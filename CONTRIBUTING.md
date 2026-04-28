@@ -63,11 +63,13 @@ After creating a `SKILL.md` under `<plugin>/skills/<skill-name>/`, run the `/upd
 
 ### Validating before committing
 
-Before opening a PR, run the `/validate-marketplace` skill to check that all JSON is valid, required fields are present, local paths exist, and skill frontmatter is correct:
+Before opening a PR, run the deterministic validator to check that all JSON is valid, required fields are present, local paths exist, skill frontmatter is correct, and README/catalog skill counts match the source files:
 
+```bash
+make validate
 ```
-/validate-marketplace
-```
+
+You can also invoke `/validate-marketplace` inside Claude Code; it runs the same check.
 
 ## Pull Request Guidelines
 

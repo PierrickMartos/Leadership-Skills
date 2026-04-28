@@ -2,10 +2,13 @@ CLAUDE_MARKETPLACE := .claude-plugin/marketplace.json
 CURSOR_MARKETPLACE := .cursor-plugin/marketplace.json
 CURRENT_VERSION := $(shell python3 -c "import json; print(json.load(open('$(CLAUDE_MARKETPLACE)'))['version'])")
 
-.PHONY: version patch minor major release
+.PHONY: version validate patch minor major release
 
 version:
 	@echo "Current version: $(CURRENT_VERSION)"
+
+validate:
+	python3 scripts/validate_marketplace.py
 
 patch:
 	@$(MAKE) _bump PART=patch

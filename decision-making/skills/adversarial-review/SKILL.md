@@ -1,5 +1,5 @@
 ---
-name: decision-adversarial-review
+name: adversarial-review
 description: >
   Adversarial review for significant strategic decisions. Use this skill whenever a leader or team
   is weighing an important choice — launching a product, making a hire, entering a market, adopting
@@ -117,7 +117,16 @@ Search externally to build an independent view. Look for:
 - Signals the user may have missed: trends, regulatory shifts, behavior changes
 - Contrarian takes: credible voices arguing the opposite
 
-Be honest about what you found and what you couldn't find.
+Track the source quality as you research:
+
+- **Primary sources** — company docs, filings, official reports, public metrics, direct customer
+  evidence. Treat these as highest confidence.
+- **Credible secondary sources** — analyst reports, reputable journalism, expert commentary.
+  Use these to interpret, not to overrule stronger primary evidence.
+- **Weak signals** — anecdotes, unsourced claims, stale content, thin commentary. Use only as
+  directional signals and label them clearly.
+
+Be honest about what you found, what you couldn't find, and what is only weakly supported.
 
 ---
 
@@ -151,8 +160,13 @@ Keep this list to the 4–6 most important assumptions, not an exhaustive invent
 ---
 
 ### Market & External Context
-*What does research reveal that the user probably doesn't know?* Synthesize — don't list sources.
-Surface surprises and counterintuitive findings. Skip anything that just confirms what they said.
+*What does research reveal that the user probably doesn't know?* Synthesize the findings and
+surface surprises or counterintuitive evidence. Skip anything that just confirms what they said.
+
+Include a compact evidence note:
+- **Sources consulted:** [3-6 most relevant sources or source types, with dates if known]
+- **Evidence quality:** [High / Medium / Low, with one-sentence rationale]
+- **Could not verify:** [Claims or assumptions that remain unsupported]
 
 ---
 
