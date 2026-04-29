@@ -1,0 +1,28 @@
+{
+  "eval_id": 1,
+  "eval_name": "production-bug-priority",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "business-impact-stated: The draft quantifies or clearly describes the business impact (12% of users, onboarding blocked, etc.)",
+      "passed": true,
+      "evidence": "'preventing roughly 12% of users from completing onboarding' and '12% of users hitting a hard stop during onboarding is a significant activation loss, and every day it stays open compounds that.'"
+    },
+    {
+      "text": "prioritization-framed-as-request: The P1/P2 disagreement is framed as a question for Priya to weigh in on, not a criticism of Thomas's judgment",
+      "passed": true,
+      "evidence": "'I think this warrants P1 treatment and a committed resolution timeline... Would it be possible to get eyes on the priority call' — asks for Priya's perspective, not a verdict against Thomas."
+    },
+    {
+      "text": "not-accusatory-toward-thomas: The draft avoids making Thomas look negligent",
+      "passed": true,
+      "evidence": "'Thomas is on it... I've checked in with Thomas but understand he may be juggling other things. I'm not looking to add pressure on him' — explicitly protects Thomas."
+    },
+    {
+      "text": "actionable-ask: The draft ends with a clear ask",
+      "passed": true,
+      "evidence": "'Would it be possible to get eyes on the priority call and a rough ETA? Happy to jump on a quick call if that's easier.' — two-part ask, easy to act on."
+    }
+  ],
+  "pass_rate": 1.0
+}

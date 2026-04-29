@@ -1,0 +1,28 @@
+{
+  "eval_id": 2,
+  "eval_name": "api-ownership-gap",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "ownership-gap-named: The draft frames this as an ownership gap — nobody is accountable — rather than as anyone's fault",
+      "passed": true,
+      "evidence": "'there's no shared rate limiting strategy and no single owner for how we handle quota allocation, throttling, retries, or failure modes' — structural, not personal."
+    },
+    {
+      "text": "timeline-urgency: The draft mentions the 3-week deadline or the first ship date to create appropriate urgency",
+      "passed": true,
+      "evidence": "'The first of those ships in three weeks' and 'The window to sort this without impacting the ship date is closing fast.'"
+    },
+    {
+      "text": "prior-attempts-referenced: The draft references the #architecture-discuss discussions or the informal attempts to align",
+      "passed": true,
+      "evidence": "'I've raised this in #architecture-discuss twice and got agreement that alignment is needed, but we haven't moved to a concrete decision or owner.'"
+    },
+    {
+      "text": "asks-for-owner-not-solution: The ask is for someone to own the decision or coordinate — not for the recipient to personally solve the technical problem",
+      "passed": true,
+      "evidence": "'Can you help identify who should own this decision?... I just need someone with the authority to convene the right people.' — asks for owner/convener, not technical answer."
+    }
+  ],
+  "pass_rate": 1.0
+}

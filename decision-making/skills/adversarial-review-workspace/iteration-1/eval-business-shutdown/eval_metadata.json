@@ -1,0 +1,27 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-business-shutdown",
+  "prompt": "We're a B2B SaaS company, 3 years old, $2M ARR. I'm deciding whether to shut down our self-serve free tier (currently ~8,000 free users, ~200 convert to paid each quarter) and go sales-assisted only. Rationale: free tier costs us ~$40k/month in infrastructure, our ACV has gone up to $18k so the self-serve funnel feels misaligned. Our head of sales thinks we're losing enterprise deals because we look like a 'prosumer' tool. Board meeting in 3 weeks. Please do a full adversarial review.",
+  "assertions": [
+    {
+      "id": "identifies-one-way-door",
+      "text": "The report correctly identifies this as a one-way door (hard to reverse) decision — killing a free tier damages user trust and is difficult to undo"
+    },
+    {
+      "id": "calculates-revenue-impact",
+      "text": "The report does the math: 200 conversions/quarter × $18k ACV = $3.6M ARR pipeline from free tier, comparing it to the $40k/month ($480k/year) infra cost"
+    },
+    {
+      "id": "challenges-enterprise-perception-assumption",
+      "text": "The report challenges the assumption that the free tier is causing enterprise deal losses — asking for evidence beyond the sales head's opinion"
+    },
+    {
+      "id": "mentions-plg-moat",
+      "text": "The report mentions product-led growth (PLG), word-of-mouth, or community value being lost by removing the free tier"
+    },
+    {
+      "id": "strong-counterargument",
+      "text": "The report includes a substantive counterargument against shutting down the free tier (not just a token mention)"
+    }
+  ]
+}

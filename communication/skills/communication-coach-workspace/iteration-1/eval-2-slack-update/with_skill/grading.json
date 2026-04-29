@@ -1,0 +1,32 @@
+{
+  "eval_id": 2,
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Output identifies that the beta date is buried and should be in the first sentence (BLUF violation)",
+      "passed": true,
+      "evidence": "Annotation: 'BLUF missing — lead buried: The timeline (the only thing readers need from this update) appears in the second-to-last sentence. Moved it to the first line.'"
+    },
+    {
+      "text": "Output flags the vague hedge 'might change depending on a few things' and asks for a specific condition or date",
+      "passed": true,
+      "evidence": "Annotation: 'Vague hedging replaced with a concrete commitment: replaced with a specific commitment: if the date changes, you'll post by [day].'"
+    },
+    {
+      "text": "Output flags the throat-clearing opener ('I hope you're all doing well') and/or other filler",
+      "passed": true,
+      "evidence": "Annotation explicitly names: '\"I hope you're all doing well,\" \"I just wanted to give a quick update,\" and \"As you know\" add zero information.'"
+    },
+    {
+      "text": "Rewritten Slack message is noticeably shorter than the original (under 80 words vs original ~120+)",
+      "passed": true,
+      "evidence": "Output explicitly states '130 words → 57 words'. The rewrite confirms this with a tight 3-sentence message."
+    },
+    {
+      "text": "Rewritten version leads with the key status update (beta date target) in the first line",
+      "passed": true,
+      "evidence": "Rewrite opens with bold: '**Onboarding flow beta: targeting end of next week**' as the first line."
+    }
+  ],
+  "pass_rate": 1.0
+}

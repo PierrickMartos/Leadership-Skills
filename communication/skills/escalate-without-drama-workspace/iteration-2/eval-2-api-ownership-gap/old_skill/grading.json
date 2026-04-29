@@ -1,0 +1,28 @@
+{
+  "eval_id": 2,
+  "eval_name": "api-ownership-gap",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "ownership-gap-named: The draft frames this as an ownership gap — nobody is accountable — rather than as anyone's fault",
+      "passed": true,
+      "evidence": "'no one owns this cross-team — it's fallen in the gap between us' — structural framing, no blame assigned to any individual or team."
+    },
+    {
+      "text": "timeline-urgency: The draft mentions the 3-week deadline or the first ship date to create appropriate urgency",
+      "passed": true,
+      "evidence": "'Three teams (including mine) are shipping features in the next three weeks' — opening line establishes urgency with specific timeline."
+    },
+    {
+      "text": "prior-attempts-referenced: The draft references the #architecture-discuss discussions or the informal attempts to align",
+      "passed": true,
+      "evidence": "'I've raised it twice in #architecture-discuss and both times the response was \"good point, let's align\" — but nothing has moved.'"
+    },
+    {
+      "text": "asks-for-owner-not-solution: The ask is for someone to own the decision or coordinate — not for the recipient to personally solve the technical problem",
+      "passed": true,
+      "evidence": "'What I need is either: (a) someone designated as the owner who can drive a decision... or (b) a clear decision that each team handles their own rate limiting independently' — asks for ownership/decision, not technical solution."
+    }
+  ],
+  "pass_rate": 1.0
+}

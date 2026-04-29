@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "eval_name": "engineering-manager-french",
+  "prompt": "Engineering Manager screening at French SaaS scale-up. Candidate is Tech Lead at Datadog wanting to transition to management. Key question: ready for full people management?",
+  "assertions": [
+    {"id": "rating", "text": "Output contains an explicit rating on a defined scale (e.g., 1-5)", "type": "presence"},
+    {"id": "strengths-with-evidence", "text": "Strengths section exists with specific evidence from the profile", "type": "quality"},
+    {"id": "gaps-section", "text": "Gaps section exists, distinguishing unknowns from concerns", "type": "presence"},
+    {"id": "risks-section", "text": "Risks section addresses tech-lead-to-manager transition risk", "type": "quality"},
+    {"id": "decision-framework", "text": "Includes conditional decision logic", "type": "presence"},
+    {"id": "star-questions", "text": "Interview questions use behavioral format targeting perf management and conflict resolution", "type": "quality"},
+    {"id": "scoring-rubric", "text": "Includes a scoring rubric for the call", "type": "presence"},
+    {"id": "questions-target-gaps", "text": "Questions target the specific gaps (perf management experience, letting go of code)", "type": "quality"},
+    {"id": "french-language", "text": "The entire output is in French (matching the user's language)", "type": "presence"}
+  ]
+}

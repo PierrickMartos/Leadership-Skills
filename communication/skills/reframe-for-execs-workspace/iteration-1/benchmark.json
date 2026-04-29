@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "skill_name": "reframe-for-execs",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-04-01T08:21:05Z",
+    "evals_run": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "four-sections-present: Output contains all four exec frame sections",
+          "passed": true,
+          "evidence": "Output contains 'What matters', 'Why now', 'Risk if we do nothing', 'Recommendation' as explicit headers"
+        },
+        {
+          "text": "no-implementation-noise: Output does not mention microservices, Redis, or caching layer",
+          "passed": true,
+          "evidence": "None of those terms appear in the output \u2014 progress update was correctly stripped"
+        },
+        {
+          "text": "surfaces-decision-point: Output mentions March 31 deadline or Q1/scope/unplanned",
+          "passed": true,
+          "evidence": "'The deprecation deadline is March 31st' and 'Q1 roadmap' both present"
+        },
+        {
+          "text": "clear-specific-ask: Recommendation does not end with 'your thoughts', 'let me know', or 'happy to discuss more'",
+          "passed": true,
+          "evidence": "Ends with 'I can bring a brief options breakdown to make that call efficient' \u2014 specific and purposeful"
+        },
+        {
+          "text": "concise-length: Total output under 200 words",
+          "passed": true,
+          "evidence": "Exec frame sections total approximately 155 words"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.8,
+        "passed": 4,
+        "failed": 1,
+        "total": 5,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "four-sections-present: Output contains all four exec frame sections",
+          "passed": true,
+          "evidence": "'What matters', 'Why now', 'Risk if we do nothing', 'Recommendation' all present as headers"
+        },
+        {
+          "text": "no-process-noise: Output does not mention 12 evaluation criteria, 14 stakeholder, 47-page, or 4 phases",
+          "passed": false,
+          "evidence": "'14 stakeholder teams were consulted' appears in the What matters section \u2014 the skill didn't fully strip this process detail"
+        },
+        {
+          "text": "surfaces-savings: Output mentions $1.3M projected savings",
+          "passed": true,
+          "evidence": "'a projected saving of $1.3M' in What matters section"
+        },
+        {
+          "text": "recommendation-is-approve: Recommendation asks for approval to proceed to Phase 1",
+          "passed": true,
+          "evidence": "'Approve Phase 1: foundation setup and pilot migration of three non-critical datasets'"
+        },
+        {
+          "text": "what-was-removed-included: Output includes a 'What was removed' section",
+          "passed": true,
+          "evidence": "'What was removed' section present with 4 bullet points explaining editorial logic"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "four-sections-present: Output contains all four exec frame sections",
+          "passed": true,
+          "evidence": "'What matters', 'Why now', 'Risk if we do nothing', 'Recommendation' all present as headers"
+        },
+        {
+          "text": "attrition-risk-surfaced: Output mentions engineers considering leaving",
+          "passed": true,
+          "evidence": "'Two have told me they're considering leaving'"
+        },
+        {
+          "text": "hiring-decision-is-the-ask: Recommendation asks specifically for EMEA hiring decision",
+          "passed": true,
+          "evidence": "'I'm asking you to greenlight a senior engineering hire in an EMEA time zone'"
+        },
+        {
+          "text": "no-root-cause-analysis: Output does not enumerate three root causes or list 'runbooks and'",
+          "passed": true,
+          "evidence": "Root causes collapsed to a single sentence; no enumeration of the three issues; 'runbooks and' does not appear"
+        },
+        {
+          "text": "payments-service-risk-kept: Output mentions payments service as critical",
+          "passed": true,
+          "evidence": "'one of them leads payments, our most critical service'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "four-sections-present: Output contains all four exec frame sections",
+          "passed": false,
+          "evidence": "Output uses flowing prose and a 'Decision needed:' label but no four-part structured frame. Sections 'What matters', 'Why now', 'Risk if we do nothing', 'Recommendation' are absent."
+        },
+        {
+          "text": "no-implementation-noise: Output does not mention microservices, Redis, or caching layer",
+          "passed": false,
+          "evidence": "'cart service migrated, Redis caching done' appears in the output \u2014 implementation progress included despite not being decision-grade"
+        },
+        {
+          "text": "surfaces-decision-point: Output mentions March 31 deadline or Q1/scope/unplanned",
+          "passed": true,
+          "evidence": "'sunset date is March 31st' and 'Q1 resourcing' both present"
+        },
+        {
+          "text": "clear-specific-ask: Recommendation does not end with 'your thoughts', 'let me know', or 'happy to discuss more'",
+          "passed": true,
+          "evidence": "Ends with 'Happy to walk through options on Monday' \u2014 not an exact match for the checked phrases, though still a soft close"
+        },
+        {
+          "text": "concise-length: Total output under 200 words",
+          "passed": true,
+          "evidence": "Output is approximately 100 words"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.4,
+        "passed": 2,
+        "failed": 3,
+        "total": 5,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "four-sections-present: Output contains all four exec frame sections",
+          "passed": false,
+          "evidence": "Uses custom headers (Recommendation, Financial Case, What We Did to Get Here, Migration Plan, Key Risks, Decision Needed) \u2014 not the four-part exec frame"
+        },
+        {
+          "text": "no-process-noise: Output does not mention 12 evaluation criteria, 14 stakeholder, 47-page, or 4 phases",
+          "passed": false,
+          "evidence": "'12 criteria', '14 stakeholder interviews', '4 phases' all present \u2014 process detail retained"
+        },
+        {
+          "text": "surfaces-savings: Output mentions $1.3M projected savings",
+          "passed": true,
+          "evidence": "$1.3M savings in the financial table"
+        },
+        {
+          "text": "recommendation-is-approve: Recommendation asks for approval to proceed to Phase 1",
+          "passed": true,
+          "evidence": "'Requesting approval to proceed to Phase 1' and 'Approve Phase 1 to start immediately'"
+        },
+        {
+          "text": "what-was-removed-included: Output includes a 'What was removed' section",
+          "passed": false,
+          "evidence": "No such section \u2014 without the skill the editorial logic is not surfaced to the user"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.6,
+        "passed": 3,
+        "failed": 2,
+        "total": 5,
+        "time_seconds": 0.0,
+        "tokens": 0,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "four-sections-present: Output contains all four exec frame sections",
+          "passed": false,
+          "evidence": "Uses BLUF-style headers: 'What's happening', 'Root causes', 'What we can do ourselves', 'What we need from you' \u2014 not the four-part exec frame"
+        },
+        {
+          "text": "attrition-risk-surfaced: Output mentions engineers considering leaving",
+          "passed": true,
+          "evidence": "'Two engineers mentioned last week they're considering leaving because of the burden'"
+        },
+        {
+          "text": "hiring-decision-is-the-ask: Recommendation asks specifically for EMEA hiring decision",
+          "passed": true,
+          "evidence": "'A decision on EMEA senior engineer hiring to close the coverage gap'"
+        },
+        {
+          "text": "no-root-cause-analysis: Output does not enumerate three root causes or list 'runbooks and'",
+          "passed": false,
+          "evidence": "A full root-cause table with three rows is present (noisy alerting, missing runbooks, no EMEA coverage) \u2014 operational detail retained rather than stripped"
+        },
+        {
+          "text": "payments-service-risk-kept: Output mentions payments service as critical",
+          "passed": true,
+          "evidence": "'One of them owns the payments service'"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.9333,
+        "stddev": 0.1155,
+        "min": 0.8,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 0.5333,
+        "stddev": 0.1155,
+        "min": 0.4,
+        "max": 0.6
+      },
+      "time_seconds": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "tokens": {
+        "mean": 0.0,
+        "stddev": 0.0,
+        "min": 0,
+        "max": 0
+      }
+    },
+    "delta": {
+      "pass_rate": "+0.40",
+      "time_seconds": "+0.0",
+      "tokens": "+0"
+    }
+  },
+  "notes": []
+}

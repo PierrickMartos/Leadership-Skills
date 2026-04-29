@@ -1,0 +1,41 @@
+{
+  "expectations": [
+    {
+      "text": "The 3x churn rate finding or the 14-day onboarding insight appears in the first 1-2 sentences of the rewritten intro",
+      "passed": true,
+      "evidence": "The revised intro opens with: 'Customers who don't complete onboarding within 14 days churn at 3x the rate during months 2–4.' Both the 14-day onboarding insight and the 3x churn rate appear in the very first sentence."
+    },
+    {
+      "text": "Analysis methodology (cohort analysis, regression modeling) is not in the first paragraph of the rewrite",
+      "passed": true,
+      "evidence": "The first paragraph of the revised intro contains no methodology: 'Customers who don't complete onboarding within 14 days churn at 3x the rate during months 2–4. This report explains what's driving that pattern and what we can do about it.' Cohort analysis and regression modeling appear only in the second paragraph."
+    },
+    {
+      "text": "The phrase 'after extensive analysis' or equivalent throat-clearing is removed",
+      "passed": true,
+      "evidence": "The feedback explicitly calls this out: 'Cut the process narration. Phrases like \"after extensive analysis, we identified several key drivers\" add length without adding information.' The revised intro contains no such phrase."
+    },
+    {
+      "text": "The feedback explains the problem in terms of the leadership audience's needs (they want the answer first)",
+      "passed": true,
+      "evidence": "The output opens with: 'Leadership audiences typically want the key takeaway upfront, not after a methodology walkthrough.' The first bullet in 'What changed and why' also states: 'The 3x churn stat is the most actionable insight in your report. Putting it first signals to leadership that you have a concrete answer, not just a study.'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 28.9
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      "The output is strong across all dimensions. A potential enhancement would be to more explicitly name the BLUF principle (Bottom Line Up Front) in the feedback, which could help learners connect the technique to the broader communication framework.",
+      "The output could reinforce why methodology belongs in a second paragraph rather than being cut entirely — it shows the distinction between 'moved' vs 'deleted' content."
+    ],
+    "overall": "The output fully satisfies all four assertions. It leads with both key findings (14-day onboarding, 3x churn) in the first sentence, relegates methodology to the second paragraph, explicitly removes throat-clearing language, and frames the feedback around the leadership audience's need for answers first. The rewrite is clean and well-explained."
+  }
+}

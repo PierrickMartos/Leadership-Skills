@@ -1,0 +1,20 @@
+{
+  "reviews": [
+    {
+      "run_id": "senior-backend-engineer-saas-with_skill",
+      "feedback": "- candidate summary: should be quicker to scan, like by using bullet points\n- overall rating: only put the rating once, right now its in the table and in subheading\n- strengths, gaps, risks: a bit too verbose\n- tailored questions; improve the format, like with bullet points and sub bulletpoints",
+      "timestamp": "2026-04-01T12:33:35.191Z"
+    },
+    {
+      "run_id": "senior-backend-engineer-saas-without_skill",
+      "feedback": "too verbose\nlack of structure",
+      "timestamp": "2026-04-01T12:33:35.191Z"
+    },
+    {
+      "run_id": "engineering-manager-french-with_skill",
+      "feedback": "- Rating: dont output the scale, just mention \"3/5\" here and the rationale",
+      "timestamp": "2026-04-01T12:33:35.191Z"
+    }
+  ],
+  "status": "in_progress"
+}

@@ -1,0 +1,27 @@
+{
+  "eval_id": 2,
+  "eval_name": "api-ownership-gap",
+  "prompt": "I'm a tech lead and nobody seems to own the API rate limiting strategy. Three teams are about to ship features that will all hit the same external API and none of us have coordinated. I've raised it in #architecture-discuss twice and got 'good point, let's align' both times but nothing happened. The first feature ships in 3 weeks. I'm not sure whether to escalate to my director, to the principal engineer, or both. What's the best way to do this and can you draft something?",
+  "assertions": [
+    {
+      "name": "ownership-gap-named",
+      "description": "The draft frames this as an ownership gap — nobody is accountable — rather than as anyone's fault",
+      "type": "qualitative"
+    },
+    {
+      "name": "timeline-urgency",
+      "description": "The draft mentions the 3-week deadline or the first ship date to create appropriate urgency",
+      "type": "qualitative"
+    },
+    {
+      "name": "prior-attempts-referenced",
+      "description": "The draft references the #architecture-discuss discussions or the informal attempts to align",
+      "type": "qualitative"
+    },
+    {
+      "name": "asks-for-owner-not-solution",
+      "description": "The ask is for someone to own the decision or coordinate — not for the recipient to personally solve the technical problem",
+      "type": "qualitative"
+    }
+  ]
+}

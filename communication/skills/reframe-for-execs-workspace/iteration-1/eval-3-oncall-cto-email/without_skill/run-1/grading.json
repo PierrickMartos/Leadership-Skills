@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "text": "four-sections-present: Output contains all four exec frame sections",
+      "passed": false,
+      "evidence": "Uses BLUF-style headers: 'What's happening', 'Root causes', 'What we can do ourselves', 'What we need from you' — not the four-part exec frame"
+    },
+    {
+      "text": "attrition-risk-surfaced: Output mentions engineers considering leaving",
+      "passed": true,
+      "evidence": "'Two engineers mentioned last week they're considering leaving because of the burden'"
+    },
+    {
+      "text": "hiring-decision-is-the-ask: Recommendation asks specifically for EMEA hiring decision",
+      "passed": true,
+      "evidence": "'A decision on EMEA senior engineer hiring to close the coverage gap'"
+    },
+    {
+      "text": "no-root-cause-analysis: Output does not enumerate three root causes or list 'runbooks and'",
+      "passed": false,
+      "evidence": "A full root-cause table with three rows is present (noisy alerting, missing runbooks, no EMEA coverage) — operational detail retained rather than stripped"
+    },
+    {
+      "text": "payments-service-risk-kept: Output mentions payments service as critical",
+      "passed": true,
+      "evidence": "'One of them owns the payments service'"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  },
+  "timing": {
+    "executor_duration_seconds": 31.5
+  }
+}

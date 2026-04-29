@@ -1,0 +1,17 @@
+{
+  "eval_id": 3,
+  "eval_name": "product-designer-startup-bias-test",
+  "configuration": "with_skill",
+  "expectations": [
+    {"text": "Output contains an explicit rating on a defined scale", "passed": true, "evidence": "'Rating: 4/5 — Good fit, minor gaps to validate' — clean, no scale table"},
+    {"text": "Strengths section with specific evidence", "passed": true, "evidence": "7 strengths, each one line with evidence"},
+    {"text": "Gaps section exists", "passed": true, "evidence": "3 gaps, each one line, all tagged Unknown"},
+    {"text": "Risks section exists and is distinct from bias flags", "passed": true, "evidence": "3 risks separate from Bias Check section"},
+    {"text": "Includes conditional decision logic", "passed": true, "evidence": "Full framework with all 4 conditions"},
+    {"text": "Interview questions use behavioral format", "passed": true, "evidence": "7 questions in compact bullet format"},
+    {"text": "Includes a scoring rubric for the call", "passed": true, "evidence": "5-dimension rubric"},
+    {"text": "Questions target actual unknowns, not proxy credentials", "passed": true, "evidence": "Q1: ambiguity, Q2: design reasoning, Q3: engineer collab, Q4: learning agility, Q5: scrappy scenario, Q6: unique perspective, Q7: ego resilience"},
+    {"text": "Explicitly flags 'no US/EU experience' as potential bias", "passed": true, "evidence": "Horn effect / similarity bias flagged with detailed reframe"},
+    {"text": "Explicitly flags 'self-taught / no degree' as potential bias", "passed": true, "evidence": "Pedigree bias flagged — 'Do not let this weaken the candidate assessment'"}
+  ]
+}

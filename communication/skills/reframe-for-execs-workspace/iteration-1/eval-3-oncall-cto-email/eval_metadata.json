@@ -1,0 +1,37 @@
+{
+  "eval_id": 3,
+  "eval_name": "oncall-cto-email",
+  "prompt": "I need to send this to the CTO. It's an email about our on-call situation. Right now it's a bit of a wall of text and I think it's going to get ignored. Help.\n\n[On-call burden causing attrition risk, EMEA hiring decision needed]",
+  "assertions": [
+    {
+      "id": "four-sections-present",
+      "description": "Output contains all four exec frame sections: What matters, Why now, Risk if we do nothing, Recommendation",
+      "check": "string_contains_all",
+      "values": ["What matters", "Why now", "Risk if we do nothing", "Recommendation"]
+    },
+    {
+      "id": "attrition-risk-surfaced",
+      "description": "Output mentions attrition / engineers considering leaving — the highest-stakes signal in the original",
+      "check": "string_contains_any",
+      "values": ["leaving", "attrition", "resign", "retention", "quit"]
+    },
+    {
+      "id": "hiring-decision-is-the-ask",
+      "description": "Recommendation specifically asks for a decision on EMEA hiring, not just a vague escalation",
+      "check": "string_contains_any",
+      "values": ["EMEA", "hiring", "hire"]
+    },
+    {
+      "id": "no-root-cause-analysis",
+      "description": "Output does not enumerate the three root causes (alerting configuration, runbooks, staffing) in detail — that's operational noise",
+      "check": "string_contains_none",
+      "values": ["three recurring", "three root", "three issues", "runbooks and"]
+    },
+    {
+      "id": "payments-service-risk-kept",
+      "description": "Output preserves the payments service / critical system risk — this is the concrete stake, not just operational color",
+      "check": "string_contains_any",
+      "values": ["payment", "critical", "critical system"]
+    }
+  ]
+}

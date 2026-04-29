@@ -1,0 +1,100 @@
+{
+  "expectations": [
+    {
+      "text": "The report correctly identifies this as a two-way door (reversible) decision",
+      "passed": false,
+      "evidence": "Section 5 'Lock-In and Reversibility' explicitly concludes the opposite: 'After switching, reversibility is extremely costly... switching back in 18 months would likely cost more than the original migration.' The summary table rates Reversibility as 'Low — switching back in 18 months would cost more.' The report treats this as a low-reversibility (one-way door) decision, never using the term 'two-way door' or characterizing it as easily reversible."
+    },
+    {
+      "text": "The report applies lighter/faster analysis appropriate for a two-way door, rather than maximum depth",
+      "passed": false,
+      "evidence": "The report is 196 lines across 10 numbered sections, includes a 9-criteria decision matrix (all 0/9 confirmed), a detailed risk table with 6 risk areas, a pre-mortem with 5 failure scenarios, a hidden assumptions section, and a summary comparison table. This is maximum-depth analysis. Given that assertion 1 also failed (the report does not identify this as a two-way door), this lighter-touch behavior would not be expected or present."
+    },
+    {
+      "text": "The report mentions migration risk, data loss, or disruption to support operations during transition",
+      "passed": true,
+      "evidence": "Section 4 'Migration Risk Assessment' contains a detailed table with rows for 'Data migration completeness' (Likelihood: High), 'Agent retraining time' (Medium), 'Reporting continuity' (High — '3 years of KPI baselines live in Zendesk. Post-migration, you lose comparison points'), and 'Workflow re-mapping' (High). Section 6 also covers 'SLA performance at scale' and 'Reporting adequacy' as operational risks during transition."
+    },
+    {
+      "text": "The report identifies hidden costs beyond the stated $15k (e.g., retraining, productivity dip, integration rebuilding)",
+      "passed": true,
+      "evidence": "Section 1 calculates: '8 agents, even 20% slower for 4 weeks = 8 x 0.2 x 4 x agent loaded cost. If agents cost $70k/year all-in, that is ~$18k in hidden migration overhead on top of the $15k.' Section 4 also flags 'Integration rebuild' and 'Agent retraining time' as underestimated risks. The summary table revises the total estimate to '$22-30k / 3+ months all-in' versus the stated $15k / 2 months."
+    },
+    {
+      "text": "The report includes external market context about Zendesk vs Intercom based on research (not just restating user's input)",
+      "passed": true,
+      "evidence": "The report contains market knowledge not present in the user's input: Intercom's pricing is 'notoriously modular' with add-ons for product tours, proactive support, AI, and reporting; Intercom is a 'private company that has undergone significant pricing restructuring multiple times'; Intercom is 'historically strongest for product-led growth companies with conversational, low-complexity support'; Zendesk 'has a very stable API and data model'; and standalone product tour alternatives are named (Appcues, Pendo, Chameleon, Userflow at '~$200/month'). These reflect external knowledge, not restatements of user input."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  },
+  "execution_metrics": {
+    "output_chars": 7450,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "executor_duration_seconds": 99.9,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 99.9
+  },
+  "claims": [
+    {
+      "claim": "The migration cost of $15k / 2 months is likely underestimated",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The report provides a concrete calculation arriving at ~$18k hidden overhead on top of $15k stated cost, and notes engineering estimates for internal migrations are 'historically optimistic by 40-100%', arriving at a revised estimate of $22-30k / 3+ months."
+    },
+    {
+      "claim": "Intercom's pricing scales with MAU (monthly active users) in some plans",
+      "type": "factual",
+      "verified": false,
+      "evidence": "The report states 'Intercom's pricing scales with the number of people you contact (MAU-based for some plans)' — this is unverifiable from the available outputs but is consistent with Intercom's known pricing model as of the knowledge cutoff."
+    },
+    {
+      "claim": "Standalone product tours tools (Appcues, Pendo, Chameleon, Userflow) are available for ~$200/month",
+      "type": "factual",
+      "verified": false,
+      "evidence": "The report asserts these tools are available at '~$200/month' but no source or pricing data is cited. This is a reasonable directional claim but not verifiable from available outputs."
+    },
+    {
+      "claim": "The 9 decision criteria scored 0/9 confirmed",
+      "type": "quality",
+      "verified": true,
+      "evidence": "The decision framework table in Section 9 lists 9 criteria, all marked 'Not confirmed', resulting in a score of 0/9."
+    },
+    {
+      "claim": "The report recommends 'pause, not kill'",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Section 10 explicitly states: 'Recommended decision: Pause, not kill.' with rationale that the drivers are real but unvalidated."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The report correctly identifies this as a two-way door (reversible) decision",
+        "reason": "This assertion is misaligned with the actual nature of the decision. The report correctly identifies Zendesk-to-Intercom migration as a LOW-reversibility (one-way door) decision — which is the accurate characterization. The assertion as written would only pass if the model misidentified the decision type. Consider replacing it with: 'The report explicitly assesses the reversibility of this decision' — which tests whether reversibility was analyzed at all, regardless of which direction the analysis lands."
+      },
+      {
+        "assertion": "The report applies lighter/faster analysis appropriate for a two-way door, rather than maximum depth",
+        "reason": "This assertion is only meaningful if assertion 1 passes. Since the decision is correctly characterized as low-reversibility (one-way door), applying lighter treatment would be a mistake. Grading 'lighter treatment' as a positive outcome on a one-way door decision would reward incorrect behavior. Consider testing instead: 'The report calibrates analysis depth to the actual reversibility of the decision' — i.e., deep analysis for a one-way door, lighter for a two-way door."
+      },
+      {
+        "reason": "No assertion checks the quality or actionability of the recommendations. The report provides a 9-criteria checklist and concrete next steps — an assertion like 'The report includes specific, actionable criteria for when to proceed with the migration' would test whether the analysis is decision-useful, not just analytically thorough."
+      },
+      {
+        "reason": "No assertion checks whether the pre-mortem or failure scenario analysis was included. The report's Section 8 pre-mortem ('How Does This Decision Fail?') is one of the higher-value outputs for adversarial review. Consider: 'The report includes a pre-mortem or failure scenario analysis.'"
+      }
+    ],
+    "overall": "Two of the five assertions appear to be testing for incorrect behavior (treating a one-way door decision as two-way). The remaining three are well-targeted and discriminating. The eval set would benefit from replacing the two misaligned assertions with ones that test decision calibration quality and recommendation actionability."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "eval_name": "engineering-manager-french",
+  "configuration": "without_skill",
+  "expectations": [
+    {"text": "Output contains an explicit rating on a defined scale", "passed": false, "evidence": "Has a criteria evaluation table and 'Verdict preliminaire' but no single numeric rating on a defined scale"},
+    {"text": "Strengths section with specific evidence from profile", "passed": true, "evidence": "4 strengths with evidence (Criteo/Datadog environments, promotion, exposure to management, team size)"},
+    {"text": "Gaps section distinguishing unknowns from concerns", "passed": false, "evidence": "Gaps are embedded in 'Zones de risque' — no separate gaps section with unknown/concerning distinction"},
+    {"text": "Risks section addresses tech-lead-to-manager transition", "passed": true, "evidence": "4 risks: tech lead->manager transition (CRITIQUE), perf management (CRITIQUE), scope jump, visibility"},
+    {"text": "Includes conditional decision logic", "passed": true, "evidence": "GO/NO GO/MAYBE framework with clear criteria for each"},
+    {"text": "Interview questions use behavioral format targeting perf management and conflict", "passed": true, "evidence": "7 questions in structured phases with 'Bons signaux' and 'Mauvais signaux' for each"},
+    {"text": "Includes a scoring rubric for the call", "passed": true, "evidence": "6-dimension weighted scoring grid with 3.5/5 threshold and critical dimension floor"},
+    {"text": "Questions target the specific gaps", "passed": true, "evidence": "Q1: feedback, Q2: perf management, Q3: talent development, Q6: transition, Q7: onboarding scenario"},
+    {"text": "The entire output is in French", "passed": true, "evidence": "100% French throughout"}
+  ]
+}

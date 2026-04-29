@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "text": "four-sections-present: Output contains all four exec frame sections",
+      "passed": false,
+      "evidence": "Output uses flowing prose and a 'Decision needed:' label but no four-part structured frame. Sections 'What matters', 'Why now', 'Risk if we do nothing', 'Recommendation' are absent."
+    },
+    {
+      "text": "no-implementation-noise: Output does not mention microservices, Redis, or caching layer",
+      "passed": false,
+      "evidence": "'cart service migrated, Redis caching done' appears in the output — implementation progress included despite not being decision-grade"
+    },
+    {
+      "text": "surfaces-decision-point: Output mentions March 31 deadline or Q1/scope/unplanned",
+      "passed": true,
+      "evidence": "'sunset date is March 31st' and 'Q1 resourcing' both present"
+    },
+    {
+      "text": "clear-specific-ask: Recommendation does not end with 'your thoughts', 'let me know', or 'happy to discuss more'",
+      "passed": true,
+      "evidence": "Ends with 'Happy to walk through options on Monday' — not an exact match for the checked phrases, though still a soft close"
+    },
+    {
+      "text": "concise-length: Total output under 200 words",
+      "passed": true,
+      "evidence": "Output is approximately 100 words"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  },
+  "timing": {
+    "executor_duration_seconds": 29.7
+  }
+}

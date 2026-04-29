@@ -1,0 +1,35 @@
+{
+  "reviews": [
+    {
+      "run_id": "eval-tooling-switch-with_skill",
+      "feedback": "Yes its reversible but with a non significant cost because of user support training, potential urls change, change management... its not a one way door but its not an easy two way door neither, revert is costly.\nMention on how to limit risks are a bit burried\nIts a bit too verbose IMO",
+      "timestamp": "2026-03-31T21:18:33.146Z"
+    },
+    {
+      "run_id": "eval-tooling-switch-without_skill",
+      "feedback": "Risk are more explicit\nI love the stress tests questions\nToo verbose",
+      "timestamp": "2026-03-31T21:18:33.146Z"
+    },
+    {
+      "run_id": "eval-business-shutdown-with_skill",
+      "feedback": "Like the alternative paths\nOne way door calibration great\nRecommandation is great\nDont see the think big work small to limit risk while aiming for something bigger",
+      "timestamp": "2026-03-31T21:18:33.146Z"
+    },
+    {
+      "run_id": "eval-business-shutdown-without_skill",
+      "feedback": "Too verbose\nStructure is weak\nBut I love the recommended path",
+      "timestamp": "2026-03-31T21:18:33.146Z"
+    },
+    {
+      "run_id": "eval-eu-expansion-with_skill",
+      "feedback": "Like the think big work small with tiny steps and decision gate\nLike the question to ask (kidn of stress tests quesstion)",
+      "timestamp": "2026-03-31T21:18:33.146Z"
+    },
+    {
+      "run_id": "eval-eu-expansion-without_skill",
+      "feedback": "Too verbose\nA plan is still proposed with baby steps and gate",
+      "timestamp": "2026-03-31T21:18:33.146Z"
+    }
+  ],
+  "status": "in_progress"
+}

@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "eval_name": "engineering-manager-french",
+  "configuration": "with_skill",
+  "expectations": [
+    {"text": "Output contains an explicit rating on a defined scale", "passed": true, "evidence": "'Note : 3 -- Maybe' with full 5-point scale table and explanation"},
+    {"text": "Strengths section with specific evidence from profile", "passed": true, "evidence": "5 strengths grounded in profile (Criteo/Datadog environments, progression, Datadog recruitment involvement, international context)"},
+    {"text": "Gaps section distinguishing unknowns from concerns", "passed": true, "evidence": "5 gaps labeled as 'Inconnu (a explorer en priorite)', 'Inconnu', or 'Mineur'"},
+    {"text": "Risks section addresses tech-lead-to-manager transition", "passed": true, "evidence": "4 risks including 'tech lead deguise en manager', perf management urgency, scope increase, and identity loss"},
+    {"text": "Includes conditional decision logic", "passed": true, "evidence": "Full framework: 'Si vous prenez cet appel...', 'bon fit si...', 'pas un fit si...', 'Ce qui changerait votre avis...'"},
+    {"text": "Interview questions use behavioral format targeting perf management and conflict", "passed": true, "evidence": "7 STAR questions. Q1 directly targets perf management, Q3 targets conflict, Q7 targets difficult feedback"},
+    {"text": "Includes a scoring rubric for the call", "passed": true, "evidence": "4-dimension rubric with Signal fort/Acceptable/Signal faible columns"},
+    {"text": "Questions target the specific gaps", "passed": true, "evidence": "Q1: perf management, Q2: code vs manage time split, Q3: conflict resolution, Q5: tech lead delegation, Q6: management reality check"},
+    {"text": "The entire output is in French", "passed": true, "evidence": "100% French throughout — headings, body text, questions, rubric, everything"}
+  ]
+}

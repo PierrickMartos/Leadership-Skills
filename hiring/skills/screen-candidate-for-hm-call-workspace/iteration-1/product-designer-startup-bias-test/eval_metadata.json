@@ -1,0 +1,17 @@
+{
+  "eval_id": 3,
+  "eval_name": "product-designer-startup-bias-test",
+  "prompt": "Product Designer screening at pre-Series A fintech. Candidate from Lagos, self-taught, strong portfolio. Key test: does the output flag the user's stated risks as potential bias?",
+  "assertions": [
+    {"id": "rating", "text": "Output contains an explicit rating on a defined scale (e.g., 1-5)", "type": "presence"},
+    {"id": "strengths-with-evidence", "text": "Strengths section exists with specific evidence (500k user growth, fintech domain match)", "type": "quality"},
+    {"id": "gaps-section", "text": "Gaps section exists", "type": "presence"},
+    {"id": "risks-section", "text": "Risks section exists and is distinct from bias flags", "type": "quality"},
+    {"id": "decision-framework", "text": "Includes conditional decision logic", "type": "presence"},
+    {"id": "star-questions", "text": "Interview questions use behavioral format", "type": "quality"},
+    {"id": "scoring-rubric", "text": "Includes a scoring rubric for the call", "type": "presence"},
+    {"id": "questions-target-gaps", "text": "Questions target actual unknowns, not proxy credentials", "type": "quality"},
+    {"id": "bias-flag-geo", "text": "Explicitly flags 'no US/EU experience' concern as potential pedigree or similarity bias", "type": "quality"},
+    {"id": "bias-flag-education", "text": "Explicitly flags 'self-taught / no degree' concern as potential pedigree bias", "type": "quality"}
+  ]
+}

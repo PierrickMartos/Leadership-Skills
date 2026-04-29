@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "text": "four-sections-present: Output contains all four exec frame sections",
+      "passed": true,
+      "evidence": "'What matters', 'Why now', 'Risk if we do nothing', 'Recommendation' all present as headers"
+    },
+    {
+      "text": "no-process-noise: Output does not mention 12 evaluation criteria, 14 stakeholder, 47-page, or 4 phases",
+      "passed": false,
+      "evidence": "'14 stakeholder teams were consulted' appears in the What matters section — the skill didn't fully strip this process detail"
+    },
+    {
+      "text": "surfaces-savings: Output mentions $1.3M projected savings",
+      "passed": true,
+      "evidence": "'a projected saving of $1.3M' in What matters section"
+    },
+    {
+      "text": "recommendation-is-approve: Recommendation asks for approval to proceed to Phase 1",
+      "passed": true,
+      "evidence": "'Approve Phase 1: foundation setup and pilot migration of three non-critical datasets'"
+    },
+    {
+      "text": "what-was-removed-included: Output includes a 'What was removed' section",
+      "passed": true,
+      "evidence": "'What was removed' section present with 4 bullet points explaining editorial logic"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 1,
+    "total": 5,
+    "pass_rate": 0.8
+  },
+  "timing": {
+    "executor_duration_seconds": 39.4
+  }
+}

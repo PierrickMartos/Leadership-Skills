@@ -1,0 +1,17 @@
+{
+  "eval_id": 2,
+  "run": "with_skill",
+  "assertions": [
+    { "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when", "passed": true, "evidence": "'Decide by next week whether to form a dedicated platform team (2–3 engineers) or maintain distributed infrastructure ownership across the 4 product squads, to be confirmed by the CTO.'" },
+    { "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)", "passed": true, "evidence": "Full assumptions table with Confidence column: Medium/Medium/Low/Low/Medium for 5 assumptions." },
+    { "text": "The memo explicitly separates customer value from internal convenience", "passed": true, "evidence": "Tradeoffs note: 'Option A is harder internally but is the only path with a realistic chance of improving reliability for end users. Options B and C are easier to execute but primarily serve internal comfort — they avoid the hard conversation about structural change without addressing the root cause.'" },
+    { "text": "The memo has a section naming specific unknowns", "passed": true, "evidence": "'What We Don't Know' section with 5 specific unknowns: actual time cost audit, incident root cause, engineer willingness, backfill timeline, prior coordination attempts." },
+    { "text": "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)", "passed": true, "evidence": "'Recommendation: Option A — Form a dedicated platform team, with a structured 4-week transition and explicit charter before engineers move.' Two explicit conditions stated." },
+    { "text": "The memo includes a risk table with likelihood, severity, and mitigation columns", "passed": true, "evidence": "Risk table with Risk | Likelihood | Severity | Mitigation, 5 rows with concrete mitigations." },
+    { "text": "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)", "passed": true, "evidence": "'Approvals Required' section with HR/People (blocking) and Finance (advisory). Explicitly states: 'No legal, security, privacy, or procurement approvals required for the org decision itself.'" },
+    { "text": "The memo identifies HR/People or Finance as requiring involvement, given that engineers are being reallocated across teams (an org change)", "passed": true, "evidence": "HR/People listed as Blocking: 'Role changes and any compensation adjustments for engineers moving to platform — Before announcement, at least 1 week before decision deadline.'" }
+  ],
+  "pass_count": 8,
+  "total_count": 8,
+  "pass_rate": 1.0
+}

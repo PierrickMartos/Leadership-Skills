@@ -1,0 +1,17 @@
+{
+  "eval_id": 1,
+  "run": "old_skill",
+  "assertions": [
+    { "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when", "passed": true, "evidence": "'Decide by end of week whether to (A) ship the catalog management product on the current data sync layer and address technical debt post-launch, or (B) rewrite the sync layer before launch, delaying Q3 delivery by 2–3 months.'" },
+    { "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)", "passed": true, "evidence": "Full assumptions table with Confidence column: Medium/Low/Low/Medium/Medium." },
+    { "text": "The memo explicitly separates customer value from internal convenience", "passed": true, "evidence": "'Option B is better for the engineering team's long-term health, but worse for the two customers who are waiting. That tradeoff must be named explicitly.'" },
+    { "text": "The memo has a section naming specific unknowns", "passed": true, "evidence": "'What We Don't Know' section with 4 specific unknowns." },
+    { "text": "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)", "passed": true, "evidence": "'Option A — Ship with the current sync layer' with explicit conditions and conditional flip." },
+    { "text": "The memo includes a risk table with likelihood, severity, and mitigation columns", "passed": true, "evidence": "Risk table with Risk | Likelihood | Severity | Mitigation, 5 rows." },
+    { "text": "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)", "passed": false, "evidence": "No 'Approvals Required' section. No mention of whether cross-functional approvals are needed." },
+    { "text": "If an appendix is included, it offloads supporting detail and the main body references it inline; if no appendix, the memo is concise enough not to need one", "passed": true, "evidence": "No appendix. Memo is focused and does not contain material that would warrant one." }
+  ],
+  "pass_count": 7,
+  "total_count": 8,
+  "pass_rate": 0.875
+}

@@ -1,0 +1,96 @@
+{
+  "expectations": [
+    {
+      "text": "The report identifies this as a mixed or partially one-way door decision (hiring is reversible; GDPR/data center commitments are harder to undo)",
+      "passed": true,
+      "evidence": "The 'Door Type Assessment' section states: 'Door Type: Mixed — primarily one-way on several components, two-way on others.' It explicitly identifies EU hiring as one-way ('EU employment law makes headcount reduction expensive and slow') and GDPR/data center as largely sunk costs. Note: the assertion parenthetical has it backwards — the report correctly identifies hiring as *harder* to reverse, not easier. The core assertion (mixed door, GDPR/data center harder to undo) is substantively present."
+    },
+    {
+      "text": "The report includes a 'Think Big, Work Small' section that recommends sequencing the plan to validate assumptions before committing full budget",
+      "passed": true,
+      "evidence": "A literal 'Think Big, Work Small' section exists. It identifies load-bearing assumptions ranked by uncertainty x impact, then sequences them into phases (Phase 0: validate before building, ~$30–50k; Phase 1: one market one hire, ~$200–250k; Phase 2: expand the motion; Phase 3: scale). Decision gates explicitly prevent committing full budget without validated demand."
+    },
+    {
+      "text": "The report flags the risk of running GDPR compliance, data center setup, hiring, localization, and outbound all in parallel — recommending phased approach",
+      "passed": true,
+      "evidence": "The Counterarguments section states: 'The plan conflates infrastructure with go-to-market. GDPR compliance, EU data centers, and localization are infrastructure-level investments... Doing all of them simultaneously with sales hiring means the company will be simultaneously building compliance, engineering, and sales pipelines — three parallel programs with interdependencies and no clear sequencing risk management.' The Think Big, Work Small section then provides the phased alternative."
+    },
+    {
+      "text": "The report flags the runway risk: $800k spend on 18 months runway is a significant portion, and EU expansion often takes longer than planned",
+      "passed": true,
+      "evidence": "Assumption 6 ('18 months of runway provides sufficient buffer') explicitly calls out: '18 months is the lower bound of advisable runway for growing SaaS businesses. If the $800k expansion budget is drawn from that runway... the company may be raising in a difficult position.' The Blind Spots section adds: '18 months of runway minus $800k in expansion spend means the company is funding growth from a finite cash position.' The Risk table also includes 'Runway shrinks to danger zone before EU revenue materializes' as Medium-High likelihood/High severity."
+    },
+    {
+      "text": "The report recommends validating EU demand before building infrastructure (e.g., test with existing inbound, close 2-3 EU deals manually before investing in localization)",
+      "passed": true,
+      "evidence": "Phase 0 of Think Big, Work Small explicitly states: 'Close 2–3 pilot customers from EU on existing US infrastructure, English-language, USD pricing' and 'Decision gate: If you cannot close 2–3 EU pilots at an ACV that justifies the expansion, stop. The rest of the plan is premature.' Questions to Answer section also recommends checking CRM for EU inbound signal and running 15–20 discovery calls before any hiring."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 12390,
+    "transcript_chars": null
+  },
+  "timing": {
+    "executor_duration_seconds": 316.1,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 316.1
+  },
+  "claims": [
+    {
+      "claim": "The plan's budget of $800k is at the edge of feasibility",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The report itemizes cost components totaling $530–800k conservatively, noting 'zero contingency' — this is a substantiated factual claim, not an assertion without backing."
+    },
+    {
+      "claim": "EU B2B sales cycles are 30–50% longer than comparable US deals",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Consistent with cited sources (Aexus, Sales Force Europe, SaaStr). The report cites multiple external sources for EU B2B dynamics."
+    },
+    {
+      "claim": "GDPR compliance runs $25k–$100k in initial setup costs",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Consistent with cited Usercentrics and Medium/byjoe sources listed at end of report."
+    },
+    {
+      "claim": "The EU Data Act became fully applicable in September 2025",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Consistent with Fenwick source cited in the report and known regulatory timeline."
+    },
+    {
+      "claim": "The report covers all five major workstreams (GDPR, data center, hiring, localization, outbound)",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Each workstream is addressed in detail across Assumptions, Market Context, Risk table, and Think Big, Work Small sections."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The report identifies this as a mixed or partially one-way door decision (hiring is reversible; GDPR/data center commitments are harder to undo)",
+        "reason": "The assertion parenthetical has the reversibility backwards — the report correctly identifies EU hiring as *harder* to reverse (one-way), not easier. The assertion as written could mislead evaluators. Consider rewriting to: 'hiring creates ongoing EU employment obligations (one-way); GDPR/data center are sunk costs; only sales experiments are truly two-way.' This makes the assertion harder to pass with a superficial treatment."
+      },
+      {
+        "reason": "No assertion checks whether the report provides a credible minimum viable alternative (not just 'phase it') with a specific budget figure and timeline. The report does this well (Phase 0 at $30–50k, Phase 1 at $200–250k), and an assertion testing for this would discriminate between surface-level phasing advice and a genuine actionable alternative."
+      },
+      {
+        "reason": "No assertion checks whether the report surfaces the UK-vs-EU regulatory distinction (UK GDPR is separate from EU GDPR post-Brexit). The report flags this in Blind Spots as a hidden duplication risk. This is a substantive finding that separates a thorough review from a generic one — worth asserting."
+      }
+    ],
+    "overall": "All five assertions pass, and the report genuinely earns them — substantive evidence is present in each case. The main weakness in the eval is the reversed parenthetical in assertion 1, and the absence of assertions testing two strong discriminating outcomes: the specific minimum-viable alternative budget, and the UK/EU regulatory split. These would raise the bar and better distinguish a thorough review from a generic one."
+  }
+}

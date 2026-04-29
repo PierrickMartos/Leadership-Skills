@@ -1,0 +1,41 @@
+{
+  "expectations": [
+    {
+      "text": "The deadline or timeline change appears in the first line or two of the rewritten message",
+      "passed": true,
+      "evidence": "The suggested rewrite opens with 'Hey everyone, The migration project deadline has moved to [new date].' — the deadline change is stated in the second sentence, immediately after the greeting, before any explanation or context."
+    },
+    {
+      "text": "The backstory (infra delays, scope changes, alignment issues) does not appear in the opening",
+      "passed": true,
+      "evidence": "In the rewrite, infra delays, scope changes, and alignment issues appear only as a sub-bullet under 'Why', clearly after the deadline announcement. The opening contains no backstory."
+    },
+    {
+      "text": "The rewritten message is meaningfully shorter than the original",
+      "passed": true,
+      "evidence": "The rewrite is structured into 3 concise bullet points plus a brief closing sentence (~9 lines total). The feedback critiques the original for being verbose and diffuse ('listing infra delays, scope changes, and alignment issues without specifics reads as excuse-stacking'), implying the original was substantially longer and less focused."
+    },
+    {
+      "text": "The feedback identifies that the key information (deadline) was buried at the end",
+      "passed": true,
+      "evidence": "Line 13 of the output explicitly states: 'The critical fact — the new deadline is March 28 — appears at the end. By then, readers may have lost interest or context.' This directly identifies the deadline as buried at the end."
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 156.2
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      "Including the original message in the eval context would make assertion 3 (shorter rewrite) verifiable with exact word counts rather than inferred from the feedback tone.",
+      "Assertion 3 could be strengthened by requiring the evaluator to quote specific line counts or word counts for both original and rewrite."
+    ],
+    "overall": "All four assertions passed clearly. The output provides strong, direct evidence for each: the deadline appears in the opening of the rewrite, backstory is deferred to a sub-bullet, the rewrite is visibly condensed, and the feedback explicitly calls out the buried deadline at the end of the original. The without_skill response still correctly identifies the BLUF problem and applies it, suggesting this task may not strongly differentiate skill vs. no-skill conditions."
+  }
+}

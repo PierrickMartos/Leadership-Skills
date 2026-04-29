@@ -1,5 +1,1 @@
 .DS_Store
-
-# Eval and workspace artifacts
-**/evals/
-**/*-workspace/

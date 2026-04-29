@@ -1,0 +1,33 @@
+{
+  "eval_id": 1,
+  "eval_name": "production-bug-priority",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "business-impact-stated: The draft quantifies or clearly describes the business impact",
+      "passed": true,
+      "evidence": "'blocking 12% of users from completing onboarding for 24 hours' — specific and quantified."
+    },
+    {
+      "text": "prioritization-framed-as-request: The P1/P2 disagreement is framed as a question for Priya",
+      "passed": true,
+      "evidence": "'I think it warrants P1 treatment and I'd like your input on that call' — asks for Priya's judgment."
+    },
+    {
+      "text": "not-accusatory-toward-thomas: Thomas is not made to look negligent",
+      "passed": true,
+      "evidence": "'Thomas has confirmed the team is working on it, and I appreciate that' — explicitly positive framing."
+    },
+    {
+      "text": "actionable-ask: Clear ask at the end",
+      "passed": true,
+      "evidence": "Two numbered asks: (1) P1 alignment, (2) committed ETA. Specific and easy to act on."
+    },
+    {
+      "text": "bluf-first-sentence: The first sentence states the situation and impact without preamble",
+      "passed": true,
+      "evidence": "'We have a production bug that's been blocking 12% of users from completing onboarding for 24 hours, and I want to flag it before it compounds further.' — full situation + impact in sentence one, no preamble."
+    }
+  ],
+  "pass_rate": 1.0
+}

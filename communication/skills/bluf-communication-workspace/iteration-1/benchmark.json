@@ -1,0 +1,303 @@
+{
+  "metadata": {
+    "skill_name": "bluf-communication",
+    "skill_path": "<path/to/skill>",
+    "executor_model": "<model-name>",
+    "analyzer_model": "<model-name>",
+    "timestamp": "2026-03-31T20:39:29Z",
+    "evals_run": [
+      1,
+      2,
+      3
+    ],
+    "runs_per_configuration": 3
+  },
+  "runs": [
+    {
+      "eval_id": 1,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 38.4,
+        "tokens": 15789,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The rewritten email has a specific, informative subject line (not generic like 'Follow-up' or 'Team capacity')",
+          "passed": true,
+          "evidence": "Subject line reads: 'Headcount request for data engineering \u2014 next planning cycle' \u2014 specific, action-oriented, and names the exact ask and scope."
+        },
+        {
+          "text": "The headcount request appears in the first sentence or two of the rewritten body",
+          "passed": true,
+          "evidence": "First sentence of the BLUF body: 'I'd like to request one data engineering headcount in the next planning cycle.' \u2014 the ask leads the email."
+        },
+        {
+          "text": "Preamble phrases ('I hope you're doing well', 'As you know', 'Q4 has been intense') are removed or substantially shortened",
+          "passed": true,
+          "evidence": "The BLUF version opens with 'Hi Sarah,' then immediately states the request. All three preamble phrases are removed. The Q4 context is retained but repositioned after the ask as supporting evidence."
+        },
+        {
+          "text": "The passive hedging ('might be worth exploring whether we could potentially consider') is made direct",
+          "passed": true,
+          "evidence": "The rewrite replaces the six-layer hedge with 'I'd like to request.' The feedback explicitly calls this out: ''I think it might be worth exploring whether we could potentially consider adding' is six layers of softening around a direct ask.'"
+        },
+        {
+          "text": "The feedback explains *why* the original is problematic from the reader's perspective, not just labels it",
+          "passed": true,
+          "evidence": "The feedback explains the reader impact: 'Sarah has to read to the very last word to find out what you actually need'; 'it doesn't make you sound more polite \u2014 it makes you sound uncertain about your own request'; 'The original ended without telling Sarah what you wanted her to do with this information.' All anchored in Sarah's reading experience."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 50.5,
+        "tokens": 15575,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The deadline or timeline change appears in the first line or two of the rewritten message",
+          "passed": true,
+          "evidence": "The BLUF version opens with: 'Heads up: the migration project deadline has moved to March 28.' \u2014 the deadline is the very first sentence."
+        },
+        {
+          "text": "The backstory (infra delays, scope changes, alignment issues) does not appear in the opening",
+          "passed": true,
+          "evidence": "The opening line contains only the deadline. Backstory appears in the second paragraph: 'A few things contributed to the shift \u2014 infra delays, scope changes, and stakeholder alignment.' \u2014 clearly secondary and subordinate."
+        },
+        {
+          "text": "The rewritten message is meaningfully shorter than the original",
+          "passed": true,
+          "evidence": "Original message is approximately 65 words across six sentences. The BLUF rewrite is approximately 35 words across two short sentences \u2014 roughly 46% shorter."
+        },
+        {
+          "text": "The feedback identifies that the key information (deadline) was buried at the end",
+          "passed": true,
+          "evidence": "The 'What changed and why' section states explicitly: 'In the original, \"The new deadline is March 28\" is buried near the end after six sentences of context.'"
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "with_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 0.75,
+        "passed": 3,
+        "failed": 1,
+        "total": 4,
+        "time_seconds": 34.9,
+        "tokens": 15609,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The 3x churn rate finding or the 14-day onboarding insight appears in the first 1-2 sentences of the rewritten intro",
+          "passed": true,
+          "evidence": "The BLUF version opens with: 'Customers who don't complete onboarding within 14 days churn at 3x the rate of those who do \u2014 concentrated in months 2\u20134.' Both the 14-day insight and the 3x churn rate appear in the first sentence."
+        },
+        {
+          "text": "Analysis methodology (cohort analysis, regression modeling) is not in the first paragraph of the rewrite",
+          "passed": false,
+          "evidence": "The BLUF rewrite is a single paragraph. Cohort analysis and regression modeling appear in the second sentence of that paragraph: '...using cohort analysis, regression modeling, and qualitative input from CS and sales.' The methodology is deferred to sentence 2 (after the finding), but it remains within the same paragraph block."
+        },
+        {
+          "text": "The phrase 'after extensive analysis' or equivalent throat-clearing is removed",
+          "passed": true,
+          "evidence": "The phrase does not appear in the BLUF version. The 'What changed and why' section explicitly confirms: 'Removed \"after extensive analysis.\" This phrase adds length but no information. Readers assume analysis happened; describing it as \"extensive\" reads as filler. Cut it.'"
+        },
+        {
+          "text": "The feedback explains the problem in terms of the leadership audience's needs (they want the answer first)",
+          "passed": true,
+          "evidence": "The 'What changed and why' section states: 'Leadership reading an intro wants to know what you found, not how you found it. The method can follow the message.' This directly frames the rewrite rationale in terms of leadership audience expectations."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 1,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 5,
+        "failed": 0,
+        "total": 5,
+        "time_seconds": 41.4,
+        "tokens": 13618,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The rewritten email has a specific, informative subject line (not generic like 'Follow-up' or 'Team capacity')",
+          "passed": true,
+          "evidence": "Subject line reads: 'Headcount request for data engineering \u2014 input needed before next planning cycle' \u2014 specific, actionable, and scannable."
+        },
+        {
+          "text": "The headcount request appears in the first sentence or two of the rewritten body",
+          "passed": true,
+          "evidence": "First sentence of revised body: 'I want to flag a staffing need I'd like to discuss before the next planning cycle: we need to add a data engineer to the team.' The ask is in the opening line."
+        },
+        {
+          "text": "Preamble phrases ('I hope you're doing well', 'As you know', 'Q4 has been intense') are removed or substantially shortened",
+          "passed": true,
+          "evidence": "The revised email opens directly with the ask. 'I hope you're doing well' is removed entirely. 'Q4 has been intense' is replaced with substantive framing ('Q4 has put significant strain on our data engineering capacity') placed after the ask, not as an opener."
+        },
+        {
+          "text": "The passive hedging ('might be worth exploring whether we could potentially consider') is made direct",
+          "passed": true,
+          "evidence": "The revised version states: 'I would like to make a formal headcount request' and 'we need to add a data engineer to the team.' The four layers of hedging identified in the feedback are eliminated entirely."
+        },
+        {
+          "text": "The feedback explains *why* the original is problematic from the reader's perspective, not just labels it",
+          "passed": true,
+          "evidence": "The feedback explains reader impact explicitly: 'your reader is busy and likely scanning. If the most important thing is the last sentence, there is a real risk it gets missed or treated as an afterthought' and 'She cannot advocate for you if she does not know what the team has actually decided.' These are reader-centric explanations, not mere labels."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 2,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 156.2,
+        "tokens": 14077,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The deadline or timeline change appears in the first line or two of the rewritten message",
+          "passed": true,
+          "evidence": "The suggested rewrite opens with 'Hey everyone, The migration project deadline has moved to [new date].' \u2014 the deadline change is stated in the second sentence, immediately after the greeting, before any explanation or context."
+        },
+        {
+          "text": "The backstory (infra delays, scope changes, alignment issues) does not appear in the opening",
+          "passed": true,
+          "evidence": "In the rewrite, infra delays, scope changes, and alignment issues appear only as a sub-bullet under 'Why', clearly after the deadline announcement. The opening contains no backstory."
+        },
+        {
+          "text": "The rewritten message is meaningfully shorter than the original",
+          "passed": true,
+          "evidence": "The rewrite is structured into 3 concise bullet points plus a brief closing sentence (~9 lines total). The feedback critiques the original for being verbose and diffuse ('listing infra delays, scope changes, and alignment issues without specifics reads as excuse-stacking'), implying the original was substantially longer and less focused."
+        },
+        {
+          "text": "The feedback identifies that the key information (deadline) was buried at the end",
+          "passed": true,
+          "evidence": "Line 13 of the output explicitly states: 'The critical fact \u2014 the new deadline is March 28 \u2014 appears at the end. By then, readers may have lost interest or context.' This directly identifies the deadline as buried at the end."
+        }
+      ],
+      "notes": []
+    },
+    {
+      "eval_id": 3,
+      "configuration": "without_skill",
+      "run_number": 1,
+      "result": {
+        "pass_rate": 1.0,
+        "passed": 4,
+        "failed": 0,
+        "total": 4,
+        "time_seconds": 28.9,
+        "tokens": 13306,
+        "tool_calls": 0,
+        "errors": 0
+      },
+      "expectations": [
+        {
+          "text": "The 3x churn rate finding or the 14-day onboarding insight appears in the first 1-2 sentences of the rewritten intro",
+          "passed": true,
+          "evidence": "The revised intro opens with: 'Customers who don't complete onboarding within 14 days churn at 3x the rate during months 2\u20134.' Both the 14-day onboarding insight and the 3x churn rate appear in the very first sentence."
+        },
+        {
+          "text": "Analysis methodology (cohort analysis, regression modeling) is not in the first paragraph of the rewrite",
+          "passed": true,
+          "evidence": "The first paragraph of the revised intro contains no methodology: 'Customers who don't complete onboarding within 14 days churn at 3x the rate during months 2\u20134. This report explains what's driving that pattern and what we can do about it.' Cohort analysis and regression modeling appear only in the second paragraph."
+        },
+        {
+          "text": "The phrase 'after extensive analysis' or equivalent throat-clearing is removed",
+          "passed": true,
+          "evidence": "The feedback explicitly calls this out: 'Cut the process narration. Phrases like \"after extensive analysis, we identified several key drivers\" add length without adding information.' The revised intro contains no such phrase."
+        },
+        {
+          "text": "The feedback explains the problem in terms of the leadership audience's needs (they want the answer first)",
+          "passed": true,
+          "evidence": "The output opens with: 'Leadership audiences typically want the key takeaway upfront, not after a methodology walkthrough.' The first bullet in 'What changed and why' also states: 'The 3x churn stat is the most actionable insight in your report. Putting it first signals to leadership that you have a concrete answer, not just a study.'"
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "run_summary": {
+    "with_skill": {
+      "pass_rate": {
+        "mean": 0.9167,
+        "stddev": 0.1443,
+        "min": 0.75,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 41.2667,
+        "stddev": 8.1856,
+        "min": 34.9,
+        "max": 50.5
+      },
+      "tokens": {
+        "mean": 15657.6667,
+        "stddev": 115.0014,
+        "min": 15575,
+        "max": 15789
+      }
+    },
+    "without_skill": {
+      "pass_rate": {
+        "mean": 1.0,
+        "stddev": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "time_seconds": {
+        "mean": 75.5,
+        "stddev": 70.1672,
+        "min": 28.9,
+        "max": 156.2
+      },
+      "tokens": {
+        "mean": 13667.0,
+        "stddev": 387.8286,
+        "min": 13306,
+        "max": 14077
+      }
+    },
+    "delta": {
+      "pass_rate": "-0.08",
+      "time_seconds": "-34.2",
+      "tokens": "+1991"
+    }
+  },
+  "notes": []
+}

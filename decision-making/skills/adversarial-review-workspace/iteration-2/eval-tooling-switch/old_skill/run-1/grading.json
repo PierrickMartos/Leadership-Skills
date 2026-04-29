@@ -1,0 +1,96 @@
+{
+  "expectations": [
+    {
+      "text": "The report correctly identifies this as a two-way door (reversible) decision",
+      "passed": true,
+      "evidence": "The report's opening section is explicitly titled 'Decision Classification: Two-Way Door' and states: 'This is a two-way door (reversible) decision. Switching support platforms is operationally painful but not strategically irreversible.'"
+    },
+    {
+      "text": "The report applies lighter/faster analysis appropriate for a two-way door, rather than maximum depth",
+      "passed": true,
+      "evidence": "The report explicitly states: 'Because this is reversible, this review applies a calibrated level of scrutiny — not maximum-depth analysis. The goal is to surface blind spots and hidden assumptions that should be tested, not to be exhaustive.' The analysis produces 8 findings (3 high, 3 medium, 2 low) with focused recommendations rather than exhaustive deep-dives."
+    },
+    {
+      "text": "The report mentions migration risk, data loss, or disruption to support operations during transition",
+      "passed": true,
+      "evidence": "Two findings address this directly. The [HIGH] finding 'Migration disruption cost is underestimated — agent productivity dip is real and unbilled' covers workflow rebuild from scratch, 1–3 week productivity dip, agent retraining for paradigm shift, and degraded historical search. The [LOW] finding 'Data portability and historical records need explicit validation' explicitly warns that internal notes, custom fields, and metadata 'may not migrate cleanly.'"
+    },
+    {
+      "text": "The report identifies hidden costs beyond the stated $15k (e.g., retraining, productivity dip, integration rebuilding)",
+      "passed": true,
+      "evidence": "Multiple findings quantify hidden costs: (1) [HIGH] migration finding estimates 'additional $8k–$20k in productivity loss' and itemizes agent retraining (8 agents × ~10 hours = $3–6k at blended cost), help center article reformatting, SLA config rebuild, and reporting recreation; (2) [HIGH] TCO finding identifies Fin AI usage fees ($0.99/resolution, ~$594/month at 30% deflection of 2,000 tickets) and year-over-year price escalation not in the 30% savings claim; (3) [MEDIUM] integration finding warns of '20–40% additional engineering effort beyond the core migration.'"
+    },
+    {
+      "text": "The report includes external market context about Zendesk vs Intercom based on research (not just restating user's input)",
+      "passed": true,
+      "evidence": "The 'Market Context' section cites 11 named external sources (Freqens, Kustomer, HelpCrunch, SparrowDesk, eesel AI, BoldDesk, Vendr, GuruSup, Zendesk, Intercom, Capterra) and provides independently researched data: Intercom seat pricing ($29–$132/seat/month), Zendesk seat pricing ($19–$115/agent/month), Fin AI per-resolution fee ($0.99), reported 30–45% YoY price escalation, and platform positioning analysis (ticket-first vs. conversation-first paradigm) — none of which were present in the user's original input."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 6872,
+    "transcript_chars": null
+  },
+  "timing": {
+    "executor_duration_seconds": 217.4,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 217.4
+  },
+  "claims": [
+    {
+      "claim": "Intercom's Fin AI charges $0.99 per resolution",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Cited across multiple sources listed in the report but cannot be independently verified from available outputs. Consistent with publicly available 2025–2026 pricing references cited."
+    },
+    {
+      "claim": "Intercom pricing has jumped 30–45% year-over-year as conversation volume grows (Capterra data)",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Report attributes this to 'Capterra data' but no direct Capterra URL is included in the sources list. Unverifiable from available outputs."
+    },
+    {
+      "claim": "At 2,000 tickets/month, if Fin handles 30% of tickets, AI fees add ~$594/month",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Math checks out: 2,000 × 0.30 × $0.99 = $594/month."
+    },
+    {
+      "claim": "Standalone product tour tools (Appcues ~$250/month, Pendo free tier, Chameleon ~$279/month) can satisfy the product tours need",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Pricing figures cited without source. Plausible based on general market knowledge but not verifiable from available outputs."
+    },
+    {
+      "claim": "The analysis is calibrated (not maximum-depth) due to two-way door classification",
+      "type": "quality",
+      "verified": true,
+      "evidence": "The report explicitly states this and demonstrates it through focused findings rather than exhaustive analysis. Verdict structure (8 findings with clear recommendations) is appropriately scoped."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The report applies lighter/faster analysis appropriate for a two-way door, rather than maximum depth",
+        "reason": "This assertion is satisfied by the report explicitly stating it applies lighter analysis — but it does not verify whether the depth actually differs from what the skill would produce for a one-way door decision. A stronger assertion would compare output length, finding count, or recommendation depth against a known one-way door run to confirm the classification actually changes behavior."
+      },
+      {
+        "reason": "No assertion checks whether the report's verdict and recommendations are actionable (i.e., whether the skill produces concrete next steps rather than generic warnings). The report does include three specific gating conditions for proceeding — this quality outcome goes unchecked by the current assertions."
+      },
+      {
+        "reason": "No assertion checks whether the sources cited are real and relevant, as opposed to hallucinated URLs. The report cites 11 sources; an assertion verifying that cited sources are actually about Zendesk vs. Intercom comparison would catch a common LLM failure mode."
+      }
+    ],
+    "overall": "All five assertions pass cleanly with strong evidence. The assertions cover the most critical behaviors (reversibility classification, proportional depth, transition risk, hidden costs, external research). The main gap is that assertion 2 tests stated intent rather than demonstrated behavior differential, and no assertion guards against hallucinated citations."
+  }
+}

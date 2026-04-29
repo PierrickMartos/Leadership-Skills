@@ -1,0 +1,11 @@
+{
+  "eval_id": 2,
+  "eval_name": "unfocused-slack",
+  "prompt": "Here's a Slack I'm about to send to my whole team. Review it please: 'Hey everyone! Just wanted to give a quick update. So we've been working on the migration project for a few months now and there's been a lot of moving pieces. The infra team had some delays, we had some scope changes, and there were some alignment issues with stakeholders. Anyway, the point is that the timeline has shifted. The new deadline is March 28. Let me know if you have questions!'",
+  "assertions": [
+    "The deadline or timeline change appears in the first line or two of the rewritten message",
+    "The backstory (infra delays, scope changes, alignment issues) does not appear in the opening",
+    "The rewritten message is meaningfully shorter than the original",
+    "The feedback identifies that the key information (deadline) was buried at the end"
+  ]
+}

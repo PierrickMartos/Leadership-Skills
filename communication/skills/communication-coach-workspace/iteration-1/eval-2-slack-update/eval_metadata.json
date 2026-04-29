@@ -1,0 +1,6 @@
+{
+  "eval_id": 2,
+  "eval_name": "slack-update",
+  "prompt": "Review Slack product update with buried timeline and vague hedging",
+  "assertions": []
+}

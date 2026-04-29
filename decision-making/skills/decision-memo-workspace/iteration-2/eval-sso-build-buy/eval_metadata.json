@@ -1,0 +1,16 @@
+{
+  "eval_id": 3,
+  "eval_name": "eval-sso-build-buy",
+  "prompt": "our product roadmap for H2 is basically full but we just got strong signal from 3 enterprise prospects that they all need SSO (SAML/OIDC) before they can sign. combined TCV is about 800k. building SSO properly would take about 6 weeks for 2 engineers. we could also buy a third-party auth solution like WorkOS which would take 2 weeks but costs $1500/mo and adds vendor dependency. or we could delay these deals to Q1. i'm trying to figure out what to put in front of my leadership team tomorrow morning",
+  "assertions": [
+    { "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when (tomorrow)", "passed": null, "evidence": null },
+    { "text": "The memo covers all 3 options: build, buy (WorkOS or equivalent), and delay", "passed": null, "evidence": null },
+    { "text": "The memo explicitly separates customer value from internal convenience", "passed": null, "evidence": null },
+    { "text": "The memo has a section naming specific unknowns", "passed": null, "evidence": null },
+    { "text": "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)", "passed": null, "evidence": null },
+    { "text": "The memo includes a risk table with likelihood, severity, and mitigation columns", "passed": null, "evidence": null },
+    { "text": "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)", "passed": null, "evidence": null },
+    { "text": "The memo identifies Security and/or Finance as requiring approval, given the third-party vendor onboarding (WorkOS) and recurring spend", "passed": null, "evidence": null },
+    { "text": "The memo uses an appendix to offload detailed supporting content (e.g., cost breakdown, full option comparison), keeping the main body scannable", "passed": null, "evidence": null }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "text": "four-sections-present: Output contains all four exec frame sections",
+      "passed": true,
+      "evidence": "'What matters', 'Why now', 'Risk if we do nothing', 'Recommendation' all present as headers"
+    },
+    {
+      "text": "attrition-risk-surfaced: Output mentions engineers considering leaving",
+      "passed": true,
+      "evidence": "'Two have told me they're considering leaving'"
+    },
+    {
+      "text": "hiring-decision-is-the-ask: Recommendation asks specifically for EMEA hiring decision",
+      "passed": true,
+      "evidence": "'I'm asking you to greenlight a senior engineering hire in an EMEA time zone'"
+    },
+    {
+      "text": "no-root-cause-analysis: Output does not enumerate three root causes or list 'runbooks and'",
+      "passed": true,
+      "evidence": "Root causes collapsed to a single sentence; no enumeration of the three issues; 'runbooks and' does not appear"
+    },
+    {
+      "text": "payments-service-risk-kept: Output mentions payments service as critical",
+      "passed": true,
+      "evidence": "'one of them leads payments, our most critical service'"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 39.4
+  }
+}

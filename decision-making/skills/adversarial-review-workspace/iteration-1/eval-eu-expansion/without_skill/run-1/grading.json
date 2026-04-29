@@ -1,0 +1,100 @@
+{
+  "expectations": [
+    {
+      "text": "The report identifies this as a mixed or partially one-way door decision (hiring is reversible; GDPR/data center commitments are harder to undo)",
+      "passed": false,
+      "evidence": "The report discusses the cost and difficulty of reversing EU hires (notice periods, severance obligations, EOR complexity) and the ongoing commitment of EU infrastructure, but never frames this as a one-way door vs. two-way door analysis. There is no explicit comparison of reversibility between hiring and infrastructure/GDPR commitments. The report treats all components as risky and costly without using this decision-type lens."
+    },
+    {
+      "text": "The report includes a 'Think Big, Work Small' section that recommends sequencing the plan to validate assumptions before committing full budget",
+      "passed": false,
+      "evidence": "No section titled 'Think Big, Work Small' exists in the report. Part 6 ('What a Better-Structured Plan Looks Like') does recommend a phased, gate-based approach with go/no-go gates before committing further budget — which captures the substance of the assertion — but the specific framing and section heading required by the assertion is absent. Since the assertion specifies this section, it fails."
+    },
+    {
+      "text": "The report flags the risk of running GDPR compliance, data center setup, hiring, localization, and outbound all in parallel — recommending phased approach",
+      "passed": true,
+      "evidence": "Section 2.6 states explicitly: 'Q3 outbound assumes all prior workstreams are done: AEs are hired and ramped, product is localized, GDPR is complete, EU data center is live, site is launched. Each of these has dependencies and unknowns. If any of them slips — and several will — the outbound launch slips too. Building a plan where six parallel workstreams must all complete before the revenue-generating activity begins is a fragility that should be re-engineered.' Part 6 then proposes a three-phase gate-based alternative with explicit go/no-go checkpoints."
+    },
+    {
+      "text": "The report flags the runway risk: $800k spend on 18 months runway is a significant portion, and EU expansion often takes longer than planned",
+      "passed": true,
+      "evidence": "Part 4 ('Runway Risk') explicitly models this: '18 months of runway, spending $800k over 12 months... At $800k/year additional, monthly burn increases by ~$67k... 18 months of runway at current spending becomes approximately 14 months of runway after expansion begins.' The executive summary also notes the Q3 outbound target is 'almost certainly optimistic' and Section 2.6 explains AEs hired in Q2 will not generate meaningful pipeline until Q3 and first deals not until Q4 at earliest — capturing the 'takes longer than planned' dimension."
+    },
+    {
+      "text": "The report recommends validating EU demand before building infrastructure (e.g., test with existing inbound, close 2-3 EU deals manually before investing in localization)",
+      "passed": false,
+      "evidence": "The report raises the question of pull-driven vs. push-driven demand (Part 1) and asks whether there are EU prospects asking to buy, but does not recommend closing deals manually before building infrastructure. Part 6's phased plan still begins with GDPR compliance and EU data center setup in Phase 1 — infrastructure comes before first customer. There is no recommendation to use existing inbound signals or close 2-3 EU deals manually as a precondition to investing in localization or infrastructure."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 3,
+    "total": 5,
+    "pass_rate": 0.4
+  },
+  "execution_metrics": {
+    "output_chars": 11452,
+    "transcript_chars": null
+  },
+  "timing": {
+    "executor_duration_seconds": 157.9,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 157.9
+  },
+  "claims": [
+    {
+      "claim": "The $800k budget is likely 30–50% short of what execution will actually cost",
+      "type": "factual",
+      "verified": true,
+      "evidence": "The bottom-up reconstruction in Part 3 shows a high estimate of $1,260k against a stated $800k budget — a gap of 57%. The low estimate of $650k is within range, making the 30–50% shortfall claim reasonable and well-substantiated."
+    },
+    {
+      "claim": "AEs hired in Q2 will not be productive until late Q3 at the earliest",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Section 2.1 states onboarding takes 60–90 days minimum and quota ramp takes 6–9 months, supporting this claim."
+    },
+    {
+      "claim": "GDPR compliance is not a one-time checkbox",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Section 2.3 lists 8+ ongoing GDPR obligations including DPA templates, RoPA, DPO, breach notification procedures, and vendor sub-processor agreements — all substantiating the ongoing nature of compliance."
+    },
+    {
+      "claim": "EU data center costs could be $96–300k over 12 months",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Section 2.4 calculates this as $8–25k/month additional AWS costs over 12 months, well-reasoned from current spend assumptions."
+    },
+    {
+      "claim": "The plan lacks kill criteria and revenue targets for Year 1",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Part 4 explicitly notes: 'The plan has no stated revenue target for EU in Year 1' and 'What triggers a wind-down? If EU expansion is burning $67k/month with no clear path to $250k+ ARR by month 12, what is the decision framework for stopping? Absence of a kill criterion is a common failure mode.'"
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "assertion": "The report includes a 'Think Big, Work Small' section that recommends sequencing the plan to validate assumptions before committing full budget",
+        "reason": "This assertion tests for a specific section heading ('Think Big, Work Small') rather than a meaningful outcome. The report actually does recommend sequencing and phased commitment (Part 6), but fails because it doesn't use this exact label. If the intent is to check whether the report recommends validating assumptions before committing budget, the assertion should test for that outcome, not the specific framing. As written, a report with no phased approach but a section titled 'Think Big, Work Small' would pass."
+      },
+      {
+        "assertion": "The report identifies this as a mixed or partially one-way door decision (hiring is reversible; GDPR/data center commitments are harder to undo)",
+        "reason": "This is a discriminating assertion — the report does discuss reversibility costs but not through this decision-type framework. However, the specific claim that 'hiring is reversible' is arguably wrong in the EU context: the report explains EU hiring (especially in Germany/France) has 3–6 month notice periods and mandatory severance, making it considerably less reversible than US hiring. The assertion's premise may be too US-centric for an EU expansion review."
+      },
+      {
+        "reason": "No assertion checks whether the report recommends a kill criterion or decision gate — yet the absence of kill criteria is one of the report's strongest findings ('Weak' rating in the scorecard for 'Kill criteria / governance'). This is a meaningful outcome that distinguishes a deep adversarial review from a surface one."
+      },
+      {
+        "reason": "No assertion checks whether the report analyzes the competitive landscape gap — the report explicitly flags that competitive analysis is missing ('no competitive analysis' in the scorecard), which is a foundational issue for a market entry decision. Testing for this would raise the discriminating power of the eval."
+      }
+    ],
+    "overall": "Two of the five assertions test for specific framing ('Think Big, Work Small' section, one-way/two-way door taxonomy) rather than substantive analytical outcomes. These framings are not required for a high-quality adversarial review and their absence does not indicate a worse output. The eval would be stronger if assertions tested for the analytical substance (demand validation before infrastructure investment, explicit kill criteria, competitive landscape analysis) rather than skill-specific vocabulary."
+  }
+}

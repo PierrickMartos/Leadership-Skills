@@ -1,0 +1,18 @@
+{
+  "eval_id": 3,
+  "run": "with_skill",
+  "assertions": [
+    { "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when (tomorrow)", "passed": true, "evidence": "'Decide by 2026-04-02 whether to build SSO (SAML/OIDC) natively, buy via WorkOS, or delay affected enterprise deals to Q1 — to be confirmed by the leadership team before re-engaging these prospects.'" },
+    { "text": "The memo covers all 3 options: build, buy (WorkOS or equivalent), and delay", "passed": true, "evidence": "Option A (Build), Option B (Buy via WorkOS), Option C (Delay to Q1) — each with timeline, dependencies, and what-to-believe conditions." },
+    { "text": "The memo explicitly separates customer value from internal convenience", "passed": true, "evidence": "Tradeoffs: 'Option A delivers the most durable outcome but displaces H2 commitments. Option B is the fastest path to unblocking revenue but adds a vendor dependency in a sensitive layer... Option C preserves the roadmap but treats $800K in pipeline as expendable.'" },
+    { "text": "The memo has a section naming specific unknowns", "passed": true, "evidence": "'What We Don't Know' section with 5 specific unknowns: whether any prospect will wait, whether WorkOS passes security review, what actually slips from H2, whether $800K closes, how long vendor approval takes." },
+    { "text": "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)", "passed": true, "evidence": "'Recommendation: Option B (Buy via WorkOS) with a parallel fast-track on approvals — conditional on no prospect objections to third-party auth.' Conditional fallback to Option A explicitly stated." },
+    { "text": "The memo includes a risk table with likelihood, severity, and mitigation columns", "passed": true, "evidence": "Risk table with Risk | Likelihood | Severity | Mitigation, 5 rows." },
+    { "text": "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)", "passed": true, "evidence": "'Approvals Required' section: Security (blocking), Finance (blocking), Legal/Compliance (blocking), Procurement (advisory). Strong note that Security review is the most likely bottleneck and should start immediately." },
+    { "text": "The memo identifies Security and/or Finance as requiring approval, given the third-party vendor onboarding (WorkOS) and recurring spend", "passed": true, "evidence": "Security: 'Blocking (must approve before WorkOS integration begins)'. Finance: 'Blocking (for new recurring vendor spend)'." },
+    { "text": "The memo uses an appendix to offload detailed supporting content (e.g., cost breakdown, full option comparison), keeping the main body scannable", "passed": true, "evidence": "Appendix A ('Stated Assumptions About the Situation') offloads 5 stated context assumptions, keeping the main body focused on the decision argument." }
+  ],
+  "pass_count": 9,
+  "total_count": 9,
+  "pass_rate": 1.0
+}

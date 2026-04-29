@@ -1,0 +1,17 @@
+{
+  "eval_id": 2,
+  "run": "old_skill",
+  "assertions": [
+    { "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when", "passed": true, "evidence": "'Decide by next week whether to form a dedicated platform team (2–3 engineers) or maintain distributed infrastructure ownership across the 4 product squads, to be confirmed by the CTO.'" },
+    { "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)", "passed": true, "evidence": "Full assumptions table with Confidence column: Medium/Medium/Medium/Medium/Low-Medium." },
+    { "text": "The memo explicitly separates customer value from internal convenience", "passed": true, "evidence": "Tradeoffs note: 'Option B is primarily convenient for squads in the short term. It does not address the structural cause of the problem — it defers it.'" },
+    { "text": "The memo has a section naming specific unknowns", "passed": true, "evidence": "'What We Don't Know' section with 5 specific unknowns." },
+    { "text": "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)", "passed": true, "evidence": "'Recommendation: Form a dedicated platform team (Option A), targeting a 3-person team, with a phased extraction over 4–6 weeks.'" },
+    { "text": "The memo includes a risk table with likelihood, severity, and mitigation columns", "passed": true, "evidence": "Risk table with Risk | Likelihood | Severity | Mitigation, 5 rows." },
+    { "text": "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)", "passed": false, "evidence": "No 'Approvals Required' section. HR/People and Finance implications not surfaced despite an org restructuring." },
+    { "text": "The memo identifies HR/People or Finance as requiring involvement, given that engineers are being reallocated across teams (an org change)", "passed": false, "evidence": "No approvals section. HR/People involvement not mentioned anywhere despite engineers moving roles." }
+  ],
+  "pass_count": 6,
+  "total_count": 8,
+  "pass_rate": 0.75
+}

@@ -1,0 +1,101 @@
+{
+  "expectations": [
+    {
+      "text": "The report classifies this as a friction door or two-way door (reversible but potentially costly) — not a clean one-way door",
+      "passed": true,
+      "evidence": "Report explicitly states 'Door Type: Friction Door' with 'Reversibility Score: 3' and explains: 'Reversing means re-migrating 3+ years of ticket history, retraining agents, rebuilding integrations, and negotiating a new Zendesk contract — painful and expensive but not impossible.'"
+    },
+    {
+      "text": "The report is concise — the main findings are surfaced as bullets rather than long prose paragraphs",
+      "passed": true,
+      "evidence": "The report is structured throughout with bullet lists, numbered lists, and tables. Sections like Blind Spots, Counterarguments, Alternative Paths, and Think Big/Work Small all use short bullets. The Risk Factors section uses a table. Very little long prose appears; most content is scannable."
+    },
+    {
+      "text": "The report mentions migration risk, data loss, or disruption to support operations during transition",
+      "passed": true,
+      "evidence": "Multiple explicit mentions: Risk table row 'Historical data doesn't migrate cleanly' (Likelihood M, Severity H); blind spot 'The trial didn't test the hard things' including 'migration of 3 years of ticket history'; 'Loss of institutional knowledge' blind spot; counterargument noting '$15k engineering estimate is almost certainly low' due to incompatible data models."
+    },
+    {
+      "text": "The report identifies hidden costs beyond the stated $15k (e.g., retraining, productivity dip, integration rebuilding)",
+      "passed": true,
+      "evidence": "Counterarguments section: 'The $15k engineering estimate is almost certainly low. Standard migration guidance puts Zendesk-to-Intercom at 6–12 weeks... Engineering time estimates for migrations routinely miss by 2x.' Risk table includes 'Agent productivity dips post-migration (90+ days)'. Scope note: 'includes: data migration, workflow rebuild, integration re-wiring, SLA/report reconfiguration, agent training, parallel-run period.'"
+    },
+    {
+      "text": "The report includes external market context about Zendesk vs Intercom based on research (not just restating user's input)",
+      "passed": true,
+      "evidence": "The 'Market & External Context' section provides specific pricing data not in the user's input: '$85/seat/month for the Advanced plan', '$0.99 per resolved conversation' for Fin AI, '$99/month Proactive Support Plus', notes the per-resolution billing is 'the market's most-complained-about pricing structure', mentions Zendesk's acquisition of Ultimate AI, and names Pendo, Appcues, Userpilot, Chameleon as product tour alternatives."
+    },
+    {
+      "text": "The risk table or risk section includes mitigations alongside each risk (not just listing risks in isolation)",
+      "passed": true,
+      "evidence": "The Risk Factors table has four columns: Risk | Likelihood | Severity | Mitigation. All 7 rows include concrete mitigations, e.g., 'True cost exceeds Zendesk after Fin AI and add-ons' → 'Build full 12-month cost model before committing; include per-resolution estimates at current ticket volume'."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 5826,
+    "transcript_chars": null
+  },
+  "timing": {
+    "executor_duration_seconds": 152.3,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 152.3
+  },
+  "claims": [
+    {
+      "claim": "Intercom Advanced plan costs $85/seat/month",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Stated in the Market & External Context section, consistent with publicly known pricing as of 2024-2025, but cannot be verified against live pricing data from this session. Plausible and specific."
+    },
+    {
+      "claim": "Fin AI charges $0.99 per resolved conversation",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Stated in the Market & External Context section. This matches Intercom's published Fin AI pricing model structure, but exact per-resolution rates vary and cannot be independently confirmed here."
+    },
+    {
+      "claim": "Standard migration guidance puts Zendesk-to-Intercom at 6–12 weeks for teams of this size",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Stated in the Counterarguments section. Cannot verify the '6–12 weeks' figure without access to migration practitioner sources. The claim is directionally consistent with the complexity described but is unverifiable from available information."
+    },
+    {
+      "claim": "Intercom's data model is fundamentally different from Zendesk's (Users/Leads vs. unified Users; conversation threading vs. ticket threading)",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Stated in Market & External Context. This is a known structural difference between the two platforms, directionally accurate, but the specific claim about conversation vs. ticket threading architecture cannot be confirmed without access to platform documentation."
+    },
+    {
+      "claim": "The 30% savings figure is an unverified comparison of list prices rather than modeled TCO",
+      "type": "quality",
+      "verified": true,
+      "evidence": "The report correctly identifies this as a blind spot and a load-bearing assumption. No evidence in the report suggests a full cost model was provided by the user — the input only references '30% cost savings' as a driver, not a verified model."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "All 6 assertions passed, and the report is genuinely high quality — but none of the assertions check whether the stress test questions are actually actionable and specific (vs. generic). The report includes 5 stress test questions; an assertion that they reference specific data points from the decision (e.g., the 2,000 tickets/month figure, 8 seats, 2-week trial) would be more discriminating."
+      },
+      {
+        "assertion": "The report includes external market context about Zendesk vs Intercom based on research (not just restating user's input)",
+        "reason": "This assertion passes, but a hallucinated report with plausible-sounding pricing would also pass it. The assertion would be stronger if it required the market context to surface at least one claim that contradicts or complicates the user's stated rationale (e.g., the per-resolution pricing trap), rather than just 'adding context'."
+      },
+      {
+        "reason": "No assertion checks whether the 'Think Big, Work Small' section provides a sequenced, gated action plan with concrete next steps. The report does this well (4 weekly gates), but it's an important structural output of the skill that goes untested."
+      }
+    ],
+    "overall": "Evals are solid and well-targeted. The main gap is that several assertions test presence of a category (e.g., 'mentions migration risk') without testing whether the treatment is substantive and specific to this decision's parameters."
+  }
+}

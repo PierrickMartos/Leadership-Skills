@@ -1,0 +1,37 @@
+{
+  "eval_id": 1,
+  "eval_name": "api-deprecation-slack",
+  "prompt": "Can you reframe this for my VP? I'm sending it as a Slack message before our Monday sync.\n\n[Sift API deprecation message — detailed operational Slack draft]",
+  "assertions": [
+    {
+      "id": "four-sections-present",
+      "description": "Output contains all four exec frame sections: What matters, Why now, Risk if we do nothing, Recommendation",
+      "check": "string_contains_all",
+      "values": ["What matters", "Why now", "Risk if we do nothing", "Recommendation"]
+    },
+    {
+      "id": "no-implementation-noise",
+      "description": "Output does not mention microservices architecture, Redis caching layer, or payment gateway — implementation details the VP can't act on",
+      "check": "string_contains_none",
+      "values": ["microservices", "Redis", "caching layer"]
+    },
+    {
+      "id": "surfaces-decision-point",
+      "description": "Output mentions the March 31 deadline or the unplanned scope / Q1 planning impact — the actual decision point",
+      "check": "string_contains_any",
+      "values": ["March 31", "Q1", "scope", "unplanned"]
+    },
+    {
+      "id": "clear-specific-ask",
+      "description": "Recommendation section contains a specific ask (discuss, decide, prioritize) rather than 'your thoughts' or 'let me know'",
+      "check": "string_contains_none",
+      "values": ["your thoughts", "let me know", "happy to discuss more"]
+    },
+    {
+      "id": "concise-length",
+      "description": "Total output is shorter than the original (original is ~250 words; reframe should be under 150 words for exec sections)",
+      "check": "word_count_lt",
+      "value": 200
+    }
+  ]
+}

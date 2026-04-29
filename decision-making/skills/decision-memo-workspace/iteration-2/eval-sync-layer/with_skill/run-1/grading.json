@@ -1,0 +1,17 @@
+{
+  "eval_id": 1,
+  "run": "with_skill",
+  "assertions": [
+    { "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when", "passed": true, "evidence": "'Decide by end of this week whether to ship the catalog management product with the current data sync layer on the Q3 timeline, or rewrite the sync layer now and accept a 2–3 month delay past Q3.'" },
+    { "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)", "passed": true, "evidence": "Full assumptions table with Confidence column: Medium/Medium/Low/Low/Unknown for 5 assumptions, each with 'How to Test'." },
+    { "text": "The memo explicitly separates customer value from internal convenience", "passed": true, "evidence": "Tradeoffs narrative: 'Option A is better for customers in the short term... Option B is better for the architecture but transfers cost directly to the business via delayed commitments.'" },
+    { "text": "The memo has a section naming specific unknowns", "passed": true, "evidence": "'What We Don't Know' section with 5 specific unknowns: customer data volumes, severity of scaling issues, rewrite estimate reliability, contract exposure, and Option C feasibility." },
+    { "text": "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)", "passed": true, "evidence": "'Recommendation: Option A — ship on Q3 timeline — conditioned on two gates being met before end of week.' Conditions explicitly stated." },
+    { "text": "The memo includes a risk table with likelihood, severity, and mitigation columns", "passed": true, "evidence": "Risk table with Risk | Likelihood | Severity | Mitigation columns, 4 rows." },
+    { "text": "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)", "passed": true, "evidence": "'Approvals Required' section lists Legal/Contracts (blocking for Option B), Engineering Leadership (blocking for Option A), and Sales/Account Management (advisory). Ends with 'No other cross-functional approvals required for Options A or C.'" },
+    { "text": "If an appendix is included, it offloads supporting detail and the main body references it inline; if no appendix, the memo is concise enough not to need one", "passed": true, "evidence": "No formal appendix. Supporting assumptions are noted inline at the bottom in a clearly marked section. Memo is focused enough not to require one." }
+  ],
+  "pass_count": 8,
+  "total_count": 8,
+  "pass_rate": 1.0
+}

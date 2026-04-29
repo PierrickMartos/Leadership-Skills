@@ -1,0 +1,39 @@
+{
+  "eval_id": 3,
+  "run": "with_skill",
+  "assertions": [
+    {
+      "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when (tomorrow)",
+      "passed": true,
+      "evidence": "'Decision' section: 'Decide by April 2 whether to (A) build SSO natively in H2, (B) adopt WorkOS or equivalent third-party auth, or (C) defer the three enterprise deals to Q1, so the product roadmap and resourcing plan can be finalized before the quarter begins.'"
+    },
+    {
+      "text": "The memo covers all 3 options: build, buy (WorkOS or equivalent), and delay",
+      "passed": true,
+      "evidence": "Three clearly labeled options: Option A (Build SSO natively), Option B (Buy via WorkOS), Option C (Defer deals to Q1), each with implications and what-to-believe conditions."
+    },
+    {
+      "text": "The memo explicitly separates customer value from internal convenience (e.g., notes that delay has zero customer value, build has full control, buy is faster but adds dependency)",
+      "passed": true,
+      "evidence": "Tradeoffs note: 'From the customer's perspective, Options A and B are functionally equivalent — they both get working SAML/OIDC. The difference is entirely internal (build time, vendor dependency, roadmap displacement). Option C is the only one that's worse for the customer.'"
+    },
+    {
+      "text": "The memo has a section naming specific unknowns (e.g., whether prospects are actually closeable, whether WorkOS covers their specific SSO requirements)",
+      "passed": true,
+      "evidence": "'What We Don't Know' section with 5 specific unknowns: whether prospects will wait, what the 6-week estimate actually includes, which H2 commitments would be displaced, compliance constraints with WorkOS, and whether SSO is a one-time ask or a pattern."
+    },
+    {
+      "text": "The memo gives a clear recommendation (not hedged into 'it depends' without stating conditions)",
+      "passed": true,
+      "evidence": "'Option B — Buy via WorkOS (or equivalent), targeting a close within 2 weeks.' With explicit conditions and a conditional flip to Option A if all prospects require native SSO."
+    },
+    {
+      "text": "The memo includes a risk table with likelihood, severity, and mitigation columns",
+      "passed": true,
+      "evidence": "Risk table has Risk | Likelihood | Severity | Mitigation with 5 rows and specific mitigations for each."
+    }
+  ],
+  "pass_count": 6,
+  "total_count": 6,
+  "pass_rate": 1.0
+}

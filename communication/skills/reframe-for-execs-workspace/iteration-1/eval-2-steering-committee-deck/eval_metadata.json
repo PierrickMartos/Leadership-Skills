@@ -1,0 +1,37 @@
+{
+  "eval_id": 2,
+  "eval_name": "steering-committee-deck",
+  "prompt": "This is going into the exec summary of a steering committee deck next week. Can you make it tighter and more exec-ready?\n\n[Data platform modernization — vendor evaluation, Snowflake recommendation, $1.3M savings]",
+  "assertions": [
+    {
+      "id": "four-sections-present",
+      "description": "Output contains all four exec frame sections: What matters, Why now, Risk if we do nothing, Recommendation",
+      "check": "string_contains_all",
+      "values": ["What matters", "Why now", "Risk if we do nothing", "Recommendation"]
+    },
+    {
+      "id": "no-process-noise",
+      "description": "Output does not mention the 12 evaluation criteria, 14 stakeholder interviews, 47-page document, or 4 phases — process details that don't inform the decision",
+      "check": "string_contains_none",
+      "values": ["12 evaluation criteria", "14 stakeholder", "47-page", "4 phases"]
+    },
+    {
+      "id": "surfaces-savings",
+      "description": "Output mentions the $1.3M projected savings — the most decision-relevant financial signal",
+      "check": "string_contains_any",
+      "values": ["$1.3M", "1.3M", "saving", "savings"]
+    },
+    {
+      "id": "recommendation-is-approve",
+      "description": "Recommendation asks for approval to proceed to Phase 1 (or equivalent), not a vague next step",
+      "check": "string_contains_any",
+      "values": ["approve", "Approve", "Phase 1", "proceed"]
+    },
+    {
+      "id": "what-was-removed-included",
+      "description": "Output includes a 'What was removed' section explaining the editorial logic",
+      "check": "string_contains_any",
+      "values": ["What was removed", "was removed", "Removed"]
+    }
+  ]
+}

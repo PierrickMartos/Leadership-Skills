@@ -1,0 +1,37 @@
+{
+  "eval_id": 1,
+  "eval_name": "eval-sync-layer",
+  "prompt": "I need to write a decision memo for my VP. We're 3 months away from launching our new catalog management product and the engineering team is pushing hard to rewrite the data sync layer from scratch because the current one has scaling issues. But doing so would add 2–3 months to the timeline and push our launch past Q3. The alternative is to ship with the current sync layer and deal with the debt after launch. We have 2 enterprise customers already waiting and we've made commitments to them. I need to make a call by end of this week.",
+  "assertions": [
+    {
+      "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "The memo explicitly separates customer value from internal convenience (e.g., notes which option is better for enterprise customers vs. easier for the team)",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "The memo has a section naming specific unknowns (e.g., actual risk of sync failure at enterprise scale, not just generic unknowns)",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "The memo gives a clear recommendation (not hedged into 'it depends' without stating conditions)",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "The memo includes a risk table with likelihood, severity, and mitigation columns",
+      "passed": null,
+      "evidence": null
+    }
+  ]
+}

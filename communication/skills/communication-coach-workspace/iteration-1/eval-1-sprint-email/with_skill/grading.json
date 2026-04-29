@@ -1,0 +1,32 @@
+{
+  "eval_id": 1,
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Output identifies the negative/blaming framing — e.g. 'frustrated', 'not learning from mistakes', 'need to do better' — as a problem",
+      "passed": true,
+      "evidence": "Output has a dedicated 'Facts, not feelings' annotation: explicitly calls out 'I'm a bit frustrated,' 'it feels like we're not learning,' and 'I'm worried about what this signals' by name as feelings presented as facts."
+    },
+    {
+      "text": "Output identifies that the key ask (review estimates) is buried at the end instead of leading the message",
+      "passed": true,
+      "evidence": "BLUF annotation states: 'The original opens with I wanted to take a moment to follow up... — seven words before anything useful. The revised version leads with the concrete ask in the first sentence.'"
+    },
+    {
+      "text": "Output flags feelings-as-facts language ('it feels like', 'I'm worried', 'I'm frustrated') and suggests replacing with specific observations",
+      "passed": true,
+      "evidence": "All three phrases named explicitly. Replaced in rewrite with: 'This is the third sprint in a row where scope creep and estimation gaps caused us to miss the sprint goal.'"
+    },
+    {
+      "text": "Rewritten version leads with a forward-looking or actionable statement rather than 'we didn't hit our goal'",
+      "passed": true,
+      "evidence": "Rewrite opens with: 'For the next sprint planning session, please review your story point estimates before committing — and flag scope changes as they surface.'"
+    },
+    {
+      "text": "Rewritten version removes or reframes emotional language and replaces with factual tone",
+      "passed": true,
+      "evidence": "Zero emotional language in rewrite. All feelings replaced with observable facts and a concrete fix (15 min added to pre-planning)."
+    }
+  ],
+  "pass_rate": 1.0
+}

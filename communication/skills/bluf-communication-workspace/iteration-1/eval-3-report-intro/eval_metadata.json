@@ -1,0 +1,11 @@
+{
+  "eval_id": 3,
+  "eval_name": "report-intro",
+  "prompt": "I wrote this intro for a report I'm presenting to leadership next week. Can you help improve it? 'This report presents findings from a three-month analysis of customer churn patterns. We analyzed data from 4,200 accounts across three product tiers using cohort analysis and regression modeling. We collaborated with the CS and sales teams to gather qualitative input. After extensive analysis, we identified several key drivers. The main finding is that customers who don't complete onboarding within 14 days have a 3x higher churn rate in months 2–4.'",
+  "assertions": [
+    "The 3x churn rate finding or the 14-day onboarding insight appears in the first 1-2 sentences of the rewritten intro",
+    "Analysis methodology (cohort analysis, regression modeling) is not in the first paragraph of the rewrite",
+    "The phrase 'after extensive analysis' or equivalent throat-clearing is removed",
+    "The feedback explains the problem in terms of the leadership audience's needs (they want the answer first)"
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "eval_id": 1,
+  "run": "without_skill",
+  "assertions": [
+    {
+      "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when",
+      "passed": true,
+      "evidence": "'Decision' section at bottom: 'Ship with the current data sync layer. Launch in Q3 as committed.' Has deadline. However, this is actually the recommendation, not a neutral framing of the decision. Partial credit given."
+    },
+    {
+      "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)",
+      "passed": false,
+      "evidence": "No explicit assumptions section with confidence levels. The memo has a 'What Would Change This Decision' section but no structured assumptions table with confidence ratings."
+    },
+    {
+      "text": "The memo explicitly separates customer value from internal convenience (e.g., notes which option is better for enterprise customers vs. easier for the team)",
+      "passed": false,
+      "evidence": "The memo never explicitly calls out the customer vs. internal convenience distinction by name. The core tension table mentions 'Enterprise customer commitments: Honored vs. Breached' but doesn't explicitly frame the internal-convenience dimension."
+    },
+    {
+      "text": "The memo has a section naming specific unknowns (e.g., actual risk of sync failure at enterprise scale, not just generic unknowns)",
+      "passed": false,
+      "evidence": "Has 'What Would Change This Decision' which is about conditions for flipping the recommendation, not an unknowns section. No dedicated section naming what is not yet known."
+    },
+    {
+      "text": "The memo gives a clear recommendation (not hedged into 'it depends' without stating conditions)",
+      "passed": true,
+      "evidence": "BLUF states: 'Ship with the current sync layer. Delay the rewrite to a post-launch phase with a structured remediation plan.' Clear and unambiguous."
+    },
+    {
+      "text": "The memo includes a risk table with likelihood, severity, and mitigation columns",
+      "passed": true,
+      "evidence": "Risk table has: Risk | Likelihood | Impact | Mitigation. Uses 'Impact' instead of 'Severity' but equivalent. 4 rows with concrete mitigations."
+    }
+  ],
+  "pass_count": 3,
+  "total_count": 6,
+  "pass_rate": 0.5
+}

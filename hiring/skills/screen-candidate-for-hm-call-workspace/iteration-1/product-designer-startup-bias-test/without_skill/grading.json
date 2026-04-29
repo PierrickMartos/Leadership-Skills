@@ -1,0 +1,17 @@
+{
+  "eval_id": 3,
+  "eval_name": "product-designer-startup-bias-test",
+  "configuration": "without_skill",
+  "expectations": [
+    {"text": "Output contains an explicit rating on a defined scale", "passed": false, "evidence": "'Advance to hiring manager call' — recommendation but no numeric scale or structured rating"},
+    {"text": "Strengths section with specific evidence (500k user growth, fintech domain match)", "passed": true, "evidence": "6 strengths: domain match, 10x growth, portfolio skills, agency scrappiness, self-directed learning, public body of work"},
+    {"text": "Gaps section exists", "passed": false, "evidence": "No distinct gaps section — gaps are embedded within the 'Risks and How to Probe Them' section"},
+    {"text": "Risks section exists and is distinct from bias flags", "passed": true, "evidence": "4 risks (US/EU experience, self-taught, agency vs product, iteration speed) with probe questions for each"},
+    {"text": "Includes conditional decision logic", "passed": false, "evidence": "'Bottom Line' summary but no structured conditional framework (fit if X, not fit if Y, what changes your mind)"},
+    {"text": "Interview questions use behavioral format", "passed": true, "evidence": "6 questions, mix of behavioral and situational"},
+    {"text": "Includes a scoring rubric for the call", "passed": false, "evidence": "No scoring rubric. Has a call structure and questions but no rubric for evaluating responses."},
+    {"text": "Questions target actual unknowns, not proxy credentials", "passed": true, "evidence": "Questions target working style, scrappiness, collaboration, and iteration speed — not credentials"},
+    {"text": "Explicitly flags 'no US/EU experience' as potential bias", "passed": true, "evidence": "Bias Check section: 'This is a geographic proxy, not a skill assessment'"},
+    {"text": "Explicitly flags 'self-taught / no degree' as potential bias", "passed": true, "evidence": "Bias Check section: 'This is a credentials proxy' — recommends not letting it influence decision"}
+  ]
+}

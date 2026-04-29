@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "text": "four-sections-present: Output contains all four exec frame sections",
+      "passed": true,
+      "evidence": "Output contains 'What matters', 'Why now', 'Risk if we do nothing', 'Recommendation' as explicit headers"
+    },
+    {
+      "text": "no-implementation-noise: Output does not mention microservices, Redis, or caching layer",
+      "passed": true,
+      "evidence": "None of those terms appear in the output — progress update was correctly stripped"
+    },
+    {
+      "text": "surfaces-decision-point: Output mentions March 31 deadline or Q1/scope/unplanned",
+      "passed": true,
+      "evidence": "'The deprecation deadline is March 31st' and 'Q1 roadmap' both present"
+    },
+    {
+      "text": "clear-specific-ask: Recommendation does not end with 'your thoughts', 'let me know', or 'happy to discuss more'",
+      "passed": true,
+      "evidence": "Ends with 'I can bring a brief options breakdown to make that call efficient' — specific and purposeful"
+    },
+    {
+      "text": "concise-length: Total output under 200 words",
+      "passed": true,
+      "evidence": "Exec frame sections total approximately 155 words"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 34.1
+  }
+}

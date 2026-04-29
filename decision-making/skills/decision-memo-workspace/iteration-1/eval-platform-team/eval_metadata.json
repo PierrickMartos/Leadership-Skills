@@ -1,0 +1,37 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-platform-team",
+  "prompt": "We're debating whether to create a dedicated platform team or keep infrastructure responsibilities spread across our 4 product squads. Right now each squad manages their own infra, which leads to duplicated work, inconsistent practices, and occasional incidents that affect everyone. But forming a platform team means pulling 2–3 strong engineers out of product squads, which will slow feature delivery. My CTO wants a proposal by next week. We're a 40-person eng org.",
+  "assertions": [
+    {
+      "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "The memo explicitly separates customer value from internal convenience (e.g., notes which option is better for end-users/product quality vs. easier for engineers)",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "The memo has a section naming specific unknowns (e.g., actual cost of incidents, whether platform team would become a bottleneck)",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "The memo gives a clear recommendation (not hedged into 'it depends' without stating conditions)",
+      "passed": null,
+      "evidence": null
+    },
+    {
+      "text": "The memo includes a risk table with likelihood, severity, and mitigation columns",
+      "passed": null,
+      "evidence": null
+    }
+  ]
+}

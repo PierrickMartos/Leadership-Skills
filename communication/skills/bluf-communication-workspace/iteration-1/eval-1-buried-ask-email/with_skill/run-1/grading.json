@@ -1,0 +1,46 @@
+{
+  "expectations": [
+    {
+      "text": "The rewritten email has a specific, informative subject line (not generic like 'Follow-up' or 'Team capacity')",
+      "passed": true,
+      "evidence": "Subject line reads: 'Headcount request for data engineering — next planning cycle' — specific, action-oriented, and names the exact ask and scope."
+    },
+    {
+      "text": "The headcount request appears in the first sentence or two of the rewritten body",
+      "passed": true,
+      "evidence": "First sentence of the BLUF body: 'I'd like to request one data engineering headcount in the next planning cycle.' — the ask leads the email."
+    },
+    {
+      "text": "Preamble phrases ('I hope you're doing well', 'As you know', 'Q4 has been intense') are removed or substantially shortened",
+      "passed": true,
+      "evidence": "The BLUF version opens with 'Hi Sarah,' then immediately states the request. All three preamble phrases are removed. The Q4 context is retained but repositioned after the ask as supporting evidence."
+    },
+    {
+      "text": "The passive hedging ('might be worth exploring whether we could potentially consider') is made direct",
+      "passed": true,
+      "evidence": "The rewrite replaces the six-layer hedge with 'I'd like to request.' The feedback explicitly calls this out: ''I think it might be worth exploring whether we could potentially consider adding' is six layers of softening around a direct ask.'"
+    },
+    {
+      "text": "The feedback explains *why* the original is problematic from the reader's perspective, not just labels it",
+      "passed": true,
+      "evidence": "The feedback explains the reader impact: 'Sarah has to read to the very last word to find out what you actually need'; 'it doesn't make you sound more polite — it makes you sound uncertain about your own request'; 'The original ended without telling Sarah what you wanted her to do with this information.' All anchored in Sarah's reading experience."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 38.4
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      "Consider adding an assertion about whether context is preserved (not just removed) to verify the rewrite doesn't strip useful supporting information.",
+      "A next-step or call-to-action assertion could be added since the skill adds one ('Would you be open to discussing this before planning kicks off?') that wasn't in the original."
+    ],
+    "overall": "All 5 assertions pass cleanly. The output demonstrates strong BLUF application: subject line is specific and actionable, the ask leads the body, preamble is eliminated, hedging is replaced with direct language, and the feedback grounds every critique in the reader's experience. The rewrite also adds a clear next step absent from the original, showing skill application beyond the minimum requirements."
+  }
+}

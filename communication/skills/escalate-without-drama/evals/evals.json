@@ -1,0 +1,91 @@
+{
+  "skill_name": "escalate-without-drama",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I need to escalate a blocker. We're building a new checkout flow and we've been waiting 10 days on the Payments team to give us the updated webhook spec. I've pinged their lead (Sasha) three times on Slack and sent an email last Thursday. No response. Our sprint ends Friday and without the spec we can't finish the integration. Our PM is going to ask me in standup tomorrow why we're behind. I need to message my manager (Keiko) tonight. Can you help me write that?",
+      "expected_output": "A ready-to-send Slack or email to Keiko that plainly describes the situation, states the launch risk, shows the attempts already made, and asks for a specific intervention — probably Keiko looping in Payments leadership or taking over the follow-up. Tone should be factual and calm, not frustrated. No blame on Sasha personally.",
+      "assertions": [
+        {
+          "name": "states-situation-plainly",
+          "description": "The draft describes the situation in factual, neutral terms without emotional language or blame",
+          "type": "qualitative"
+        },
+        {
+          "name": "includes-impact",
+          "description": "The draft mentions the concrete impact (sprint deadline, integration risk, or standup accountability)",
+          "type": "qualitative"
+        },
+        {
+          "name": "references-prior-attempts",
+          "description": "The draft mentions that attempts were already made to resolve directly",
+          "type": "qualitative"
+        },
+        {
+          "name": "clear-ask",
+          "description": "The draft includes a specific ask — either from Keiko to intervene or a concrete next step",
+          "type": "qualitative"
+        },
+        {
+          "name": "no-blamey-language",
+          "description": "The draft avoids language that attacks Sasha or the Payments team ('dropped the ball', 'ignored', 'unresponsive', etc.)",
+          "type": "qualitative"
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "I'm a PM and we have a critical bug in production affecting about 12% of users — they can't complete onboarding. It's been 24 hours. Engineering triaged it as P2 but I think it should be P1 given the business impact. The on-call engineer (Thomas) says it's being worked on but hasn't given me an ETA and the ticket hasn't moved. I need to escalate to the VP of Engineering (Priya) without making Thomas look bad or creating drama. How do I write this?",
+      "expected_output": "A clear, professional message to Priya that surfaces the business impact of the bug, explains the priority mismatch, shows what's been tried, and asks for Priya to weigh in on prioritization or get an ETA. Should not throw Thomas under the bus. Should be appropriately urgent without being alarmist.",
+      "assertions": [
+        {
+          "name": "business-impact-stated",
+          "description": "The draft quantifies or clearly describes the business impact (12% of users, onboarding blocked, etc.)",
+          "type": "qualitative"
+        },
+        {
+          "name": "prioritization-framed-as-request",
+          "description": "The P1/P2 disagreement is framed as a question for Priya to weigh in on, not as a criticism of Thomas's judgment",
+          "type": "qualitative"
+        },
+        {
+          "name": "not-accusatory-toward-thomas",
+          "description": "The draft avoids making Thomas look negligent — presents the situation as a process/priority gap, not individual failure",
+          "type": "qualitative"
+        },
+        {
+          "name": "actionable-ask",
+          "description": "The draft ends with a clear ask: ETA, priority call, or direct involvement from Priya",
+          "type": "qualitative"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm a tech lead and nobody seems to own the API rate limiting strategy. Three teams are about to ship features that will all hit the same external API and none of us have coordinated. I've raised it in #architecture-discuss twice and got 'good point, let's align' both times but nothing happened. The first feature ships in 3 weeks. I'm not sure whether to escalate to my director, to the principal engineer, or both. What's the best way to do this and can you draft something?",
+      "expected_output": "Advice on who to escalate to (likely both, or the person who can assign an owner), plus a draft message that describes the ownership gap clearly, explains what happens if it's not resolved before the first ship date, summarizes the prior attempts to align informally, and asks for a named owner or a decision-making process. Should not be political or make anyone look bad.",
+      "assertions": [
+        {
+          "name": "ownership-gap-named",
+          "description": "The draft frames this as an ownership gap — nobody is accountable — rather than as anyone's fault",
+          "type": "qualitative"
+        },
+        {
+          "name": "timeline-urgency",
+          "description": "The draft mentions the 3-week deadline or the first ship date to create appropriate urgency",
+          "type": "qualitative"
+        },
+        {
+          "name": "prior-attempts-referenced",
+          "description": "The draft references the #architecture-discuss discussions or the informal attempts to align",
+          "type": "qualitative"
+        },
+        {
+          "name": "asks-for-owner-not-solution",
+          "description": "The ask is for someone to own the decision or coordinate — not for the recipient to personally solve the technical problem",
+          "type": "qualitative"
+        }
+      ]
+    }
+  ]
+}

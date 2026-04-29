@@ -1,0 +1,41 @@
+{
+  "expectations": [
+    {
+      "text": "The 3x churn rate finding or the 14-day onboarding insight appears in the first 1-2 sentences of the rewritten intro",
+      "passed": true,
+      "evidence": "The BLUF version opens with: 'Customers who don't complete onboarding within 14 days churn at 3x the rate of those who do — concentrated in months 2–4.' Both the 14-day insight and the 3x churn rate appear in the first sentence."
+    },
+    {
+      "text": "Analysis methodology (cohort analysis, regression modeling) is not in the first paragraph of the rewrite",
+      "passed": false,
+      "evidence": "The BLUF rewrite is a single paragraph. Cohort analysis and regression modeling appear in the second sentence of that paragraph: '...using cohort analysis, regression modeling, and qualitative input from CS and sales.' The methodology is deferred to sentence 2 (after the finding), but it remains within the same paragraph block."
+    },
+    {
+      "text": "The phrase 'after extensive analysis' or equivalent throat-clearing is removed",
+      "passed": true,
+      "evidence": "The phrase does not appear in the BLUF version. The 'What changed and why' section explicitly confirms: 'Removed \"after extensive analysis.\" This phrase adds length but no information. Readers assume analysis happened; describing it as \"extensive\" reads as filler. Cut it.'"
+    },
+    {
+      "text": "The feedback explains the problem in terms of the leadership audience's needs (they want the answer first)",
+      "passed": true,
+      "evidence": "The 'What changed and why' section states: 'Leadership reading an intro wants to know what you found, not how you found it. The method can follow the message.' This directly frames the rewrite rationale in terms of leadership audience expectations."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  },
+  "timing": {
+    "executor_duration_seconds": 34.9
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      "Consider restructuring the BLUF rewrite into two explicit paragraphs — one for the finding, one for methodology/context — so that assertion 2 is unambiguously satisfied. Currently the rewrite is one paragraph with the methodology in sentence 2, which technically keeps methodology in the first (and only) paragraph.",
+      "The assertion about methodology placement would be more robustly satisfied if the BLUF version used a paragraph break between the finding sentence and the supporting context sentence."
+    ],
+    "overall": "The skill performed well: the key finding leads, throat-clearing is removed, and the feedback is audience-aware. The one failure is a structural edge case — the BLUF rewrite is a single paragraph, so methodology appears in it by definition, even though it is correctly deferred to the second sentence. Clarifying whether 'first paragraph' means 'opening sentence' or 'opening block' would sharpen the assertion and better reflect the skill's intent."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "eval_id": 1,
+  "eval_name": "production-bug-priority",
+  "prompt": "I'm a PM and we have a critical bug in production affecting about 12% of users — they can't complete onboarding. It's been 24 hours. Engineering triaged it as P2 but I think it should be P1 given the business impact. The on-call engineer (Thomas) says it's being worked on but hasn't given me an ETA and the ticket hasn't moved. I need to escalate to the VP of Engineering (Priya) without making Thomas look bad or creating drama. How do I write this?",
+  "assertions": [
+    {
+      "name": "business-impact-stated",
+      "description": "The draft quantifies or clearly describes the business impact (12% of users, onboarding blocked, etc.)",
+      "type": "qualitative"
+    },
+    {
+      "name": "prioritization-framed-as-request",
+      "description": "The P1/P2 disagreement is framed as a question for Priya to weigh in on, not as a criticism of Thomas's judgment",
+      "type": "qualitative"
+    },
+    {
+      "name": "not-accusatory-toward-thomas",
+      "description": "The draft avoids making Thomas look negligent — presents the situation as a process/priority gap, not individual failure",
+      "type": "qualitative"
+    },
+    {
+      "name": "actionable-ask",
+      "description": "The draft ends with a clear ask: ETA, priority call, or direct involvement from Priya",
+      "type": "qualitative"
+    }
+  ]
+}

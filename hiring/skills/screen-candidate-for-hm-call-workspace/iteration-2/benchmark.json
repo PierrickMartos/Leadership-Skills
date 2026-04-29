@@ -1,0 +1,99 @@
+{
+  "skill_name": "screen-candidate-for-hm-call",
+  "iteration": 2,
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_name": "senior-backend-engineer-saas",
+          "pass_rate": 1.0,
+          "passed": 8,
+          "total": 8,
+          "duration_seconds": 110.7,
+          "total_tokens": 20942
+        },
+        {
+          "eval_name": "engineering-manager-french",
+          "pass_rate": 1.0,
+          "passed": 9,
+          "total": 9,
+          "duration_seconds": 113.1,
+          "total_tokens": 21650
+        },
+        {
+          "eval_name": "product-designer-startup-bias-test",
+          "pass_rate": 1.0,
+          "passed": 10,
+          "total": 10,
+          "duration_seconds": 99.6,
+          "total_tokens": 20657
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 1.0,
+        "stddev_pass_rate": 0.0,
+        "mean_duration_seconds": 107.8,
+        "stddev_duration_seconds": 5.8,
+        "mean_tokens": 21083,
+        "stddev_tokens": 410
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_name": "senior-backend-engineer-saas",
+          "pass_rate": 0.625,
+          "passed": 5,
+          "total": 8,
+          "duration_seconds": 115.9,
+          "total_tokens": 19902
+        },
+        {
+          "eval_name": "engineering-manager-french",
+          "pass_rate": 0.667,
+          "passed": 6,
+          "total": 9,
+          "duration_seconds": 109.7,
+          "total_tokens": 20323
+        },
+        {
+          "eval_name": "product-designer-startup-bias-test",
+          "pass_rate": 0.6,
+          "passed": 6,
+          "total": 10,
+          "duration_seconds": 79.9,
+          "total_tokens": 18469
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.631,
+        "stddev_pass_rate": 0.028,
+        "mean_duration_seconds": 101.8,
+        "stddev_duration_seconds": 15.7,
+        "mean_tokens": 19565,
+        "stddev_tokens": 764
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": "+36.9pp",
+    "duration": "+5.9%",
+    "tokens": "+7.8%"
+  },
+  "comparison_with_iteration_1": {
+    "with_skill_tokens": {"iter1": 24770, "iter2": 21083, "change": "-14.9%"},
+    "with_skill_duration": {"iter1": 146.2, "iter2": 107.8, "change": "-26.3%"},
+    "pass_rate": {"iter1": "100%", "iter2": "100%", "change": "unchanged"}
+  },
+  "analyst_observations": [
+    "Iteration 2 maintains 100% pass rate while cutting token usage by 15% and duration by 26% compared to iteration 1.",
+    "The token/duration gap between with-skill and without-skill has collapsed: from +27%/+44% in iteration 1 to +8%/+6% in iteration 2. The conciseness instructions worked — the skill now produces better structure at nearly the same cost as the baseline.",
+    "Rating format improved: 'Rating: 4/5 — Label' instead of full scale table. Cleaner and faster to scan.",
+    "Candidate summary is now bullet points (Profile/Trajectory/Headline) as requested — scannable in seconds.",
+    "Question format is compact (Q1. / Targets / Good answer / Probe / Red flag) instead of blockquote walls.",
+    "Strengths/gaps/risks are tighter — mostly one line per item vs. multi-sentence paragraphs in iteration 1.",
+    "All three outputs still pass all assertions — no quality regression from the conciseness push."
+  ]
+}

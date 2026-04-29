@@ -1,0 +1,12 @@
+{
+  "eval_id": 1,
+  "eval_name": "buried-ask-email",
+  "prompt": "Can you review this email I'm about to send my skip-level? 'Hi Sarah, I hope you're doing well. I wanted to follow up on our last discussion around team capacity. As you know, Q4 has been really intense and the team has been stretched. We've had a few conversations internally about priorities. Given all of this context, I think it might be worth exploring whether we could potentially consider adding a headcount in the data engineering area in the next planning cycle if the budget allows.' What do you think?",
+  "assertions": [
+    "The rewritten email has a specific, informative subject line (not generic like 'Follow-up' or 'Team capacity')",
+    "The headcount request appears in the first sentence or two of the rewritten body",
+    "Preamble phrases ('I hope you're doing well', 'As you know', 'Q4 has been intense') are removed or substantially shortened",
+    "The passive hedging ('might be worth exploring whether we could potentially consider') is made direct",
+    "The feedback explains *why* the original is problematic from the reader's perspective, not just labels it"
+  ]
+}

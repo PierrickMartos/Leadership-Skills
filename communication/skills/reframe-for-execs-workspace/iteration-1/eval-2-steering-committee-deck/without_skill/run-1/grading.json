@@ -1,0 +1,38 @@
+{
+  "expectations": [
+    {
+      "text": "four-sections-present: Output contains all four exec frame sections",
+      "passed": false,
+      "evidence": "Uses custom headers (Recommendation, Financial Case, What We Did to Get Here, Migration Plan, Key Risks, Decision Needed) — not the four-part exec frame"
+    },
+    {
+      "text": "no-process-noise: Output does not mention 12 evaluation criteria, 14 stakeholder, 47-page, or 4 phases",
+      "passed": false,
+      "evidence": "'12 criteria', '14 stakeholder interviews', '4 phases' all present — process detail retained"
+    },
+    {
+      "text": "surfaces-savings: Output mentions $1.3M projected savings",
+      "passed": true,
+      "evidence": "$1.3M savings in the financial table"
+    },
+    {
+      "text": "recommendation-is-approve: Recommendation asks for approval to proceed to Phase 1",
+      "passed": true,
+      "evidence": "'Requesting approval to proceed to Phase 1' and 'Approve Phase 1 to start immediately'"
+    },
+    {
+      "text": "what-was-removed-included: Output includes a 'What was removed' section",
+      "passed": false,
+      "evidence": "No such section — without the skill the editorial logic is not surfaced to the user"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 3,
+    "total": 5,
+    "pass_rate": 0.4
+  },
+  "timing": {
+    "executor_duration_seconds": 31.7
+  }
+}

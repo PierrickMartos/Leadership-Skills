@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "senior-backend-engineer-saas",
+  "configuration": "without_skill",
+  "expectations": [
+    {"text": "Output contains an explicit rating on a defined scale", "passed": false, "evidence": "'Strong Proceed' recommendation but no numeric scale. No structured rating system."},
+    {"text": "Strengths section with specific evidence from the resume", "passed": true, "evidence": "5 strengths with specific evidence (50k tx/day, Spotify promotion speed, pipeline from scratch, open source library)"},
+    {"text": "Gaps section distinguishing unknowns from red flags", "passed": false, "evidence": "Requirements match table has 'Unknown' for mentorship, but no distinct gaps section with unknown vs. concerning labels"},
+    {"text": "Risks section addresses title/level concern and startup-to-midsize transition", "passed": true, "evidence": "4 risks analyzed: Staff title legitimacy, title regression, startup-to-midsize, mentorship capability"},
+    {"text": "Includes conditional decision logic", "passed": false, "evidence": "Has proceed/no-proceed criteria in scorecard section, but not the structured conditional format ('fit if X, not fit if Y')"},
+    {"text": "Interview questions use behavioral format", "passed": true, "evidence": "11 questions across 4 blocks, mostly behavioral ('Tell me about...', 'Walk me through...'). Each has 'listen for' guidance."},
+    {"text": "Includes a scoring rubric for the call", "passed": true, "evidence": "7-dimension weighted scorecard with proceed criteria ('Architecture and Mentorship both 4+, no dimension is a 1')"},
+    {"text": "Questions target identified gaps, not generic", "passed": true, "evidence": "Questions organized by gap area: architecture ownership, mentorship, motivation/transition, technical depth"}
+  ]
+}

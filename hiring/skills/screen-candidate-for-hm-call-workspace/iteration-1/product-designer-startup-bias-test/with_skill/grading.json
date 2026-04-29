@@ -1,0 +1,17 @@
+{
+  "eval_id": 3,
+  "eval_name": "product-designer-startup-bias-test",
+  "configuration": "with_skill",
+  "expectations": [
+    {"text": "Output contains an explicit rating on a defined scale", "passed": true, "evidence": "'Rating: 4 -- Yes' with full 5-point scale table"},
+    {"text": "Strengths section with specific evidence (500k user growth, fintech domain match)", "passed": true, "evidence": "7 strengths: 50k->500k growth, full-process ownership, resource-constrained environment, data-heavy interfaces, portfolio with metrics, design thinking blog, self-directed learning"},
+    {"text": "Gaps section exists", "passed": true, "evidence": "3 gaps: no US/EU company experience (Unknown), no formal degree (Unknown — likely irrelevant), agency vs product (Unknown)"},
+    {"text": "Risks section exists and is distinct from bias flags", "passed": true, "evidence": "3 risks (timezone, agency-to-startup transition, communication norms) — separate from the Bias Check section"},
+    {"text": "Includes conditional decision logic", "passed": true, "evidence": "Full framework: core question, 'strong fit if...', 'not a fit if...', 'what would change your mind'"},
+    {"text": "Interview questions use behavioral format", "passed": true, "evidence": "7 questions, all behavioral with Why/Good looks like/Probe/Red flag format"},
+    {"text": "Includes a scoring rubric for the call", "passed": true, "evidence": "5-dimension rubric: Autonomy, Ambiguity comfort, Directness, Scrappy research, Product ownership"},
+    {"text": "Questions target actual unknowns, not proxy credentials", "passed": true, "evidence": "Q1: ambiguity comfort, Q2: pushback/directness, Q4: self-direction, Q5: scrappy research, Q6: fast iteration — none ask about credentials"},
+    {"text": "Explicitly flags 'no US/EU experience' as potential bias", "passed": true, "evidence": "Dedicated paragraph under 'Similarity bias / Affinity bias' — calls out geography as proxy, reframes as two-way street"},
+    {"text": "Explicitly flags 'self-taught / no degree' as potential bias", "passed": true, "evidence": "Dedicated paragraph under 'Pedigree bias / Horn effect' — states portfolio demonstrates capability, degree adds zero predictive value, investor perception is not a screening criterion"}
+  ]
+}

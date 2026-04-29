@@ -1,0 +1,32 @@
+{
+  "eval_id": 3,
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "Output flags the subject line 'FYI on Project Atlas' as too vague and suggests a clearer subject that conveys the key news",
+      "passed": true,
+      "evidence": "Annotation: '\"FYI on Project Atlas\" gives Sarah no information.' Revised to: 'Project Atlas go-live moving to April 3 — here's why and what we're doing about it'"
+    },
+    {
+      "text": "Output identifies that the date change (March 15 → April 3) is buried mid-paragraph and should open the message",
+      "passed": true,
+      "evidence": "Annotation: 'The revised version puts the key fact (the new date) in the first sentence. Sarah should never have to reach the third sentence to find out why she's being emailed.'"
+    },
+    {
+      "text": "Output flags the apologetic framing ('I'm sorry', 'I know this isn't ideal') as undermining the leader's credibility and suggests a more confident, factual tone",
+      "passed": true,
+      "evidence": "'Facts, not feelings' annotation: '\"I know this isn't ideal and I'm sorry for the disruption\" shifts the tone toward managing Alex's anxiety rather than informing Sarah... The revision removes the apology and replaces it with specific data.'"
+    },
+    {
+      "text": "Output identifies 'doing everything we can' as vague and asks for or suggests a specific recovery or mitigation plan",
+      "passed": true,
+      "evidence": "'Concise and direct — closing' annotation: '\"We're doing everything we can to minimize the impact\" is vague reassurance. It adds length without adding information.' Rewrite replaces with specific milestone list."
+    },
+    {
+      "text": "Rewritten version opens with the key fact (new go-live date) in the first sentence or subject line",
+      "passed": true,
+      "evidence": "Rewrite first sentence: 'Project Atlas go-live is moving from March 15 to April 3.' Subject line also contains the date."
+    }
+  ],
+  "pass_rate": 1.0
+}

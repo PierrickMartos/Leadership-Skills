@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "senior-backend-engineer-saas",
+  "configuration": "with_skill",
+  "expectations": [
+    {"text": "Output contains an explicit rating on a defined scale", "passed": true, "evidence": "'Rating: 4/5 — Good fit, minor gaps to validate' — clean, no scale table"},
+    {"text": "Strengths section with specific evidence from the resume", "passed": true, "evidence": "7 strengths, each one line with evidence. Much tighter than iteration 1"},
+    {"text": "Gaps section distinguishing unknowns from red flags", "passed": true, "evidence": "4 gaps, each one line, all tagged 'Unknown'"},
+    {"text": "Risks section addresses title/level concern and startup-to-midsize transition", "passed": true, "evidence": "4 risks, each 1-2 lines: title sensitivity, pace mismatch, flight risk, Staff calibration"},
+    {"text": "Includes conditional decision logic", "passed": true, "evidence": "Full decision framework with all 4 conditions"},
+    {"text": "Interview questions use behavioral format", "passed": true, "evidence": "7 questions in compact bullet format (Targets/Good answer/Probe/Red flag)"},
+    {"text": "Includes a scoring rubric for the call", "passed": true, "evidence": "5-dimension rubric with Strong/Acceptable/Weak"},
+    {"text": "Questions target identified gaps, not generic", "passed": true, "evidence": "Q1: Staff scope, Q2: mentorship, Q3: architecture tradeoffs, Q4: data modeling gap, Q5: pace, Q6: title, Q7: cross-functional"}
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "eval_id": 3,
+  "run": "old_skill",
+  "assertions": [
+    { "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when (tomorrow)", "passed": true, "evidence": "'Decide by April 2 whether to (A) build SSO natively in H2, (B) adopt WorkOS or equivalent third-party auth, or (C) defer the three enterprise deals to Q1.'" },
+    { "text": "The memo covers all 3 options: build, buy (WorkOS or equivalent), and delay", "passed": true, "evidence": "Options A, B, C all present with implications and what-to-believe conditions." },
+    { "text": "The memo explicitly separates customer value from internal convenience", "passed": true, "evidence": "Tradeoffs note: 'From the customer's perspective, Options A and B are functionally equivalent. The difference is entirely internal. Option C is the only one that's worse for the customer.'" },
+    { "text": "The memo has a section naming specific unknowns", "passed": true, "evidence": "'What We Don't Know' section with 5 specific unknowns." },
+    { "text": "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)", "passed": true, "evidence": "'Option B — Buy via WorkOS (or equivalent), targeting a close within 2 weeks.' With conditional to Option A." },
+    { "text": "The memo includes a risk table with likelihood, severity, and mitigation columns", "passed": true, "evidence": "Risk table with Risk | Likelihood | Severity | Mitigation, 5 rows." },
+    { "text": "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)", "passed": false, "evidence": "No 'Approvals Required' section. Security/Finance/Legal/Procurement implications of WorkOS vendor onboarding not surfaced." },
+    { "text": "The memo identifies Security and/or Finance as requiring approval, given the third-party vendor onboarding (WorkOS) and recurring spend", "passed": false, "evidence": "No approvals section. WorkOS vendor security review and Finance sign-off not mentioned." },
+    { "text": "The memo uses an appendix to offload detailed supporting content (e.g., cost breakdown, full option comparison), keeping the main body scannable", "passed": false, "evidence": "No appendix. Detailed tradeoffs table and financial comparison are in the main body. An appendix for the financial model would have kept the body more concise." }
+  ],
+  "pass_count": 6,
+  "total_count": 9,
+  "pass_rate": 0.667
+}

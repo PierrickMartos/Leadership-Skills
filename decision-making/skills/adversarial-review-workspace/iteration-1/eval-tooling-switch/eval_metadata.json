@@ -1,0 +1,27 @@
+{
+  "eval_id": 0,
+  "eval_name": "eval-tooling-switch",
+  "prompt": "I need to decide whether to switch our customer support platform from Zendesk to Intercom. We've been on Zendesk for 3 years, have about 2,000 tickets/month, 8 support agents. The main drivers: Intercom is 30% cheaper at our tier, our team says the UI is better, and it has a product tours feature we want. Migration would take about 2 months and $15k in engineering time. We've already done a 2-week trial with Intercom. Can you stress-test this decision?",
+  "assertions": [
+    {
+      "id": "identifies-two-way-door",
+      "text": "The report correctly identifies this as a two-way door (reversible) decision"
+    },
+    {
+      "id": "lighter-analysis-applied",
+      "text": "The report applies lighter/faster analysis appropriate for a two-way door, rather than maximum depth"
+    },
+    {
+      "id": "surfaces-migration-risk",
+      "text": "The report mentions migration risk, data loss, or disruption to support operations during transition"
+    },
+    {
+      "id": "surfaces-hidden-costs",
+      "text": "The report identifies hidden costs beyond the stated $15k (e.g., retraining, productivity dip, integration rebuilding)"
+    },
+    {
+      "id": "includes-market-context",
+      "text": "The report includes external market context about Zendesk vs Intercom based on research (not just restating user's input)"
+    }
+  ]
+}

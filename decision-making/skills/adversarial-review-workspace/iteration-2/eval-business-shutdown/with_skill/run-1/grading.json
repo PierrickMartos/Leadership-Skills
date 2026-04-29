@@ -1,0 +1,115 @@
+{
+  "expectations": [
+    {
+      "text": "The report correctly identifies this as a one-way or high-friction door decision — killing a free tier is difficult to reverse",
+      "passed": true,
+      "evidence": "Door Type section explicitly states: 'Door Type: Friction door (leaning one-way)' with Reversibility Score: 4. Report explains: 'Reactivating a free tier after killing it is technically possible but practically damaging — you signal instability to prospects, lose the user base you'd accumulated (they don't come back), and re-incur all the trust-building time.'"
+    },
+    {
+      "text": "The report quantifies the pipeline value of the free tier (conversions × ACV) and compares it to the infrastructure cost",
+      "passed": true,
+      "evidence": "Blind Spots section states: '200 paid conversions/quarter at $18k ACV = ~$3.6M ARR input per year from the free funnel. Against $480k/year in infra costs, the funnel returns 7.5x. The question isn't \"is the free tier expensive?\" — it's \"can you generate equivalent pipeline for less than $480k via sales-led?\"'"
+    },
+    {
+      "text": "The report challenges the assumption that the free tier is causing enterprise deal losses — asking for evidence beyond the sales head's opinion",
+      "passed": true,
+      "evidence": "Assumptions table row: 'The \"prosumer\" perception is real, not just sales narrative | Low | Run win/loss interviews; one head of sales's opinion is not data.' Also in Counterarguments: 'The core argument — \"we look prosumer\" — is unverified opinion, not data.' Stress Test Q1 asks for concrete count of enterprise deals citing brand perception. Blind Spots flags 'Head of sales incentive misalignment.'"
+    },
+    {
+      "text": "The report mentions PLG, word-of-mouth, or community value being lost by removing the free tier",
+      "passed": true,
+      "evidence": "Dedicated Blind Spot: 'Word of mouth and brand surface area. 8,000 active free users are ambassadors, content creators, community contributors, and potential champions who change jobs. Killing the tier eliminates this compounding asset overnight.' Market Context also references 'PLG-assisted or product-qualified lead (PQL) motions' and states 'you are not close to that ceiling' for PLG viability."
+    },
+    {
+      "text": "The report includes a substantive counterargument against shutting down the free tier",
+      "passed": true,
+      "evidence": "Full 'Counterarguments' section titled 'Against shutting down the free tier:' with multiple distinct arguments: (1) 10% annual conversion at $18k ACV yields funnel worth far more than $480k/year infra; (2) enterprise buyers expect to try before buying; (3) Slack example showing free tier didn't prevent $27.7B Salesforce acquisition; (4) 'Killing free to please the board narrative is a textbook one-way door taken for the wrong reason under artificial time pressure.'"
+    },
+    {
+      "text": "The report includes a Think Big Work Small section or minimum viable test — a concrete small step to validate assumptions before committing",
+      "passed": true,
+      "evidence": "Explicit 'Think Big, Work Small' section includes 'Minimum viable version before committing:' with four concrete actions: (1) Run Option D pilot kill on new signups for 60-90 days; (2) Instrument attribution now; (3) Conduct 10 win/loss interviews in 2 weeks; (4) Get infra team to model cost of usage-capped free plan. Also includes a named Gate condition before proceeding."
+    },
+    {
+      "text": "The report is concise — findings are surfaced as bullets rather than long prose paragraphs",
+      "passed": true,
+      "evidence": "Report uses tables throughout (Key Assumptions, Risk Factors), bullet lists in Blind Spots, Counterarguments, Alternative Paths, and Think Big Work Small sections. Most sections are structured as labeled items rather than dense prose. The longest prose block is the Counterarguments section (~4 short paragraphs), which is substantive rather than padded."
+    }
+  ],
+  "summary": {
+    "passed": 7,
+    "failed": 0,
+    "total": 7,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 10854,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "executor_duration_seconds": 153.4,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 153.4
+  },
+  "claims": [
+    {
+      "claim": "200 paid conversions/quarter from 8,000 free users = ~10% annual conversion rate",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Math checks out: 200/quarter × 4 = 800/year ÷ 8,000 = 10% annual conversion. Market Context section also confirms: '200/quarter from 8,000 users = ~10% annual conversion — that is well above median.'"
+    },
+    {
+      "claim": "$40k/month infra = $480k/year, and 200 conversions/quarter × $18k ACV = $3.6M ARR annually",
+      "type": "factual",
+      "verified": true,
+      "evidence": "$40k × 12 = $480k; 200 × 4 = 800 conversions/year × $18k = $14.4M gross (note: report says $3.6M ARR input which implies ~200 conversions/quarter × $18k = $3.6M per quarter, but then says 'per year'. Actually 200/quarter × $18k = $3.6M/quarter or $14.4M/year. However, report frames it as '$3.6M ARR input annually' which appears to undercalculate — 200/quarter new logos × $18k ACV = $3.6M net new ARR per quarter (annualized contribution of new logos added). This is plausible if interpreted as new ARR contribution per quarter rather than total ARR generated annually."
+    },
+    {
+      "claim": "200 AE deals/quarter capacity: 'at 3 AEs that's 270 deals per AE per year, which is implausible'",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Math checks: 200 deals/quarter × 4 = 800/year ÷ 3 AEs = 267 deals per AE per year. This is indeed implausible for $18k ACV enterprise deals. The claim is sound."
+    },
+    {
+      "claim": "Freemium conversion benchmarks: developer tools ~12%, collaboration tools ~9%",
+      "type": "factual",
+      "verified": false,
+      "evidence": "These benchmark figures are stated without citation. They are plausible but cannot be verified from available outputs. No source is provided in the report."
+    },
+    {
+      "claim": "46% of SaaS companies call their primary motion 'hybrid' (2024 survey)",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Stated as a 2024 survey finding but no source is cited. Cannot be verified from available outputs."
+    },
+    {
+      "claim": "The report was generated without a transcript (output file only)",
+      "type": "process",
+      "verified": true,
+      "evidence": "Only report.md was present in outputs/. No transcript file was provided per the grading instructions."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Assertion 7 ('concise — findings surfaced as bullets') passes easily and would pass for most structured reports regardless of quality. Consider replacing or augmenting with a length constraint assertion (e.g., 'report is under 1500 words') or a specificity check ('each section contains at least one actionable item')."
+      },
+      {
+        "assertion": "The report quantifies the pipeline value of the free tier (conversions × ACV) and compares it to the infrastructure cost",
+        "reason": "This assertion passes but does not check for correctness of the math. The report's '$3.6M ARR input per year' figure conflates quarterly new ARR contribution with annual total — worth clarifying in the assertion whether annual or quarterly math is expected, so a numerically wrong calculation would fail."
+      },
+      {
+        "reason": "No assertion checks whether the report avoids endorsing the shutdown decision when the evidence clearly argues against it — an important quality signal that adversarial reviews should reach a defensible conclusion, not just surface considerations on both sides without a recommendation."
+      },
+      {
+        "reason": "No assertion checks whether the report accounts for the 3-week board deadline as an artificial time pressure — the report does flag this well, but it's a discriminating signal that distinguishes a skilled adversarial reviewer from a generic one."
+      }
+    ],
+    "overall": "All 7 assertions pass and the report is genuinely strong — the skill produced substantive, well-structured output. Assertion 7 is the weakest (trivially satisfied by any formatted output). The most meaningful gap is the absence of an assertion checking that the report reaches a clear recommendation or at least a clear lean, rather than just cataloging considerations."
+  }
+}

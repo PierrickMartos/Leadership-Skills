@@ -1,0 +1,96 @@
+{
+  "expectations": [
+    {
+      "text": "The report correctly identifies this as a one-way door (hard to reverse) decision — killing a free tier damages user trust and is difficult to undo",
+      "passed": true,
+      "evidence": "Section 6 states explicitly: 'this decision is asymmetrically difficult to reverse. Once you shut down the free tier: Free users go to competitors. You cannot get them back cheaply... rebuilding a free tier takes 6–12 months of product and infrastructure investment to restore credibly.' The report labels it the 'risk that is hardest to reverse' and uses the phrase 'asymmetrically difficult to reverse.'"
+    },
+    {
+      "text": "The report does the math: 200 conversions/quarter × $18k ACV = $3.6M ARR pipeline from free tier, comparing it to the $40k/month ($480k/year) infra cost",
+      "passed": true,
+      "evidence": "Section 1 (steelmanning) explicitly states: '$40k/month ($480k/year) in infrastructure costs against a conversion yield that generates at most 200 × $18k = $3.6M ARR per year in new bookings.' Both numbers are present and the comparison is made directly."
+    },
+    {
+      "text": "The report challenges the assumption that the free tier is causing enterprise deal losses — asking for evidence beyond the sales head's opinion",
+      "passed": true,
+      "evidence": "Section 2.1 is titled '\"We're losing enterprise deals because we look like a prosumer tool\"' and opens: 'This is anecdotal and comes from one stakeholder (head of sales) with an incentive to prefer a sales-assisted model. Before treating this as fact, you need evidence.' It then prescribes structured win/loss interviews and sets a validation threshold."
+    },
+    {
+      "text": "The report mentions product-led growth (PLG), word-of-mouth, or community value being lost by removing the free tier",
+      "passed": true,
+      "evidence": "Section 3.1 states: 'Organic word-of-mouth from practitioners drops, which affects branded search, community mentions, and inbound leads.' Section 3.2 describes 'bottom-up adoption by individual users who then advocate internally (\"land and expand\" from the individual level)' as a powerful enterprise motion lost to competitors. PLG is the implicit framing throughout, though not named as an acronym."
+    },
+    {
+      "text": "The report includes a substantive counterargument against shutting down the free tier (not just a token mention)",
+      "passed": true,
+      "evidence": "Section 3 ('Second-Order Effects You Are Likely Underweighting') devotes four sub-sections to substantive counterarguments: pipeline destruction risk, competitive moat erosion, product feedback loop degradation, and talent/culture signal. Section 7 verdict concludes the proposal is 'likely solving the right problem with the wrong tool' and recommends against the binary shutdown in favor of restructuring alternatives. This is a thorough, multi-angle counterargument."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 14950,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "executor_duration_seconds": 1761.8,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 1761.8
+  },
+  "claims": [
+    {
+      "claim": "The free tier generates 200 conversions per quarter at $18k ACV",
+      "type": "factual",
+      "verified": true,
+      "evidence": "These are the stated input parameters, accurately reflected in the report's analysis."
+    },
+    {
+      "claim": "Infrastructure cost is $40k/month ($480k/year)",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Directly stated in the report: '$40k/month ($480k/year) in infrastructure costs' — matches the prompt inputs."
+    },
+    {
+      "claim": "The enterprise sales head's 'prosumer perception' concern is not validated",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Section 2.1 makes a well-reasoned case that this is an anecdotal claim from a stakeholder with a structural incentive toward a sales-assisted model, and proposes a concrete validation method (win/loss interviews)."
+    },
+    {
+      "claim": "The cost problem is solvable without full tier elimination",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Section 4 proposes four concrete alternatives (shrink/restructure tier, ICP-based segmentation, delayed closure with bridge, free trial replacement) with estimated cost outcomes. Section 2.3 challenges whether $40k/month is truly the marginal cost."
+    },
+    {
+      "claim": "Board should not be asked to approve a binary decision",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Final recommendation in Section 7: 'The board should not be asked to approve a binary decision on incomplete data. The ask should be: approved to run a 90-day experiment...'"
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "All 5 assertions pass, and all 5 are genuinely satisfied with substantive evidence — the report is strong. However, no assertion checks whether the report provides *concrete next steps* or an actionable recommendation (not just counterarguments). The report's Section 7 includes a specific 4-step action plan; this quality differentiates a strategic adversarial review from a list of concerns. Consider adding: 'The report includes specific, sequenced next steps (not just objections) for the decision-maker.'"
+      },
+      {
+        "reason": "No assertion checks whether the report examines the incentive structure / conflict of interest of the person proposing the change. The report devotes Section 8 entirely to this ('Who Benefits From This Decision?'), which is a high-value adversarial lens that could be an explicit assertion."
+      },
+      {
+        "assertion": "The report does the math: 200 conversions/quarter × $18k ACV = $3.6M ARR pipeline from free tier, comparing it to the $40k/month ($480k/year) infra cost",
+        "reason": "This assertion passes trivially because the numbers come directly from the prompt inputs — any report that reads the inputs would surface them. A more discriminating version would check whether the report *interprets* the ratio (e.g., flags that the cost-per-conversion of $2,400/year is actually modest relative to $18k ACV, or notes that the 3.6M figure is an overestimate if converts skew below $18k ACV). The report does make these qualifications in section 2.2, but the assertion doesn't require them."
+      }
+    ],
+    "overall": "Evals are solid and non-trivial — all five assertions required genuine analytical content to satisfy. The main gap is that no assertion covers the action-orientation or the conflict-of-interest lens, both of which are distinctive qualities of a strong adversarial review that this report demonstrates."
+  }
+}

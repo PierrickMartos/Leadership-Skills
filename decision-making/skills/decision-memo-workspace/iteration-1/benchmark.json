@@ -1,0 +1,93 @@
+{
+  "skill_name": "decision-memo",
+  "iteration": 1,
+  "configurations": [
+    {
+      "name": "with_skill",
+      "evals": [
+        {
+          "eval_id": 1,
+          "eval_name": "eval-sync-layer",
+          "pass_rate": 1.0,
+          "pass_count": 6,
+          "total_count": 6,
+          "duration_ms": 74779,
+          "total_tokens": 18145
+        },
+        {
+          "eval_id": 2,
+          "eval_name": "eval-platform-team",
+          "pass_rate": 1.0,
+          "pass_count": 6,
+          "total_count": 6,
+          "duration_ms": 82235,
+          "total_tokens": 18471
+        },
+        {
+          "eval_id": 3,
+          "eval_name": "eval-sso-build-buy",
+          "pass_rate": 1.0,
+          "pass_count": 6,
+          "total_count": 6,
+          "duration_ms": 82226,
+          "total_tokens": 18394
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 1.0,
+        "mean_duration_ms": 79747,
+        "mean_tokens": 18337
+      }
+    },
+    {
+      "name": "without_skill",
+      "evals": [
+        {
+          "eval_id": 1,
+          "eval_name": "eval-sync-layer",
+          "pass_rate": 0.5,
+          "pass_count": 3,
+          "total_count": 6,
+          "duration_ms": 58833,
+          "total_tokens": 15277
+        },
+        {
+          "eval_id": 2,
+          "eval_name": "eval-platform-team",
+          "pass_rate": 0.167,
+          "pass_count": 1,
+          "total_count": 6,
+          "duration_ms": 69113,
+          "total_tokens": 15590
+        },
+        {
+          "eval_id": 3,
+          "eval_name": "eval-sso-build-buy",
+          "pass_rate": 0.333,
+          "pass_count": 2,
+          "total_count": 6,
+          "duration_ms": 54628,
+          "total_tokens": 15152
+        }
+      ],
+      "aggregate": {
+        "mean_pass_rate": 0.333,
+        "mean_duration_ms": 60858,
+        "mean_tokens": 15340
+      }
+    }
+  ],
+  "delta": {
+    "pass_rate": "+0.667 (with_skill vs without_skill)",
+    "duration_ms": "+18889ms (with_skill is slower)",
+    "tokens": "+2997 (with_skill uses more tokens)"
+  },
+  "analyst_notes": [
+    "with_skill passes 18/18 assertions (100%); without_skill passes 6/18 (33%).",
+    "The biggest gaps in baseline: no assumptions with confidence levels, no 'What We Don't Know' section, no explicit customer-vs-internal-convenience framing.",
+    "Baseline consistently produces clear recommendations and risk tables — these two assertions are non-discriminating (both pass baseline). They don't differentiate with-skill from without-skill.",
+    "The 3 discriminating assertions are: assumptions with confidence levels, What We Don't Know section, and customer vs. internal convenience framing.",
+    "with_skill runs take ~19s more on average — a reasonable tradeoff for the structural quality improvement.",
+    "Token overhead is modest (~20% more) given the meaningfully richer output."
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 2,
+  "eval_name": "api-ownership-gap",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "ownership-gap-named: Framed as structural ownership gap, not anyone's fault",
+      "passed": true,
+      "evidence": "'exists in the space between teams, with no team or individual having formally claimed responsibility' and 'None of us have a shared rate limiting strategy' — structural framing throughout."
+    },
+    {
+      "text": "timeline-urgency: 3-week deadline mentioned",
+      "passed": true,
+      "evidence": "'Three teams (including mine) are shipping features in the next three weeks' and 'first feature shipping in roughly three weeks, we're past the point where \"let's align soon\" is enough.'"
+    },
+    {
+      "text": "prior-attempts-referenced: #architecture-discuss attempts referenced",
+      "passed": true,
+      "evidence": "'I've raised this in #architecture-discuss twice over the past few weeks and got good engagement each time, but no one has stepped up to own the strategy.'"
+    },
+    {
+      "text": "asks-for-owner-not-solution: Asks for ownership assignment, not technical solution",
+      "passed": true,
+      "evidence": "'either a named owner who will drive a lightweight shared approach in the next week, or a call with the three teams to agree on one together' — ownership and coordination ask, not a technical fix request."
+    },
+    {
+      "text": "bluf-first-sentence: The first sentence states the situation and impact without preamble",
+      "passed": true,
+      "evidence": "'I want to flag a cross-team risk that needs an owner before it becomes a production problem.' — opens with risk and consequence immediately."
+    }
+  ],
+  "pass_rate": 1.0
+}

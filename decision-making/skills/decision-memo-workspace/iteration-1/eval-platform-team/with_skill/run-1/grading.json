@@ -1,0 +1,39 @@
+{
+  "eval_id": 2,
+  "run": "with_skill",
+  "assertions": [
+    {
+      "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when",
+      "passed": true,
+      "evidence": "'Decision' section: 'Decide by next week whether to form a dedicated platform team (2–3 engineers) or maintain distributed infrastructure ownership across the 4 product squads, to be confirmed by the CTO.'"
+    },
+    {
+      "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)",
+      "passed": true,
+      "evidence": "Full assumptions table with Confidence column: Medium/Medium/Medium/Medium/Low-Medium for 5 assumptions, each with a 'How to test' column."
+    },
+    {
+      "text": "The memo explicitly separates customer value from internal convenience (e.g., notes which option is better for end-users/product quality vs. easier for engineers)",
+      "passed": true,
+      "evidence": "Tradeoffs section note: 'Option B is primarily convenient for squads in the short term. It does not address the structural cause of the problem — it defers it.' Also customer impact row shows Option B is 'Neutral to slightly negative (incidents continue; squads remain distracted by infra).'"
+    },
+    {
+      "text": "The memo has a section naming specific unknowns (e.g., actual cost of incidents, whether platform team would become a bottleneck)",
+      "passed": true,
+      "evidence": "'What We Don't Know' section with 5 specific unknowns: which engineers are candidates, how bad is the infra problem quantitatively, whether squads will accept the platform team's mandate, timing vs product commitments, and 2 vs 3 engineers."
+    },
+    {
+      "text": "The memo gives a clear recommendation (not hedged into 'it depends' without stating conditions)",
+      "passed": true,
+      "evidence": "'Recommendation: Form a dedicated platform team (Option A), targeting a 3-person team, with a phased extraction over 4–6 weeks.' Two explicit non-negotiable conditions for success stated."
+    },
+    {
+      "text": "The memo includes a risk table with likelihood, severity, and mitigation columns",
+      "passed": true,
+      "evidence": "Risk table has Risk | Likelihood | Severity | Mitigation with 5 rows and concrete mitigations."
+    }
+  ],
+  "pass_count": 6,
+  "total_count": 6,
+  "pass_rate": 1.0
+}

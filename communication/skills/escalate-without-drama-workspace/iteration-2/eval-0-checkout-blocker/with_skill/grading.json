@@ -1,0 +1,38 @@
+{
+  "eval_id": 0,
+  "eval_name": "checkout-blocker",
+  "configuration": "with_skill",
+  "expectations": [
+    {
+      "text": "states-situation-plainly: The draft describes the situation in factual, neutral terms",
+      "passed": true,
+      "evidence": "'We're at risk of not completing the checkout flow integration this sprint because we're still waiting on the updated webhook spec from the Payments team. It's been 10 days.' — neutral, factual."
+    },
+    {
+      "text": "includes-impact: The draft mentions concrete impact",
+      "passed": true,
+      "evidence": "'our sprint ends Friday' and standup reference — concrete deadline and accountability both present."
+    },
+    {
+      "text": "references-prior-attempts: Prior direct attempts are mentioned",
+      "passed": true,
+      "evidence": "'I've pinged Sasha (their lead) three times on Slack and sent an email last Thursday.'"
+    },
+    {
+      "text": "clear-ask: A specific, actionable ask is included",
+      "passed": true,
+      "evidence": "Binary ask: 'either Sasha (or someone on Payments) gets us the spec by tomorrow... or we get a clear signal that it won't happen this sprint.'"
+    },
+    {
+      "text": "no-blamey-language: No language that attacks Sasha or the Payments team",
+      "passed": true,
+      "evidence": "'No response so far' — neutral. Notes explicitly say framing avoids labeling Sasha as unresponsive or negligent."
+    },
+    {
+      "text": "bluf-first-sentence: The first sentence states the situation and impact without preamble",
+      "passed": true,
+      "evidence": "'We're at risk of not completing the checkout flow integration this sprint because we're still waiting on the updated webhook spec from the Payments team. It's been 10 days.' — leads with the problem and risk immediately."
+    }
+  ],
+  "pass_rate": 1.0
+}

@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "senior-backend-engineer-saas",
+  "prompt": "Senior Backend Engineer screening at B2B SaaS (Series C). Candidate is Staff at tiny fintech, ex-Spotify. Key question: is Staff at 20-person startup really Staff? Will they accept Senior title?",
+  "assertions": [
+    {"id": "rating", "text": "Output contains an explicit rating on a defined scale (e.g., 1-5)", "type": "presence"},
+    {"id": "strengths-with-evidence", "text": "Strengths section exists with specific evidence from the resume (not generic)", "type": "quality"},
+    {"id": "gaps-section", "text": "Gaps section exists distinguishing unknowns from red flags", "type": "presence"},
+    {"id": "risks-section", "text": "Risks section addresses title/level concern and startup-to-midsize transition", "type": "quality"},
+    {"id": "decision-framework", "text": "Includes conditional decision logic (fit if X, not fit if Y)", "type": "presence"},
+    {"id": "star-questions", "text": "Interview questions use behavioral format (past behavior, not hypotheticals)", "type": "quality"},
+    {"id": "scoring-rubric", "text": "Includes a scoring rubric or evaluation framework for the call", "type": "presence"},
+    {"id": "questions-target-gaps", "text": "Questions are specifically tied to identified gaps/risks, not generic interview questions", "type": "quality"}
+  ]
+}

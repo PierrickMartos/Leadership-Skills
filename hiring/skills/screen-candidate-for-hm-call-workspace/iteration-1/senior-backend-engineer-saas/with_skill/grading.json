@@ -1,0 +1,15 @@
+{
+  "eval_id": 1,
+  "eval_name": "senior-backend-engineer-saas",
+  "configuration": "with_skill",
+  "expectations": [
+    {"text": "Output contains an explicit rating on a defined scale", "passed": true, "evidence": "Rating: 4 — Yes, with full 5-point scale table"},
+    {"text": "Strengths section with specific evidence from the resume", "passed": true, "evidence": "7 strengths, each grounded in specific resume items (Spotify promotion, 50k txn/day pipeline, Go rate-limiting library)"},
+    {"text": "Gaps section distinguishing unknowns from red flags", "passed": true, "evidence": "4 gaps, all explicitly labeled 'Unknown' — mentorship, mid-size org experience, API design for external consumers, PostgreSQL modeling depth"},
+    {"text": "Risks section addresses title/level concern and startup-to-midsize transition", "passed": true, "evidence": "4 risks: title sensitivity, startup-to-midsize pace, 'Staff at tiny startup' calibration, retention risk"},
+    {"text": "Includes conditional decision logic", "passed": true, "evidence": "Full decision framework: 'strong fit if...', 'not a fit if...', 'what would change your mind' — all specific and grounded"},
+    {"text": "Interview questions use behavioral format", "passed": true, "evidence": "7 questions, all behavioral ('Tell me about a time...', 'Walk me through...'). Each has Why/Good looks like/Probe/Red flag structure"},
+    {"text": "Includes a scoring rubric for the call", "passed": true, "evidence": "5-dimension rubric (Mentorship, Architectural ownership, Cross-team influence, Adaptability, Motivation) with Strong/Acceptable/Weak signal columns"},
+    {"text": "Questions target identified gaps, not generic", "passed": true, "evidence": "Q1 targets mentorship gap, Q2 targets consensus-building, Q3 targets title risk, Q5 targets data modeling gap, Q6 targets cross-team influence"}
+  ]
+}

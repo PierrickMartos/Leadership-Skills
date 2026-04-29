@@ -1,0 +1,39 @@
+{
+  "eval_id": 3,
+  "run": "without_skill",
+  "assertions": [
+    {
+      "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when (tomorrow)",
+      "passed": false,
+      "evidence": "BLUF jumps straight to recommendation ('We should buy WorkOS now.') rather than a neutral decision statement. The decision header says 'Decision needed by: Tomorrow's leadership meeting' but there's no sentence framing what's being decided."
+    },
+    {
+      "text": "The memo covers all 3 options: build, buy (WorkOS or equivalent), and delay",
+      "passed": true,
+      "evidence": "All 3 options are covered: Option A (Build SSO In-House), Option B (Buy — WorkOS), Option C (Delay Deals to Q1), each with timeline, cost, outcome, and risk."
+    },
+    {
+      "text": "The memo explicitly separates customer value from internal convenience (e.g., notes that delay has zero customer value, build has full control, buy is faster but adds dependency)",
+      "passed": false,
+      "evidence": "Memo makes an ROI argument and notes SSO is 'table stakes for enterprise, not a differentiator' but never explicitly frames which options serve customers vs. which are internally convenient. The customer-vs-internal framing is absent."
+    },
+    {
+      "text": "The memo has a section naming specific unknowns (e.g., whether prospects are actually closeable, whether WorkOS covers their specific SSO requirements)",
+      "passed": false,
+      "evidence": "Has 'Open Questions for the Leadership Meeting' and 'What We Are Not Deciding Today' but neither is a 'What We Don't Know' section naming things unknown that affect the decision. The open questions are discussion prompts, not named gaps in current knowledge."
+    },
+    {
+      "text": "The memo gives a clear recommendation (not hedged into 'it depends' without stating conditions)",
+      "passed": true,
+      "evidence": "BLUF and recommendation section both clearly state: buy WorkOS. Unambiguous."
+    },
+    {
+      "text": "The memo includes a risk table with likelihood, severity, and mitigation columns",
+      "passed": false,
+      "evidence": "Risk table has Risk | Likelihood | Mitigation — missing Severity column."
+    }
+  ],
+  "pass_count": 2,
+  "total_count": 6,
+  "pass_rate": 0.333
+}

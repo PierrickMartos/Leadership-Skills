@@ -1,0 +1,106 @@
+{
+  "expectations": [
+    {
+      "text": "The report identifies this as a friction or one-way door decision (not cleanly reversible — EU hiring, GDPR, data center commitments are costly to undo)",
+      "passed": true,
+      "evidence": "The 'Door Type Assessment' section explicitly labels it a 'Friction door' with 'Reversibility Score: 3', stating: 'EU employment protections (especially France/Germany) make termination expensive and slow, sunk GDPR/infra spend won't be recovered, and reputational damage in EU markets from a failed entry is lasting. This is not a two-way door.'"
+    },
+    {
+      "text": "The report includes a Think Big, Work Small section that recommends sequencing the plan with decision gates before committing full budget",
+      "passed": true,
+      "evidence": "A dedicated 'Think Big, Work Small' section exists with a table of smallest next steps to validate before committing, and explicitly recommends a 'Minimum viable version: One EU AE hired via EOR in Q3 (after demand validation in Q2)... Go/no-go gate at 6 months based on pipeline, not activity.'"
+    },
+    {
+      "text": "The report flags the risk of running multiple workstreams (GDPR, data center, hiring, localization, outbound) in parallel",
+      "passed": true,
+      "evidence": "Counterargument #3 states: 'GDPR + data center + localization + hiring in parallel is an execution anti-pattern. Each workstream requires senior attention and specialized external help. Running all four simultaneously in a 22-person company almost guarantees something is done poorly.' Also flagged in the Risk Factors table under 'Engineering bandwidth consumed by EU infra, slipping US product roadmap'."
+    },
+    {
+      "text": "The report flags runway risk given $800k spend on 18 months of runway",
+      "passed": true,
+      "evidence": "Key Assumptions table notes: '$800K EU spend = 44% of current ARR; if EU burns $70–80K/month and US core burns continue, runway may compress to 10–12 months of real safety margin.' Counterargument #1 reinforces: '18 months of runway is not a green light for an $800K parallel bet. It's barely enough.'"
+    },
+    {
+      "text": "The report recommends validating EU demand before building infrastructure",
+      "passed": true,
+      "evidence": "Alternative Path #1 is titled 'Sequenced entry — validate demand before hiring' and recommends running EU outbound from the US for one quarter before hiring. The 'Think Big, Work Small' section's smallest next steps prioritize demand validation (outbound campaign, buyer interviews) before any infrastructure or headcount commitments."
+    },
+    {
+      "text": "The report is concise — findings are surfaced as bullets rather than long prose paragraphs",
+      "passed": true,
+      "evidence": "The report uses structured tables (Key Assumptions, Risk Factors, Think Big/Work Small steps), bullet lists (Blind Spots, Market Context, Alternative Paths), and short numbered counterarguments throughout. Prose paragraphs are minimal and limited to section framing. The entire report is ~13,400 characters covering 8 substantive sections."
+    }
+  ],
+  "summary": {
+    "passed": 6,
+    "failed": 0,
+    "total": 6,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "output_chars": 13401,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "executor_duration_seconds": 172.1,
+    "grader_duration_seconds": null,
+    "total_duration_seconds": 172.1
+  },
+  "claims": [
+    {
+      "claim": "Budget will likely land at $900K–$1.1M, not $800K as stated",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Key Assumptions table states: 'Model monthly burn: 2 AEs fully loaded in EU (salary + 25–50% social charges) + infra + legal + localization will likely land at $900K–$1.1M.' This is consistent with cited EU employment cost norms (France +45–50%, Germany +23%) and EOR fees."
+    },
+    {
+      "claim": "GDPR compliance typically takes 4–9 months and $80K–$200K",
+      "type": "factual",
+      "verified": true,
+      "evidence": "Market & External Context section cites specific cost components: EU representative ($2K–$5K/yr), DPAs with every vendor, fractional DPO ($30K–$70K/yr), TIAs. The aggregate range is consistent with published estimates for new market entrants."
+    },
+    {
+      "claim": "Localization can yield 1,900% ROI long-term",
+      "type": "factual",
+      "verified": false,
+      "evidence": "This statistic is cited in the Market & External Context section but no source is given. The claim is plausible but unverifiable from the report alone."
+    },
+    {
+      "claim": "EU SaaS market revenue exceeded $95B in 2024, growing ~10% annually",
+      "type": "factual",
+      "verified": false,
+      "evidence": "Cited in Market & External Context with no source. Plausible but unverifiable without citation."
+    },
+    {
+      "claim": "The report was produced by 'decision-adversarial-review skill'",
+      "type": "process",
+      "verified": true,
+      "evidence": "Footer states: 'Produced by decision-adversarial-review skill. Based on context provided plus external research on EU SaaS expansion patterns, GDPR compliance costs, EU employment law, and B2B sales cycle benchmarks as of Q1 2026.'"
+    },
+    {
+      "claim": "A minimum viable version of the plan can be executed for ~$300K",
+      "type": "quality",
+      "verified": true,
+      "evidence": "Think Big, Work Small section states: 'Minimum viable version: One EU AE hired via EOR in Q3 (after demand validation in Q2), GDPR-compliant by Q4, one language localized. Budget: ~$300K.' This is consistent with Alternative Path #3 estimate of '$250K–$350K'."
+    }
+  ],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  },
+  "eval_feedback": {
+    "suggestions": [
+      {
+        "reason": "Assertion 6 (conciseness) would pass for almost any structured report — it doesn't test whether the findings are substantively correct or actionable, only that formatting uses bullets. A stronger version would check that a specific high-stakes finding (e.g. runway compression risk, parallel workstream anti-pattern) appears as a top-level call-out rather than buried in a table row."
+      },
+      {
+        "reason": "No assertion checks whether the report surfaces an ICP gap — the report's 'No stated ICP for Europe' blind spot is arguably the sharpest finding in the report and goes untested by the current eval set."
+      },
+      {
+        "reason": "No assertion checks whether the report provides actionable alternative paths (not just critique). The report does this well (4 concrete alternatives with cost estimates), but its absence from the eval means a pure critique-only output would score 6/6 on these assertions."
+      }
+    ],
+    "overall": "All 6 assertions pass with clear, specific evidence. The report is substantively strong — it goes beyond surface compliance to provide externally-grounded cost estimates, specific regulatory details, and concrete alternative paths. The eval assertions are directionally correct but could be strengthened to test discriminating quality signals (ICP gap identification, presence of alternatives) rather than structure alone."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "eval_id": 0,
+  "eval_name": "checkout-blocker",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "states-situation-plainly: The draft describes the situation in factual, neutral terms without emotional language or blame",
+      "passed": true,
+      "evidence": "'We have a blocker on the checkout flow integration that's been sitting for 10 days now... I've pinged Sasha (their lead) three times on Slack and sent an email last Thursday — nothing back.' Neutral, factual."
+    },
+    {
+      "text": "includes-impact: The draft mentions the concrete impact (sprint deadline, integration risk, or standup accountability)",
+      "passed": true,
+      "evidence": "'Sprint ends Friday. Without the spec, we won't finish the integration on time.' Clear deadline impact."
+    },
+    {
+      "text": "references-prior-attempts: The draft mentions that attempts were already made to resolve directly",
+      "passed": true,
+      "evidence": "'I've pinged Sasha (their lead) three times on Slack and sent an email last Thursday — nothing back.' Specific and documented."
+    },
+    {
+      "text": "clear-ask: The draft includes a specific ask — either from Keiko to intervene or a concrete next step",
+      "passed": true,
+      "evidence": "Offers 3 numbered options: Keiko reaches out to Sasha's manager, call with Payments, or scoping a stub/deferral. Multiple actionable paths provided."
+    },
+    {
+      "text": "no-blamey-language: The draft avoids language that attacks Sasha or the Payments team",
+      "passed": true,
+      "evidence": "'I'm not sure if there's something going on on their side I'm not aware of' — explicitly considers good-faith explanations. No blame language."
+    }
+  ],
+  "pass_rate": 1.0
+}

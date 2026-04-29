@@ -1,0 +1,41 @@
+{
+  "expectations": [
+    {
+      "text": "The deadline or timeline change appears in the first line or two of the rewritten message",
+      "passed": true,
+      "evidence": "The BLUF version opens with: 'Heads up: the migration project deadline has moved to March 28.' — the deadline is the very first sentence."
+    },
+    {
+      "text": "The backstory (infra delays, scope changes, alignment issues) does not appear in the opening",
+      "passed": true,
+      "evidence": "The opening line contains only the deadline. Backstory appears in the second paragraph: 'A few things contributed to the shift — infra delays, scope changes, and stakeholder alignment.' — clearly secondary and subordinate."
+    },
+    {
+      "text": "The rewritten message is meaningfully shorter than the original",
+      "passed": true,
+      "evidence": "Original message is approximately 65 words across six sentences. The BLUF rewrite is approximately 35 words across two short sentences — roughly 46% shorter."
+    },
+    {
+      "text": "The feedback identifies that the key information (deadline) was buried at the end",
+      "passed": true,
+      "evidence": "The 'What changed and why' section states explicitly: 'In the original, \"The new deadline is March 28\" is buried near the end after six sentences of context.'"
+    }
+  ],
+  "summary": {
+    "passed": 4,
+    "failed": 0,
+    "total": 4,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 50.5
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      "Consider adding a word count comparison in the output to make the 'meaningfully shorter' assertion more immediately verifiable.",
+      "The feedback section could explicitly label the buried-deadline problem as a BLUF violation to reinforce the skill's core concept."
+    ],
+    "overall": "Strong output. All four assertions pass clearly. The BLUF rewrite leads with the deadline, demotes context to a secondary line, and the feedback accurately diagnoses why the original was ineffective. The explanation in 'What changed and why' is detailed and pedagogically sound."
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "eval_id": 2,
+  "eval_name": "engineering-manager-french",
+  "configuration": "with_skill",
+  "expectations": [
+    {"text": "Output contains an explicit rating on a defined scale", "passed": true, "evidence": "'Rating : 3/5 — Peut-etre, avec des questions ouvertes significatives' — clean, no scale table"},
+    {"text": "Strengths section with specific evidence from profile", "passed": true, "evidence": "5 strengths, each one line"},
+    {"text": "Gaps section distinguishing unknowns from concerns", "passed": true, "evidence": "5 gaps tagged Inconnu or Preoccupant — perf management correctly flagged as Preoccupant"},
+    {"text": "Risks section addresses tech-lead-to-manager transition", "passed": true, "evidence": "4 risks including transition, 'tech lead qui fait des 1:1', immediate perf management need"},
+    {"text": "Includes conditional decision logic", "passed": true, "evidence": "Full framework in French with all 4 conditions"},
+    {"text": "Interview questions use behavioral format targeting perf management and conflict", "passed": true, "evidence": "7 questions in compact bullet format. Q1-Q2 target perf management, Q6 targets conflict"},
+    {"text": "Includes a scoring rubric for the call", "passed": true, "evidence": "4-dimension rubric in French"},
+    {"text": "Questions target the specific gaps", "passed": true, "evidence": "Q1: feedback difficile, Q2: perf management situational, Q3: motivation transition, Q4: collaboration produit, Q5: EM vs TL, Q6: conflit, Q7: structuration"},
+    {"text": "The entire output is in French", "passed": true, "evidence": "100% French throughout"}
+  ]
+}

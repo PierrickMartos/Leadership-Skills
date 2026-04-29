@@ -1,0 +1,27 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-eu-expansion",
+  "prompt": "My team wants to expand into the European market. We're a US-based SaaS, $5M ARR, 22 employees. The plan: hire 2 EU-based AEs in Q2, localize the product (3 languages), get GDPR-compliant, set up an EU data center, launch a .eu site, and start outbound into UK/Germany/France by Q3. Total budget ask: $800k over 12 months. I have 18 months of runway. Please do an adversarial review including whether this plan makes sense as structured.",
+  "assertions": [
+    {
+      "id": "identifies-mixed-door-type",
+      "text": "The report identifies this as a mixed or partially one-way door decision (hiring is reversible; GDPR/data center commitments are harder to undo)"
+    },
+    {
+      "id": "think-big-work-small-present",
+      "text": "The report includes a 'Think Big, Work Small' section that recommends sequencing the plan to validate assumptions before committing full budget"
+    },
+    {
+      "id": "flags-simultaneous-execution-risk",
+      "text": "The report flags the risk of running GDPR compliance, data center setup, hiring, localization, and outbound all in parallel — recommending phased approach"
+    },
+    {
+      "id": "runway-risk-assessment",
+      "text": "The report flags the runway risk: $800k spend on 18 months runway is a significant portion, and EU expansion often takes longer than planned"
+    },
+    {
+      "id": "demand-validation-first",
+      "text": "The report recommends validating EU demand before building infrastructure (e.g., test with existing inbound, close 2-3 EU deals manually before investing in localization)"
+    }
+  ]
+}

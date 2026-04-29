@@ -1,0 +1,101 @@
+{
+  "skill_name": "communication-coach",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Hey can you review this email I'm about to send to my team after a sprint that didn't go well?\n\n---\nSubject: Sprint 22 retro\n\nHi team,\n\nI wanted to take a moment to follow up on our sprint 22 retrospective earlier today. As you know, we didn't hit our sprint goal this week. Honestly, I'm a bit frustrated because this is the third sprint in a row where we've had issues with scope creep and estimation. It feels like we're not learning from our mistakes and I'm worried about what this signals to stakeholders. I think everyone needs to think more carefully before committing to work they can't complete.\n\nWe need to do better. Please review your story point estimates before the next sprint planning session.\n\nThanks",
+      "expected_output": "Coaching feedback identifying: (1) buried ask / no BLUF, (2) negative/blame-first framing ('frustrated', 'not learning from mistakes'), (3) feelings and vague claims not grounded in facts, (4) ends on threat not forward opportunity. Should produce a rewritten version that leads with the path forward, uses facts, and frames the situation positively.",
+      "assertions": [
+        {
+          "id": "1a",
+          "text": "Output identifies the negative/blaming framing — e.g. 'frustrated', 'not learning from mistakes', 'need to do better' — as a problem",
+          "type": "qualitative"
+        },
+        {
+          "id": "1b",
+          "text": "Output identifies that the key ask (review estimates) is buried at the end instead of leading the message",
+          "type": "qualitative"
+        },
+        {
+          "id": "1c",
+          "text": "Output flags feelings-as-facts language ('it feels like', 'I'm worried', 'I'm frustrated') and suggests replacing with specific observations",
+          "type": "qualitative"
+        },
+        {
+          "id": "1d",
+          "text": "Rewritten version leads with a forward-looking or actionable statement rather than 'we didn't hit our goal'",
+          "type": "qualitative"
+        },
+        {
+          "id": "1e",
+          "text": "Rewritten version removes or reframes emotional language and replaces with factual tone",
+          "type": "qualitative"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Review this Slack message I want to send in the #product channel:\n\n---\nHey everyone, I hope you're all doing well! I just wanted to give a quick update on the situation with the feature we've been working on. So as you know, we've been going back and forth a bit on the timeline for the new onboarding flow and there have been some changes to requirements along the way which has made things a bit complicated. Anyway, the engineering team has been working really hard and doing their best and I appreciate everything they've put in. We're currently targeting end of next week for the beta release but that might change depending on a few things. I'll keep you posted when I know more!\n\nThanks everyone!",
+      "expected_output": "Feedback should identify: (1) no BLUF — the timeline is buried, (2) vague hedge 'might change depending on a few things' — no facts, (3) throat-clearing opener and filler throughout, (4) way too long for Slack. Rewrite should lead with the key info (beta date), be half the length, and give a specific condition on the uncertainty.",
+      "assertions": [
+        {
+          "id": "2a",
+          "text": "Output identifies that the beta date is buried and should be in the first sentence (BLUF violation)",
+          "type": "qualitative"
+        },
+        {
+          "id": "2b",
+          "text": "Output flags the vague hedge 'might change depending on a few things' and asks for a specific condition or date",
+          "type": "qualitative"
+        },
+        {
+          "id": "2c",
+          "text": "Output flags the throat-clearing opener ('I hope you're all doing well') and/or other filler",
+          "type": "qualitative"
+        },
+        {
+          "id": "2d",
+          "text": "Rewritten Slack message is noticeably shorter than the original (under 80 words vs original ~120+)",
+          "type": "qualitative"
+        },
+        {
+          "id": "2e",
+          "text": "Rewritten version leads with the key status update (beta date target) in the first line",
+          "type": "qualitative"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I need to send this message to my skip-level about a project delay. Can you give me feedback?\n\n---\nSubject: FYI on Project Atlas\n\nHi Sarah,\n\nI wanted to loop you in on a situation with Project Atlas. We've been running into some challenges lately. The integration with the payments API has been more complex than we initially anticipated and we've had some resource constraints due to the recent re-org. As a result, we're going to need to push the go-live date from March 15 to April 3rd. I know this isn't ideal and I'm sorry for the disruption this might cause. We're doing everything we can to minimize the impact.\n\nPlease let me know if you have any questions.\n\nBest,\nAlex",
+      "expected_output": "Feedback should identify: (1) no BLUF — the key news (delay to April 3) is in the middle, (2) subject line 'FYI on Project Atlas' doesn't convey the real message, (3) apologetic/emotional framing ('I know this isn't ideal', 'I'm sorry') instead of a confident, factual stance, (4) 'doing everything we can' is vague — what specifically is the mitigation plan? Rewrite leads with the delay and recovery plan, factual and confident tone.",
+      "assertions": [
+        {
+          "id": "3a",
+          "text": "Output flags the subject line 'FYI on Project Atlas' as too vague and suggests a clearer subject that conveys the key news",
+          "type": "qualitative"
+        },
+        {
+          "id": "3b",
+          "text": "Output identifies that the date change (March 15 → April 3) is buried mid-paragraph and should open the message",
+          "type": "qualitative"
+        },
+        {
+          "id": "3c",
+          "text": "Output flags the apologetic framing ('I'm sorry', 'I know this isn't ideal') as undermining the leader's credibility and suggests a more confident, factual tone",
+          "type": "qualitative"
+        },
+        {
+          "id": "3d",
+          "text": "Output identifies 'doing everything we can' as vague and asks for or suggests a specific recovery or mitigation plan",
+          "type": "qualitative"
+        },
+        {
+          "id": "3e",
+          "text": "Rewritten version opens with the key fact (new go-live date) in the first sentence or subject line",
+          "type": "qualitative"
+        }
+      ]
+    }
+  ]
+}

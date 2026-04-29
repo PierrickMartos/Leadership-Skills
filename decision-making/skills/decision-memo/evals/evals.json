@@ -1,0 +1,54 @@
+{
+  "skill_name": "decision-memo",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I need to write a decision memo for my VP. We're 3 months away from launching our new catalog management product and the engineering team is pushing hard to rewrite the data sync layer from scratch because the current one has scaling issues. But doing so would add 2–3 months to the timeline and push our launch past Q3. The alternative is to ship with the current sync layer and deal with the debt after launch. We have 2 enterprise customers already waiting and we've made commitments to them. I need to make a call by end of this week.",
+      "expected_output": "A structured decision memo with: clear decision statement with deadline, context on the tradeoff, both options with implications, explicit assumptions with confidence levels, separation of customer value from internal debt convenience, unknowns section with specific gaps, clear recommendation, risk table, and explicit statement on whether cross-functional approvals are required.",
+      "files": [],
+      "assertions": [
+        "The memo includes a clear one-sentence decision statement naming what's being decided and by when",
+        "The memo lists explicit assumptions with confidence levels (High/Medium/Low)",
+        "The memo explicitly separates customer value from internal convenience",
+        "The memo has a section naming specific unknowns",
+        "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)",
+        "The memo includes a risk table with likelihood, severity, and mitigation columns",
+        "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)",
+        "If an appendix is included, it offloads supporting detail and the main body references it inline; if no appendix, the memo is concise enough not to need one"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "We're debating whether to create a dedicated platform team or keep infrastructure responsibilities spread across our 4 product squads. Right now each squad manages their own infra, which leads to duplicated work, inconsistent practices, and occasional incidents that affect everyone. But forming a platform team means pulling 2–3 strong engineers out of product squads, which will slow feature delivery. My CTO wants a proposal by next week. We're a 40-person eng org.",
+      "expected_output": "A structured decision memo covering: the decision (platform team vs. distributed model), context about the org size and current pain, both options with customer and team implications, key assumptions with confidence levels, tradeoffs table, unknowns section, recommendation, risks, explicit approvals section identifying HR/People and Finance given the org restructuring.",
+      "files": [],
+      "assertions": [
+        "The memo includes a clear one-sentence decision statement naming what's being decided and by when",
+        "The memo lists explicit assumptions with confidence levels (High/Medium/Low)",
+        "The memo explicitly separates customer value from internal convenience",
+        "The memo has a section naming specific unknowns",
+        "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)",
+        "The memo includes a risk table with likelihood, severity, and mitigation columns",
+        "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)",
+        "The memo identifies HR/People or Finance as requiring involvement, given that engineers are being reallocated across teams (an org change)"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "our product roadmap for H2 is basically full but we just got strong signal from 3 enterprise prospects that they all need SSO (SAML/OIDC) before they can sign. combined TCV is about 800k. building SSO properly would take about 6 weeks for 2 engineers. we could also buy a third-party auth solution like WorkOS which would take 2 weeks but costs $1500/mo and adds vendor dependency. or we could delay these deals to Q1. i'm trying to figure out what to put in front of my leadership team tomorrow morning",
+      "expected_output": "A tight decision memo with: decision needed tomorrow, context on revenue at stake and roadmap pressure, 3 options (build, buy, delay), tradeoff table separating customer value from internal convenience, assumptions with confidence levels, unknowns section, clear recommendation, risk table, approvals section calling out Security and Finance, and an appendix for detailed financial or option breakdown to keep the main body concise.",
+      "files": [],
+      "assertions": [
+        "The memo includes a clear one-sentence decision statement naming what's being decided and by when (tomorrow)",
+        "The memo covers all 3 options: build, buy (WorkOS or equivalent), and delay",
+        "The memo explicitly separates customer value from internal convenience",
+        "The memo has a section naming specific unknowns",
+        "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)",
+        "The memo includes a risk table with likelihood, severity, and mitigation columns",
+        "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)",
+        "The memo identifies Security and/or Finance as requiring approval, given the third-party vendor onboarding (WorkOS) and recurring spend",
+        "The memo uses an appendix to offload detailed supporting content (e.g., cost breakdown, full option comparison), keeping the main body scannable"
+      ]
+    }
+  ]
+}

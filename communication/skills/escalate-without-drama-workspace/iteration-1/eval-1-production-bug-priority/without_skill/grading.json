@@ -1,0 +1,28 @@
+{
+  "eval_id": 1,
+  "eval_name": "production-bug-priority",
+  "configuration": "without_skill",
+  "expectations": [
+    {
+      "text": "business-impact-stated: The draft quantifies or clearly describes the business impact (12% of users, onboarding blocked, etc.)",
+      "passed": true,
+      "evidence": "'roughly 12% of users are unable to complete onboarding... onboarding failure at this scale typically represents meaningful revenue impact and elevated churn risk'"
+    },
+    {
+      "text": "prioritization-framed-as-request: The P1/P2 disagreement is framed as a question for Priya to weigh in on",
+      "passed": true,
+      "evidence": "'Is P2 the right priority given the user and business impact? If it is, I'd love to understand the reasoning so I can communicate it to stakeholders.' — explicitly asks for Priya's input with an off-ramp for engineering."
+    },
+    {
+      "text": "not-accusatory-toward-thomas: The draft avoids making Thomas look negligent",
+      "passed": true,
+      "evidence": "'Thomas has it on his radar and is working through it' — positive framing. 'I may be missing technical context that informed the P2 call' — explicitly gives engineering benefit of the doubt."
+    },
+    {
+      "text": "actionable-ask: The draft ends with a clear ask",
+      "passed": true,
+      "evidence": "Three numbered, specific questions: priority check, ETA/check-in time, and PM-side unblocking. Highly actionable."
+    }
+  ],
+  "pass_rate": 1.0
+}

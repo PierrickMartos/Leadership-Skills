@@ -1,0 +1,46 @@
+{
+  "expectations": [
+    {
+      "text": "The rewritten email has a specific, informative subject line (not generic like 'Follow-up' or 'Team capacity')",
+      "passed": true,
+      "evidence": "Subject line reads: 'Headcount request for data engineering — input needed before next planning cycle' — specific, actionable, and scannable."
+    },
+    {
+      "text": "The headcount request appears in the first sentence or two of the rewritten body",
+      "passed": true,
+      "evidence": "First sentence of revised body: 'I want to flag a staffing need I'd like to discuss before the next planning cycle: we need to add a data engineer to the team.' The ask is in the opening line."
+    },
+    {
+      "text": "Preamble phrases ('I hope you're doing well', 'As you know', 'Q4 has been intense') are removed or substantially shortened",
+      "passed": true,
+      "evidence": "The revised email opens directly with the ask. 'I hope you're doing well' is removed entirely. 'Q4 has been intense' is replaced with substantive framing ('Q4 has put significant strain on our data engineering capacity') placed after the ask, not as an opener."
+    },
+    {
+      "text": "The passive hedging ('might be worth exploring whether we could potentially consider') is made direct",
+      "passed": true,
+      "evidence": "The revised version states: 'I would like to make a formal headcount request' and 'we need to add a data engineer to the team.' The four layers of hedging identified in the feedback are eliminated entirely."
+    },
+    {
+      "text": "The feedback explains *why* the original is problematic from the reader's perspective, not just labels it",
+      "passed": true,
+      "evidence": "The feedback explains reader impact explicitly: 'your reader is busy and likely scanning. If the most important thing is the last sentence, there is a real risk it gets missed or treated as an afterthought' and 'She cannot advocate for you if she does not know what the team has actually decided.' These are reader-centric explanations, not mere labels."
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "executor_duration_seconds": 41.4
+  },
+  "claims": [],
+  "eval_feedback": {
+    "suggestions": [
+      "The eval could check whether a concrete call-to-action (e.g., meeting request) is present in the rewrite, as that is a meaningful BLUF element not currently tested.",
+      "Assertion 3 could be more precise: the revised email does retain a version of 'Q4' context, just repositioned after the ask — the assertion language ('substantially shortened') accommodates this, but future iterations might distinguish between removal and repositioning."
+    ],
+    "overall": "All 5 assertions passed with strong evidence. The output without the skill still produced a high-quality rewrite and substantive feedback, suggesting the baseline model performs well on this task. This eval may be better suited to measuring skill uplift on harder or more ambiguous inputs where the base model is more likely to hedge or miss BLUF structure."
+  }
+}

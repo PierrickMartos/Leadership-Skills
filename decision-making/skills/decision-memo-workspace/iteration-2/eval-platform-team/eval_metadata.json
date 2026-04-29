@@ -1,0 +1,15 @@
+{
+  "eval_id": 2,
+  "eval_name": "eval-platform-team",
+  "prompt": "We're debating whether to create a dedicated platform team or keep infrastructure responsibilities spread across our 4 product squads. Right now each squad manages their own infra, which leads to duplicated work, inconsistent practices, and occasional incidents that affect everyone. But forming a platform team means pulling 2–3 strong engineers out of product squads, which will slow feature delivery. My CTO wants a proposal by next week. We're a 40-person eng org.",
+  "assertions": [
+    { "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when", "passed": null, "evidence": null },
+    { "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)", "passed": null, "evidence": null },
+    { "text": "The memo explicitly separates customer value from internal convenience", "passed": null, "evidence": null },
+    { "text": "The memo has a section naming specific unknowns", "passed": null, "evidence": null },
+    { "text": "The memo gives a clear recommendation (not hedged into 'it depends' without conditions)", "passed": null, "evidence": null },
+    { "text": "The memo includes a risk table with likelihood, severity, and mitigation columns", "passed": null, "evidence": null },
+    { "text": "The memo explicitly addresses whether cross-functional approvals are required (either names the functions that must be involved, or explicitly states no approvals are needed)", "passed": null, "evidence": null },
+    { "text": "The memo identifies HR/People or Finance as requiring involvement, given that engineers are being reallocated across teams (an org change)", "passed": null, "evidence": null }
+  ]
+}

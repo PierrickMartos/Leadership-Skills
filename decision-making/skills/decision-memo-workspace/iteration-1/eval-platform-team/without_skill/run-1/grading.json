@@ -1,0 +1,39 @@
+{
+  "eval_id": 2,
+  "run": "without_skill",
+  "assertions": [
+    {
+      "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when",
+      "passed": false,
+      "evidence": "The memo opens with a recommendation ('Form a dedicated platform team of 3 engineers...'), not a neutral one-sentence decision statement. 'Decision needed by: April 8, 2026' appears in header but there's no sentence framing what's being decided neutrally."
+    },
+    {
+      "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)",
+      "passed": false,
+      "evidence": "No assumptions section in the memo at all. Has a risk table and implementation plan but no structured assumptions with confidence levels."
+    },
+    {
+      "text": "The memo explicitly separates customer value from internal convenience (e.g., notes which option is better for end-users/product quality vs. easier for engineers)",
+      "passed": false,
+      "evidence": "The memo doesn't explicitly frame the customer vs. internal convenience distinction. Mentions 'product squads become consumers of platform' but doesn't call out that distributed ownership is more convenient for squads vs. customer benefit."
+    },
+    {
+      "text": "The memo has a section naming specific unknowns (e.g., actual cost of incidents, whether platform team would become a bottleneck)",
+      "passed": false,
+      "evidence": "Has 'What We Are Not Deciding' section but that's about scope exclusions, not unknowns. No section naming what is currently unknown and decision-affecting."
+    },
+    {
+      "text": "The memo gives a clear recommendation (not hedged into 'it depends' without stating conditions)",
+      "passed": true,
+      "evidence": "BLUF: 'Form a dedicated platform team of 3 engineers, drawn from existing product squads, with a phased transition over 6–8 weeks.' Unambiguous recommendation."
+    },
+    {
+      "text": "The memo includes a risk table with likelihood, severity, and mitigation columns",
+      "passed": false,
+      "evidence": "Risk table only has Risk | Mitigation columns — missing Likelihood and Severity."
+    }
+  ],
+  "pass_count": 1,
+  "total_count": 6,
+  "pass_rate": 0.167
+}

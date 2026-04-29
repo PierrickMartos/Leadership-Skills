@@ -1,0 +1,39 @@
+{
+  "eval_id": 1,
+  "run": "with_skill",
+  "assertions": [
+    {
+      "text": "The memo includes a clear one-sentence decision statement naming what's being decided and by when",
+      "passed": true,
+      "evidence": "Section 'Decision': 'Decide by end of week whether to (A) ship the catalog management product on the current data sync layer and address technical debt post-launch, or (B) rewrite the sync layer before launch, delaying Q3 delivery by 2–3 months.'"
+    },
+    {
+      "text": "The memo lists explicit assumptions with confidence levels (High/Medium/Low)",
+      "passed": true,
+      "evidence": "Full assumptions table with Confidence column: Medium/Low/Low/Medium/Medium for 5 assumptions."
+    },
+    {
+      "text": "The memo explicitly separates customer value from internal convenience (e.g., notes which option is better for enterprise customers vs. easier for the team)",
+      "passed": true,
+      "evidence": "In Tradeoffs: 'Option B is better for the engineering team's long-term health, but worse for the two customers who are waiting. That tradeoff must be named explicitly — choosing Option B is choosing to prioritize internal quality over external commitment, which may be the right call but should not be obscured.'"
+    },
+    {
+      "text": "The memo has a section naming specific unknowns (e.g., actual risk of sync failure at enterprise scale, not just generic unknowns)",
+      "passed": true,
+      "evidence": "'What We Don't Know' section has 4 specific unknowns: what 'scaling issues' means at Day 1 load, whether customers will accept a delay, whether rewrite takes 2-3 months, and whether a middle path exists."
+    },
+    {
+      "text": "The memo gives a clear recommendation (not hedged into 'it depends' without stating conditions)",
+      "passed": true,
+      "evidence": "'Option A — Ship with the current sync layer', with explicit conditions: load tests this week and a committed debt retirement plan. Conditional flip is stated clearly."
+    },
+    {
+      "text": "The memo includes a risk table with likelihood, severity, and mitigation columns",
+      "passed": true,
+      "evidence": "Risk table has columns: Risk | Likelihood | Severity | Mitigation with 5 rows."
+    }
+  ],
+  "pass_count": 6,
+  "total_count": 6,
+  "pass_rate": 1.0
+}
