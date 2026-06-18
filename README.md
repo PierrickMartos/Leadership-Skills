@@ -3,7 +3,7 @@
 
 # Leadership Skills Marketplace
 
-12 leadership skills for Claude Code, Cursor, and Claude Cowork.
+13 skills for Claude Code, Cursor, and Claude Cowork.
 
 **For directors, managers, leads, and ICs** who want structured help with the hard parts of leadership — decisions, communication, hiring, and performance management.
 
@@ -168,6 +168,17 @@ Claude Code: `/plugin install performance-management@leadership-skills`
 | `write-self-review` | Help an IC write a compelling self-review that prepares them for a two-way performance conversation. |
 | `assess-career-growth` | Map demonstrated behaviors against a career/competency framework to identify strengths, gaps, and development priorities. |
 | `calibrate-talent` | Prepare calibration ratings (performance × potential) with evidence-backed notes and talking points for a calibration meeting. |
+
+</details>
+
+<details>
+<summary><strong><code>learning</code></strong> (1 skill) — Skills for deeply understanding any subject.</summary>
+
+Claude Code: `/plugin install learning@leadership-skills`
+
+| Skill | Purpose |
+|-------|---------|
+| `learn-deeply` | Explain any subject in the simplest faithful terms using the Feynman Technique — big picture, plain-language walkthrough, and where to go deeper. |
 
 </details>
 

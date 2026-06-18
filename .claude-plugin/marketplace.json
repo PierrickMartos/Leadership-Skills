@@ -1,8 +1,8 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "leadership-skills",
-  "version": "0.4.0",
-  "description": "12 leadership skills for Claude Code",
+  "version": "0.5.0",
+  "description": "13 skills for Claude Code",
   "license": "MIT",
   "owner": {
     "name": "Pierrick Martos",
@@ -32,6 +32,12 @@
       "source": "./performance-management",
       "category": "leadership",
       "description": "Performance management skills for leaders \u2014 writing fact-based reviews, preparing for calibration, assessing career growth, and helping ICs write compelling self-reviews."
+    },
+    {
+      "name": "learning",
+      "source": "./learning",
+      "category": "learning",
+      "description": "Learning skills \u2014 deeply understand and get up to speed on any subject using the Feynman Technique."
     }
   ]
 }
