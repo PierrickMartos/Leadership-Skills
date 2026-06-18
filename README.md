@@ -5,7 +5,7 @@
 
 13 skills for Claude Code, Cursor, and Claude Cowork.
 
-**For directors, managers, leads, and ICs** who want structured help with the hard parts of leadership — decisions, communication, hiring, and performance management.
+**For directors, managers, leads, and ICs** who want structured help with the hard parts of leadership — decisions, communication, hiring, performance management, and getting up to speed on any subject.
 
 ![Skills](assets/Skills.png)
 
