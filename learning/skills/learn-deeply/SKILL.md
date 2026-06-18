@@ -73,7 +73,81 @@ source to verify against — without inventing a citation.
 - **Redirect what's too broad.** If the subject is too large for one pass ("explain machine
   learning"), say so and ask the user to pick a narrower piece rather than producing a shallow
   survey.
+- **Rendering is not "doing the work".** Producing an HTML page of the explanation (see
+  HTML output below) is the same explanation in another medium, not the user's deliverable.
+  It is in scope.
 
 ## Tone
 
 Onboarding a curious newcomer. Patient, plain, no condescension, no filler.
+
+## HTML output (opt-in)
+
+Inline markdown is the default. Produce an HTML page only when:
+
+- the user explicitly asks — "as HTML", "as a page", "export this"; or
+- the inline answer included a Mermaid diagram — then append one short clause offering it
+  (e.g. "I can render this as an HTML page if you want the diagram visual."). Offer at most
+  once per conversation, and skip it entirely if HTML was already requested. You track this
+  only from visible history, so re-offering in a new conversation is fine.
+
+When producing HTML:
+
+1. **Slug** the topic: lowercase, ASCII only, non-alphanumerics → single hyphens, trim
+   leading/trailing hyphens, max 50 chars. Never contains `/`, `..`, or a leading dot.
+2. **Write** to `./learn-deeply/learn-deeply-<slug>.html` (create `./learn-deeply/` if
+   needed). If that file exists, suffix `-2`, `-3`, … — never overwrite. If the directory
+   can't be created or written (read-only/sandboxed), tell the user instead of proceeding.
+3. After confirming the write succeeded, **print the path**. On the first file this
+   conversation, mention files land in `./learn-deeply/` and can be git-ignored.
+4. **Auto-open only on local macOS:** run `open <path>` only if `uname` returns `Darwin`
+   AND none of `$SSH_CLIENT` / `$SSH_TTY` / `$SSH_CONNECTION` / `$CI` /
+   `$REMOTE_CONTAINERS` are set AND stdout is a TTY (`[ -t 1 ]`). Otherwise just leave the
+   printed path. `open` failing is non-fatal — never error over it.
+
+**The HTML must be the same explanation you just gave** — same claims, sections, analogies,
+and the exact same Mermaid source — re-encoded as real HTML elements (`<h2>`, `<p>`,
+`<strong>`, `<table>`, `<ul>`), NOT markdown pasted into the body. **Escape** all
+interpolated text (`&`, `<`, `>`, `"`, `'`); code goes in escaped `<pre><code>`.
+
+Follow this skeleton (omit the diagram block and its `<script>` entirely if the answer had
+no diagram):
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{escaped topic}</title>
+<style>
+  body { font-family: -apple-system, system-ui, sans-serif; max-width: 760px;
+         margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #1a1a1a; }
+  h1, h2 { line-height: 1.25; }
+  table { border-collapse: collapse; width: 100%; }
+  th, td { border: 1px solid #ddd; padding: .5rem .6rem; text-align: left; }
+  pre { background: #f6f8fa; padding: 1rem; overflow-x: auto; border-radius: 6px; }
+  .note { color: #666; font-size: .9rem; }
+</style>
+</head>
+<body>
+  <h1>{escaped topic}</h1>
+  <!-- big picture, walkthrough, key-parts <table>, easy-to-get-wrong <ul>, go-deeper <ul> -->
+
+  <!-- diagram block — include ONLY if the answer had a Mermaid diagram: -->
+  <pre class="mermaid">{mermaid source}</pre>
+  <p class="note">Diagram renders in-browser via CDN; needs internet.</p>
+  <details><summary>Diagram source</summary><pre>{escaped mermaid source}</pre></details>
+
+  <!-- mermaid version is pinned on purpose; bump deliberately -->
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</body>
+</html>
+```
+
+The `<pre class="mermaid">` is what mermaid renders (and overwrites/overlays on error); the
+separate `<details>` block holds the same source as plain text mermaid never touches, so a
+blocked CDN, a load failure, or a render error all still leave the diagram readable.
