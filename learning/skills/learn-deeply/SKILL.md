@@ -135,6 +135,7 @@ no diagram):
   <!-- big picture, walkthrough, key-parts <table>, easy-to-get-wrong <ul>, go-deeper <ul> -->
 
   <!-- diagram block — include ONLY if the answer had a Mermaid diagram: -->
+  <!-- raw on purpose: mermaid reads textContent, so do NOT escape this block; the escaped copy below is the safe fallback -->
   <pre class="mermaid">{mermaid source}</pre>
   <p class="note">Diagram renders in-browser via CDN; needs internet.</p>
   <details><summary>Diagram source</summary><pre>{escaped mermaid source}</pre></details>
