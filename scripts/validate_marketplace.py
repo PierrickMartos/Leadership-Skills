@@ -170,7 +170,7 @@ def validate_plugins(claude: dict, cursor: dict, errors: list[str]) -> list[Path
 
 def validate_counts(claude: dict, cursor: dict, skill_files: list[Path], errors: list[str]) -> None:
     count = len(skill_files)
-    count_pattern = re.compile(r"(\d+)\s+leadership skills")
+    count_pattern = re.compile(r"(\d+)\s+(?:leadership )?skills")
 
     locations = [
         (".claude-plugin/marketplace.json description", claude.get("description", "")),

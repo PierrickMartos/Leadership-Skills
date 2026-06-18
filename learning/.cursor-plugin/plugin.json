@@ -1,0 +1,12 @@
+{
+  "name": "learning",
+  "displayName": "Learning",
+  "version": "0.1.0",
+  "description": "Learning skills — deeply understand and get up to speed on any subject using the Feynman Technique.",
+  "author": {
+    "name": "Pierrick Martos",
+    "url": "https://github.com/PierrickMartos"
+  },
+  "license": "MIT",
+  "keywords": ["learning", "feynman", "understanding"]
+}
