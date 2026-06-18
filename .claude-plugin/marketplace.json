@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "leadership-skills",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "13 skills for Claude Code",
   "license": "MIT",
   "owner": {
