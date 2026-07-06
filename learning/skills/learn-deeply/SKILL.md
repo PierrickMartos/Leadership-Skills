@@ -33,11 +33,12 @@ subject gets the big picture and a short walkthrough, nothing more.
 2. **Feynman walkthrough** (always) — explain it in the simplest faithful terms, with concrete
    analogies. Define every technical term inline the first time you use it. No unexplained
    jargon. Length scales to the subject.
-3. **Visual** (conditional) — a Mermaid concept map, flow, or sequence diagram. Include ONLY if
-   the subject is a process (ordered steps), a hierarchy (nested parts), or a flow (something
-   moves between stages). Omit for a single definition, a principle, or prose with no moving
-   parts. Never invent structure to fill the slot. Example: "how OAuth works" → include a
-   sequence diagram; "the sunk-cost fallacy" → omit.
+3. **Visual** (conditional) — a hand-authored diagram: inline SVG or HTML plus CSS, interactive
+   where it aids understanding. Include ONLY if the subject is a process (ordered steps), a
+   hierarchy (nested parts), or a flow (something moves between stages). Omit for a single
+   definition, a principle, or prose with no moving parts. Never invent structure to fill the
+   slot. Example: "how OAuth works" → a step-through sequence diagram; "the sunk-cost fallacy"
+   → omit.
 4. **Key parts** (conditional) — a table of part → what it does → why it's there. Include ONLY
    if the subject has 3+ named components that interact. Omit for atomic concepts. Example:
    "the Kafka architecture" → include; "what is entropy" → omit.
@@ -73,82 +74,47 @@ source to verify against — without inventing a citation.
 - **Redirect what's too broad.** If the subject is too large for one pass ("explain machine
   learning"), say so and ask the user to pick a narrower piece rather than producing a shallow
   survey.
-- **Rendering is not "doing the work".** Producing an HTML page of the explanation (see
-  HTML output below) is the same explanation in another medium, not the user's deliverable.
+- **Rendering is not "doing the work".** Producing an interactive artifact of the explanation
+  (see Output below) is the same explanation in another medium, not the user's deliverable.
   It is in scope.
 
 ## Tone
 
 Onboarding a curious newcomer. Patient, plain, no condescension, no filler.
 
-## HTML output (opt-in)
+## Output: an interactive artifact
 
-Inline markdown is the default. Produce an HTML page only when:
+Every learn-deeply response is rendered as a **Claude artifact**, a self-contained interactive
+page, not inline chat prose and not a local HTML file. The artifact IS the explanation. In
+chat, give only a one or two sentence orientation, then let the artifact carry the full
+Feynman walkthrough.
 
-- the user explicitly asks — "as HTML", "as a page", "export this"; or
-- the inline answer included a Mermaid diagram — then append one short clause offering it
-  (e.g. "I can render this as an HTML page if you want the diagram visual."). Offer at most
-  once per conversation, and skip it entirely if HTML was already requested. You track this
-  only from visible history, so re-offering in a new conversation is fine.
+**Before writing the page, load the `artifact-design` skill** (the Artifact tool requires it)
+so you calibrate design effort to the subject: a simple concept gets a clean readable page, a
+rich system earns more interactive structure.
 
-When producing HTML:
+Then:
 
-1. **Slug** the topic: lowercase, ASCII only, non-alphanumerics → single hyphens, trim
-   leading/trailing hyphens, max 50 chars. Never contains `/`, `..`, or a leading dot.
-2. **Write** to `./learn-deeply/learn-deeply-<slug>.html` (create `./learn-deeply/` if
-   needed). If that file exists, suffix `-2`, `-3`, … — never overwrite. If the directory
-   can't be created or written (read-only/sandboxed), tell the user instead of proceeding.
-3. After confirming the write succeeded, **print the path**. On the first file this
-   conversation, mention files land in `./learn-deeply/` and can be git-ignored.
-4. **Auto-open only on local macOS:** run `open <path>` only if `uname` returns `Darwin`
-   AND none of `$SSH_CLIENT` / `$SSH_TTY` / `$SSH_CONNECTION` / `$CI` /
-   `$REMOTE_CONTAINERS` are set AND stdout is a TTY (`[ -t 1 ]`). Otherwise just leave the
-   printed path. `open` failing is non-fatal — never error over it.
+1. Write the page content to a file with Write, then call the **Artifact** tool with that file
+   path. Set `title` to the topic and `favicon` to one topical emoji. Write the page content
+   directly (no `<!DOCTYPE>`, `<html>`, `<head>`, or `<body>` tags: those are added at publish
+   time).
+2. **Self-contained only.** A strict CSP blocks every external host: no CDN scripts, fonts,
+   stylesheets, or remote images, and no network calls. Inline all CSS and JS, and embed any
+   asset as a `data:` URI. This is why the previous mermaid via CDN diagram cannot work in an
+   artifact.
+3. **Diagrams and visuals are hand-authored** as inline SVG or HTML plus CSS, never mermaid.
+   Build one only when the subject warrants it (see Method item 3), and make it interactive
+   only when that genuinely aids understanding: clickable or expandable steps, hover to reveal
+   a term's definition, a step through of a process. Never add interactivity as decoration.
+4. The artifact must contain **the same explanation the Method produces**: same claims,
+   analogies, and structure, expressed as real HTML elements, and nothing the epistemic check
+   would bar.
 
-**The HTML must be the same explanation you just gave** — same claims, sections, analogies,
-and the exact same Mermaid source — re-encoded as real HTML elements (`<h2>`, `<p>`,
-`<strong>`, `<table>`, `<ul>`), NOT markdown pasted into the body. **Escape** all
-interpolated text (`&`, `<`, `>`, `"`, `'`); code goes in escaped `<pre><code>`.
-
-Follow this skeleton (omit the diagram block and its `<script>` entirely if the answer had
-no diagram):
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{escaped topic}</title>
-<style>
-  body { font-family: -apple-system, system-ui, sans-serif; max-width: 760px;
-         margin: 2rem auto; padding: 0 1rem; line-height: 1.6; color: #1a1a1a; }
-  h1, h2 { line-height: 1.25; }
-  table { border-collapse: collapse; width: 100%; }
-  th, td { border: 1px solid #ddd; padding: .5rem .6rem; text-align: left; }
-  pre { background: #f6f8fa; padding: 1rem; overflow-x: auto; border-radius: 6px; }
-  .note { color: #666; font-size: .9rem; }
-</style>
-</head>
-<body>
-  <h1>{escaped topic}</h1>
-  <!-- big picture, walkthrough, key-parts <table>, easy-to-get-wrong <ul>, go-deeper <ul> -->
-
-  <!-- diagram block — include ONLY if the answer had a Mermaid diagram: -->
-  <!-- raw on purpose: mermaid reads textContent, so do NOT escape this block; the escaped copy below is the safe fallback -->
-  <pre class="mermaid">{mermaid source}</pre>
-  <p class="note">Diagram renders in-browser via CDN; needs internet.</p>
-  <details><summary>Diagram source</summary><pre>{escaped mermaid source}</pre></details>
-
-  <!-- mermaid version is pinned on purpose; bump deliberately -->
-  <script type="module">
-    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs';
-    mermaid.initialize({ startOnLoad: true });
-  </script>
-</body>
-</html>
-```
-
-The `<pre class="mermaid">` is what mermaid renders (and overwrites/overlays on error); the
-separate `<details>` block holds the same source as plain text mermaid never touches, so a
-blocked CDN, a load failure, or a render error all still leave the diagram readable.
+**Fallback.** If the Artifact tool is not available in this environment, write the same
+self-contained page to `./learn-deeply/learn-deeply-<slug>.html` instead. Slug the topic:
+lowercase, ASCII only, non-alphanumerics collapse to single hyphens, trim leading and trailing
+hyphens, max 50 chars, never `/`, `..`, or a leading dot. If that file exists, suffix `-2`,
+`-3`, and so on, never overwrite. Print the path and tell the user the interactive artifact
+was unavailable so you saved a local page instead. If the directory cannot be written
+(read-only or sandboxed), say so rather than proceeding.
