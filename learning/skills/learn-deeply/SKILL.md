@@ -47,7 +47,9 @@ subject gets the big picture and a short walkthrough, nothing more.
    ℹ️ useful context. List these ONLY when you are actually confident they are real. Do not
    manufacture misconceptions to satisfy the format.
 6. **Go deeper** (always) — open questions worth clarifying, plus 2–3 concrete next steps to
-   learn more.
+   learn more. Where a next step is naturally something the reader would do with Claude or in a
+   real codebase, make it a real clickable link (see "Actionable links in Go deeper" below), not
+   just a written suggestion.
 
 ## Epistemic check (do this before explaining)
 
@@ -140,6 +142,46 @@ hold the line:
 build-up reveal, or nothing at all. A process (the TCP handshake, backpropagation) earns a full
 step-through. A system with tunable behavior (a cache, a rate limiter, a pricing model) earns a
 knob the learner can turn. Match the investment to what actually deepens understanding.
+
+## Actionable links in "Go deeper"
+
+The best next step is one the reader can take in a single click. When a next step is naturally
+something they would do with Claude or in a real codebase, make it a genuine link in the artifact
+rather than a written suggestion. Two kinds are worth building, both gated by one question: does a
+real, correct URL exist for this? If not, keep it as plain text.
+
+**Continue with Claude.** When the next step is to explore a topic further, work an exercise, or
+have something taught in more depth, link to a prefilled Claude prompt so the reader lands in a
+conversation ready to go:
+
+- Terminal (Claude Code), the primary form since that is where this skill runs:
+  `claude-cli://open?q=<url-encoded-prompt>`. Add `&repo=owner/name` or `&cwd=/path` when the
+  follow-up is about a specific repo or directory. This is an officially supported deep link, and
+  the handler is registered once the reader has used Claude Code on that machine. See
+  https://code.claude.com/docs/en/deep-links for the current parameters.
+- Web alternative, for a reader who may not have Claude Code: `https://claude.ai/new?q=<url-encoded-prompt>`.
+- URL-encode the prompt, keep it well under a few thousand characters, and write it as a real
+  learning request ("Walk me through TCP connection teardown: the FIN/ACK sequence and TIME_WAIT"),
+  not a bare topic. Because a deep link can silently do nothing if the scheme is not registered, the
+  visible link text must stand on its own so the reader still understands what it offers.
+
+**Point at real source.** When the subject is a specific open-source library, tool, or file, a link
+to the actual code beats describing it. But a fabricated path is worse than no link: it sends the
+reader to a 404 and quietly erodes trust in everything else on the page. So link only what you can
+anchor:
+
+- Link a specific file or line (`https://github.com/owner/repo/blob/<ref>/path`) only when the
+  reader gave you the repo, or the location is canonical and you are confident it is exactly right.
+- Otherwise link the repository root, or a code search
+  (`https://github.com/search?q=<terms>&type=code`), which lands the reader in the right place
+  without pretending to know a path you are guessing.
+- Never invent a URL to look authoritative. The epistemic check that governs the explanation
+  governs links too.
+
+Build these as ordinary anchors that open in a new tab (`target="_blank" rel="noopener"`). Anchor
+navigation is allowed from an artifact even though the CSP blocks network requests. And keep the
+same restraint as everywhere else: a link earns its place by being a real, correct next action, not
+by decorating the section.
 
 ## Output: an interactive artifact
 
