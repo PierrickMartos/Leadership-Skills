@@ -33,12 +33,13 @@ subject gets the big picture and a short walkthrough, nothing more.
 2. **Feynman walkthrough** (always) — explain it in the simplest faithful terms, with concrete
    analogies. Define every technical term inline the first time you use it. No unexplained
    jargon. Length scales to the subject.
-3. **Visual** (conditional) — a hand-authored diagram: inline SVG or HTML plus CSS, interactive
-   where it aids understanding. Include ONLY if the subject is a process (ordered steps), a
+3. **Visual** (conditional) — a hand-authored diagram: inline SVG or HTML plus CSS, which can be
+   static, interactive, or animated. Include ONLY if the subject is a process (ordered steps), a
    hierarchy (nested parts), or a flow (something moves between stages). Omit for a single
    definition, a principle, or prose with no moving parts. Never invent structure to fill the
-   slot. Example: "how OAuth works" → a step-through sequence diagram; "the sunk-cost fallacy"
-   → omit.
+   slot. When you include one, use "Interactivity and animation" below to decide how much motion
+   and interaction it warrants. Example: "how OAuth works" → a step-through sequence diagram;
+   "the sunk-cost fallacy" → omit.
 4. **Key parts** (conditional) — a table of part → what it does → why it's there. Include ONLY
    if the subject has 3+ named components that interact. Omit for atomic concepts. Example:
    "the Kafka architecture" → include; "what is entropy" → omit.
@@ -82,6 +83,64 @@ source to verify against — without inventing a citation.
 
 Onboarding a curious newcomer. Patient, plain, no condescension, no filler.
 
+## Interactivity and animation
+
+The artifact is a teaching medium, not a slideshow. Motion and interaction are powerful when they
+*do the teaching* and pure noise when they decorate. Reach for them whenever they make the subject
+click faster, and leave them out when they would just move pixels around. Being generous here is
+good: a newcomer learns more from a process they can step through than from a static picture of it.
+Being generous with meaningless motion is not.
+
+**The one test that governs everything here:** would removing this interaction or animation make
+the concept harder to understand? If yes, keep it. If no, it is decoration, so cut it. A learner
+should never wait through motion to reach information, or hunt through controls to find the point.
+
+Motion and interaction earn their place when they do one of three jobs:
+
+- **Show change over time.** The subject *is* a sequence or a transformation, so let the learner
+  watch it happen: a request moving through the OAuth steps, a value propagating through a network,
+  state flipping as an event fires. A process that actually unfolds beats a static box-and-arrow.
+- **Direct attention and stage complexity.** Reveal one piece at a time instead of dropping the
+  whole diagram at once, highlight the part the text is currently discussing, build a rich picture
+  up layer by layer. This is how you keep a dense subject from overwhelming a newcomer.
+- **Let the learner probe.** Give them a knob and let them discover the relationship themselves: a
+  slider that changes an input and re-renders the effect, a toggle between two approaches shown side
+  by side, stepping forward and back through a sequence at their own pace, expanding a term or a
+  "why" on demand.
+
+A menu to pick from (use what the subject rewards, not all of them):
+
+- **Step-through controls**: next / previous / play on a process or algorithm, so the learner sets
+  the pace and can replay the tricky step.
+- **Progressive reveal**: a diagram that assembles itself layer by layer, or sections that unfold
+  as the learner advances, so complexity arrives in a digestible order.
+- **Interactive parameters**: a slider or toggle wired to a live re-render, ideal for "what happens
+  as X grows", thresholds, and trade-offs the learner should feel rather than be told.
+- **Hover or tap to define**: inline terms reveal their definition on demand, keeping the main
+  prose clean while depth sits one gesture away.
+- **Linked diagram and text**: click a part of the visual to jump to the paragraph that explains
+  it, so the picture and the words reinforce each other.
+- **Meaningful transitions**: when an element moves, it moves because the concept moves; a
+  highlight tracks the data as the narration steps through it. The motion encodes the idea.
+
+**Staying on the right side of slop.** Motion that carries no meaning actively harms learning, so
+hold the line:
+
+- Respect `prefers-reduced-motion`: gate non-essential animation behind the media query and keep
+  the artifact fully understandable with motion off.
+- No autoplaying loops that never resolve, no decorative parallax, particles, or spinners. The end
+  state must be readable without waiting for an animation to finish, and anything that plays should
+  be skippable or replayable.
+- Controls are keyboard-operable and clearly labeled. Never rely on color or motion alone to carry
+  meaning.
+- Speed and legibility win over flourish. If an effect competes with the content for attention, it
+  loses.
+
+**Scale to the subject.** A single principle (the sunk-cost fallacy) might warrant one gentle
+build-up reveal, or nothing at all. A process (the TCP handshake, backpropagation) earns a full
+step-through. A system with tunable behavior (a cache, a rate limiter, a pricing model) earns a
+knob the learner can turn. Match the investment to what actually deepens understanding.
+
 ## Output: an interactive artifact
 
 Every learn-deeply response is rendered as a **Claude artifact**, a self-contained interactive
@@ -104,9 +163,10 @@ Then:
    asset as a `data:` URI. This is why the previous mermaid via CDN diagram cannot work in an
    artifact.
 3. **Diagrams and visuals are hand-authored** as inline SVG or HTML plus CSS, never mermaid.
-   Build one only when the subject warrants it (see Method item 3), and make it interactive
-   only when that genuinely aids understanding: clickable or expandable steps, hover to reveal
-   a term's definition, a step through of a process. Never add interactivity as decoration.
+   Build one only when the subject warrants it (see Method item 3), and use "Interactivity and
+   animation" above to decide whether it stays static or becomes interactive or animated. The bar
+   is the same everywhere: it earns its place by making the concept click faster, never by
+   decorating the page.
 4. The artifact must contain **the same explanation the Method produces**: same claims,
    analogies, and structure, expressed as real HTML elements, and nothing the epistemic check
    would bar.
