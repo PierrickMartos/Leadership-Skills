@@ -1,0 +1,50 @@
+{
+  "skill_name": "delegate-well",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "I need to hand off our weekly ops review deck to Marcus. He's been on the team 5 months, he's sat in on every one of these but has never built one himself. I've been doing it for about a year and honestly it eats 3 hours every Thursday. Help me hand this off properly.",
+      "expected_output": "",
+      "files": [],
+      "name": "eval-0-standard-handoff",
+      "assertions": [
+        "The handoff names a concrete first deliverable and a date, not an open-ended 'take this over'",
+        "Adapts the plan to the fact that Marcus has watched every one but built none (co-build, shadow, or first-draft-with-review before solo)",
+        "Transfers standing beyond the task: tells the stakeholders, hands over the recurring slot, or names decision rights",
+        "Includes a way to verify Marcus understood before he sinks hours in (playback, outline review, or early draft check)",
+        "Defines the output concretely enough to copy (format, length, audience, or points at the prior deck as the example)",
+        "Names at least one thing the user did not supply that it would need, instead of silently inventing it"
+      ]
+    },
+    {
+      "id": 1,
+      "prompt": "This is the third time I've had to redo Sofia's work. I asked her for a competitive analysis of our top 3 rivals and she came back with a 20 page doc that's basically feature checklists. What I wanted was something our head of product could actually use to decide whether we build or buy. I genuinely don't know at this point if she's not getting it or I'm not explaining it right.",
+      "expected_output": "",
+      "files": [],
+      "name": "eval-1-rework-loop",
+      "assertions": [
+        "Gives a direct answer to 'is it her or me' rather than a both-sides hedge",
+        "Ties the wrong output to a specific input Sofia was never given",
+        "The corrected brief states the decision the analysis feeds (build vs buy) and who is making it",
+        "The corrected brief constrains the artifact so a 20-page feature checklist could not satisfy it again",
+        "Proposes an early comprehension check on the next attempt, before Sofia produces another full draft",
+        "Separates what to do about this attempt from what to change next time, instead of only relitigating"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "one of my engineers keeps asking for more scope so i want to give him the vendor migration project next quarter. it's like 6 weeks of work, touches billing, and he'd need to negotiate with the vendor's solutions team directly. he's strong technically but he's never led anything cross-functional and he's currently on the on-call rotation plus finishing the search refactor. how do i set this up",
+      "expected_output": "",
+      "files": [],
+      "name": "eval-2-stretch-too-far",
+      "assertions": [
+        "Does not accept the assignment as-scoped without qualification",
+        "Resolves the capacity collision concretely, naming what comes off his plate (on-call and/or the search refactor)",
+        "Treats vendor negotiation as a distinct capability from the technical work, not lumped into 'it's a stretch'",
+        "Names a guardrail specific to billing or vendor commitments (spend, contract terms, blast radius), not generic risk advice",
+        "Defines his authority in the vendor conversation and the point at which he must come back",
+        "Sets an early checkpoint tied to a concrete artifact or decision point, not a periodic status cadence"
+      ]
+    }
+  ]
+}
