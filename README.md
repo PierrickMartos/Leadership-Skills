@@ -3,7 +3,7 @@
 
 # Leadership Skills Marketplace
 
-13 skills for Claude Code, Cursor, and Claude Cowork.
+14 skills for Claude Code, Cursor, and Claude Cowork.
 
 **For directors, managers, leads, and ICs** who want structured help with the hard parts of leadership — decisions, communication, hiring, performance management, and getting up to speed on any subject.
 
@@ -132,7 +132,7 @@ Claude Code: `/plugin install decision-making@leadership-skills`
 </details>
 
 <details>
-<summary><strong><code>communication</code></strong> (5 skills) — Skills for communicating clearly and having the conversations that matter.</summary>
+<summary><strong><code>communication</code></strong> (6 skills) — Skills for communicating clearly and having the conversations that matter.</summary>
 
 Claude Code: `/plugin install communication@leadership-skills`
 
@@ -140,6 +140,7 @@ Claude Code: `/plugin install communication@leadership-skills`
 |-------|---------|
 | `bluf-communication` | Rewrite a draft message using BLUF (Bottom Line Up Front) — lead with the conclusion, cut the build-up. |
 | `communication-coach` | Review any written communication and give actionable, specific feedback grounded in proven leadership communication principles. |
+| `delegate-well` | Hand work off so it comes back right the first time: triage the fit, close the context gaps, draft the brief. Based on Wes Kao's [6 questions to ask before delegating](https://newsletter.weskao.com/p/before-you-delegate-ask-yourself). |
 | `difficult-conversations` | Prepare for a high-stakes conversation — feedback, underperformance, conflict — with structure, clarity, and care. |
 | `escalate-without-drama` | Escalate a blocker, ownership gap, or stalled dependency firmly and professionally — without blame or politics. |
 | `reframe-for-execs` | Compress and reframe a detailed draft into a crisp executive-ready message — for VPs, steering committees, or the C-suite. |
